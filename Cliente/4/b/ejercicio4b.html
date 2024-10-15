@@ -9,14 +9,25 @@
     </script>
 </head>
 <body>
-    <script type="text/javascript">
-        let num = prompt("Dame un numero");
-        
-        let pt = potencia(num);
-        let rz = raiz(num);
-        let ft = factorial(num);
-        
-        alert("La potencia de "+num+" es "+pt+"\nLa raiz de "+num+" es "+rz+"\nEl factorial de "+num+" es "+ft);
-    </script>
+
+    <input type="number" id="numero">
+
+    <button onclick="potencia()">Potencia</button>
+    <button onclick="raiz()">Raiz</button>
+    <button onclick="factorial()">Factorial</button>
+
+    <hr>
+    <h1>Calculadora</h1>
+    <input type="number" id="num1"><br><br>
+    <input type="number" id="num2"><br><br>
+    -----------------------------------      
+    <button onclick="suma()"> + </button>
+    <button onclick="rest()"> - </button>
+    <button onclick="mult()"> x </button>
+    <button onclick="divi()"> / </button>
+    <br>
+    <br>
+    <input type="number" id="result" disabled>
+
 </body>
 </html>

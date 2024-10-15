@@ -1,0 +1,12 @@
+:root{
+    --primary-color: #555;
+}
+body{
+    background-color: var(--primary-color);
+    height: 100vh;
+
+    align-items: center;
+    
+    justify-content: center;
+
+}
