@@ -1,12 +1,44 @@
 :root{
-    --primary-color: #555;
+    --primary-color: #333;
+    --secondary--color: #49ac30;
 }
+
 body{
     background-color: var(--primary-color);
     height: 100vh;
 
+    display: flex;
     align-items: center;
-    
     justify-content: center;
+}
 
+table{
+    background-color: #666;
+    padding: 10px;
+    border-radius: 10px;
+    animation: cambiarShadow 3s infinite;
+}
+
+hr {
+    height: 3px; 
+    border: none;
+    border-radius: 2px;
+    animation: cambiarColor 3s infinite;
+}
+
+@keyframes cambiarColor {
+    0% { background-color: red; }
+    25% { background-color: blue; }
+    50% { background-color: green; }
+    75% { background-color: yellow; }
+    100% { background-color: red; }
+
+}
+
+@keyframes cambiarShadow {
+    0% { box-shadow: 0 0 10px red; }
+    25% { box-shadow: 0 0 10px blue; }
+    50% { box-shadow: 0 0 10px green; }
+    75% { box-shadow: 0 0 10px yellow; }
+    100% { box-shadow: 0 0 10px red; }
 }
