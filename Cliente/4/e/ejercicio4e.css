@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
 :root{
     --primary-color: #333;
     --secondary--color: #49ac30;
@@ -12,15 +14,20 @@ body{
     justify-content: center;
 }
 
-table{
+div{
     background-color: #666;
     padding: 10px;
     border-radius: 10px;
     animation: cambiarShadow 3s infinite;
+    h1{
+        text-align: center;
+        
+    }
 }
 
 hr {
-    height: 3px; 
+    width: 5px;
+    height: 200px; 
     border: none;
     border-radius: 2px;
     animation: cambiarColor 3s infinite;
