@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -17,8 +18,14 @@
     </header>
 
     <main>
-        <h2>¿Quiénes somos?</h2>
-        <p>En Bancos JP, somos tu socio confiable en el manejo de tus finanzas. Nos dedicamos a ofrecerte soluciones bancarias accesibles y personalizadas, con un enfoque en la transparencia y la atención al cliente. Nuestro compromiso es ayudarte a alcanzar tus objetivos financieros mientras contribuimos al bienestar de nuestra comunidad. En Bancos JP, tu éxito es nuestra prioridad.</p>
+        <div>
+            <h2>Bienvenido a Bancos JP</h2>
+            <p>Lugar donde nos pides dinero y nosotros te damos el de otro</p>
+        </div>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Bancos JP. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

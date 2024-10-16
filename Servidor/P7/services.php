@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -17,10 +18,16 @@
     </header>
     
     <main>
-        <form action="" method="post">
-            <input type="file" name="file" id="file">
-            <button>Enviar</button>
-        </form>
+        <div>
+            <form action="" method="post">
+                <input type="file" name="file" id="file">
+                <button>Enviar</button>
+            </form>
+        </div>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Bancos JP. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

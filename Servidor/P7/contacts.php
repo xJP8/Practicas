@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -15,16 +16,21 @@
             <a href="contacts.php">Contacto</a>
         </nav>
     </header>
-
     <main>
-        <form action="" method="post">
-            <input type="text" id="name" placeholder="Nombre"><br>
-            <input type="email" id="email" placeholder="Email"><br>
-            <input type="number" id="number" placeholder="Telefono"><br>
-            <input type="text" id="asunto" placeholder="Asunto"><br>
-            <textarea name="mensaje" id="mensaje" placeholder="Mensaje"></textarea><br>
-            <button>Enviar</button>
-        </form>
+        <div>
+            <form action="" method="post">
+                <input type="text" id="name" placeholder="Nombre"><br>
+                <input type="email" id="email" placeholder="Email"><br>
+                <input type="number" id="number" placeholder="Telefono"><br>
+                <input type="text" id="asunto" placeholder="Asunto"><br>
+                <textarea name="mensaje" id="mensaje" placeholder="Mensaje"></textarea><br>
+                <button>Enviar</button>
+            </form>
+        </div>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Bancos JP. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
