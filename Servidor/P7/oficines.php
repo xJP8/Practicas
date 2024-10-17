@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
     <link rel="stylesheet" href="style.css">
+    <title>Oficinas</title>
 </head>
 <body>
     <header>
@@ -19,8 +19,8 @@
     <main>
         <div>
             <form action="search.php" method="post">
-                <select name="pastel" id="pasteles">
-                    <option value="error"></option>
+                <select name="oficina" id="oficina">
+                    <option value=""></option>
                     <?php
                         $servername = "localhost";
                         $username = "root";
@@ -45,7 +45,7 @@
                     ?>
                 </select>
                 <button>Buscar</button>
-            </form>            
+            </form>
         </div>
     </main>
 
