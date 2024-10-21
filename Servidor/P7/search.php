@@ -23,23 +23,26 @@
                 if ($nombre == null || $nombre == "") {
                     header("Location: oficines.php");
                 } else{
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "root";
-                    $dbname = "jesusbd";
+                    $servername = "sql308.infinityfree.com";
+                    $username = "if0_37559591";
+                    $password = "agDkpoC55UeyU";
+                    $dbname = "if0_37559591_jesusbd";
                     
                     $conn = new mysqli($servername, $username, $password, $dbname);
-                    
+                    $conn -> set_charset("uft8mb4");
                     if ($conn->connect_error) {
                         die("Conexión fallida: " . $conn->connect_error);
                     }
 
-                    $sql = "SELECT mapa FROM oficinas WHERE nombre = '$nombre'";
+                    $sql = "SELECT mapa, calle, postal, horario FROM oficinas WHERE nombre = '$nombre'";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                             echo '<h2>'.$nombre.'</h2>';
+                            echo '<h3>'.$row["calle"].'</h3>';
+                            echo '<h3>'.$row["postal"].'</h3>';
+                            echo '<h3>'.$row["horario"].'</h3>';
                             echo $row["mapa"];
                         }
                     } else {

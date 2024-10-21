@@ -19,13 +19,18 @@
     <main>
         <div>
             <form action="" method="post">
-                <input type="text" id="name" placeholder="Nombre"><br>
-                <input type="email" id="email" placeholder="Email"><br>
-                <input type="number" id="number" placeholder="Telefono"><br>
-                <input type="text" id="asunto" placeholder="Asunto"><br>
-                <textarea name="mensaje" id="mensaje" placeholder="Mensaje"></textarea><br>
-                <button>Enviar</button>
+                <input type="text" id="name" name="name" placeholder="Nombre" required><br>
+                <input type="email" id="email" name="email" placeholder="Email" required><br>
+                <input type="number" id="number" name="number" placeholder="Teléfono" required><br>
+                <input type="text" id="asunto" name="asunto" placeholder="Asunto" required><br>
+                <textarea name="mensaje" id="mensaje" placeholder="Mensaje" required></textarea><br>
+                <button type="submit">Enviar</button>
             </form>
+            <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    echo "<p style='color: green;'>Correo enviado.</p>";
+                }
+            ?>
         </div>
     </main>
 

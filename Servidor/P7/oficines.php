@@ -22,13 +22,14 @@
                 <select name="oficina" id="oficina">
                     <option value=""></option>
                     <?php
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "root";
-                        $dbname = "jesusbd";
+                        $servername = "sql308.infinityfree.com";
+                        $username = "if0_37559591";
+                        $password = "agDkpoC55UeyU";
+                        $dbname = "if0_37559591_jesusbd";
     
                         $conn = new mysqli($servername, $username, $password, $dbname);
-    
+                        $conn -> set_charset("uft8mb4");
+                        
                         if ($conn->connect_error) {
                             die("Conexión fallida: " . $conn->connect_error);
                         }
