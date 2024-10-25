@@ -1,0 +1,28 @@
+body {
+    background-color: #555;
+    color: #fff;
+    padding: 20px; /* Añadir espacio alrededor del contenido */
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    margin: 5px 0; /* Espacio vertical entre elementos */
+    padding: 10px; /* Espacio dentro de los inputs */
+    width: 300px; /* Ajustar el ancho */
+}
+
+hr {
+    width: 100%; /* Línea horizontal de ancho completo */
+    margin: 20px 0; /* Espacio alrededor de las líneas */
+}
+
+input[type="color"] {
+    margin: 5px 0; /* Espacio alrededor del color */
+}
+
+/* Opcional: para el estilo de las imágenes */
+img {
+    max-width: 100px; /* Limitar el ancho de las imágenes */
+    margin: 5px; /* Espacio entre imágenes */
+}
