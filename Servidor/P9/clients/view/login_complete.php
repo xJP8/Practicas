@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    
+    if(!isset($_SESSION["nombre"])){
+        header("Location: clients.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +18,7 @@
     <header>
         <h1>Bancos JP</h1>
         <nav>
-            <a href="../index.php">Inicio</a>
+            <a href="../../index.php">Inicio</a>
             <a href="/services/services.php">Servicios</a>
             <a href="/oficines/oficines.php">Oficinas</a>
             <a href="/contacts/contacts.php">Contacto</a>
@@ -19,14 +27,7 @@
     </header>
     <main>
         <div>
-            <form action="mail.php" method="post">
-                <input type="text" id="name" name="name" placeholder="Nombre" required><br>
-                <input type="email" id="email" name="email" placeholder="Email" required><br>
-                <input type="number" id="number" name="number" placeholder="Teléfono" required><br>
-                <input type="text" id="asunto" name="asunto" placeholder="Asunto" required><br>
-                <textarea name="mensaje" id="mensaje" placeholder="Mensaje" required></textarea><br>
-                <button type="submit">Enviar</button>
-            </form>
+            <h1>Bienvenido <?php echo $_SESSION["nombre"]?></h1>
         </div>
     </main>
 

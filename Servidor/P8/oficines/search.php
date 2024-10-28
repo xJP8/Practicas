@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <a href="/services/services.php">Servicios</a>
             <a href="/oficines/oficines.php">Oficinas</a>
             <a href="/contacts/contacts.php">Contacto</a>
-            <a href="/clients/clients.php">Acceso clientes</a>
+            <a href="/clients/view/clients.php">Acceso clientes</a>
         </nav>
     </header>
     <main>
