@@ -1,7 +1,6 @@
 <?php
-// Iniciar la lógica PHP antes de cualquier salida HTML
 $nombre = "";
-$oficinaEncontrada = false; // Bandera para saber si se encontró la oficina
+$oficinaEncontrada = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre = htmlspecialchars($_POST['oficina']);

@@ -2,7 +2,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     
-    require __DIR__ . '/../vendor/autoload.php';  // Ruta corregida al autoload de Composer
+    require __DIR__ . '/../vendor/autoload.php'; 
     
     $mail = new PHPMailer(true);
     
@@ -12,20 +12,17 @@
     $mensaje = htmlspecialchars($_POST['mensaje']);
     
     try {
-        // Configuraciones del servidor SMTP
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com'; 
         $mail->SMTPAuth   = true;            
         $mail->Username   = 'jesusperez140805@gmail.com';
-        $mail->Password   = 'ybimrbmqndlyicii';  // Contraseña de aplicación de Gmail
+        $mail->Password   = 'ybimrbmqndlyicii';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;  
     
-        // Destinatario y remitente
         $mail->setFrom('jesusperez140805@gmail.com', 'Jesús Pérez');
-        $mail->addAddress($email);  // Se envía el correo al email recibido por POST
+        $mail->addAddress($email);
     
-        // Contenido del correo
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
         $mail->Subject = $asunto;

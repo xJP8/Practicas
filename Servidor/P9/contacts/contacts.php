@@ -27,11 +27,6 @@
                 <textarea name="mensaje" id="mensaje" placeholder="Mensaje" required></textarea><br>
                 <button type="submit">Enviar</button>
             </form>
-            <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    echo "<p style='color: green;'>Correo enviado.</p>";
-                }
-            ?>
         </div>
     </main>
 
