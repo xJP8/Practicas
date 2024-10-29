@@ -1,8 +1,8 @@
 <?php
-    $servername = "sql8.freemysqlhosting.net";
-    $username = "sql8739892";
-    $password = "7I8encFwKn";
-    $dbname = "sql8739892";
+    $servername = "sql7.freesqldatabase.com";
+    $username = "sql7741535";
+    $password = "zIYqQLGvQl";
+    $dbname = "sql7741535";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
