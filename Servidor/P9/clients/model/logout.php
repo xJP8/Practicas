@@ -1,9 +1,9 @@
 <?php
     session_start();
     if(isset($_SESSION["nombre"])){
-        session_abort();
+        session_destroy();
 
-        header("Location: clients.php");
+        header("Location: /clients/view/clients.php");
         exit();
     }
 ?>

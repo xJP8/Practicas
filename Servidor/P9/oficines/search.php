@@ -1,4 +1,5 @@
 <?php
+session_start();
 $nombre = "";
 $oficinaEncontrada = false;
 
@@ -20,11 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             die("Conexión fallida: " . $conn->connect_error);
         }
 
-        $sql = "SELECT mapa, calle, postal, horario FROM oficinas WHERE nombre = '$nombre'";
+        $sql = "SELECT mapa, calle, cod_postal, horario FROM oficinas WHERE nombre = '$nombre'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            $oficinaEncontrada = true; // Cambiar la bandera si se encuentra la oficina
+            $oficinaEncontrada = true;
             $row = $result->fetch_assoc();
         }
 
@@ -49,7 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <a href="/services/services.php">Servicios</a>
             <a href="/oficines/oficines.php">Oficinas</a>
             <a href="/contacts/contacts.php">Contacto</a>
-            <a href="/clients/view/clients.php">Acceso clientes</a>
+            <?php
+                if(!isset($_SESSION["nombre"])){
+                    echo '<a href="/clients/view/clients.php">Acceso clientes</a>';
+                } else{
+                    echo '<a href="/clients/model/logout.php">Cerrar sesión</a>';
+                }
+            ?>
         </nav>
     </header>
     <main>
@@ -57,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <?php if ($oficinaEncontrada): ?>
                 <h2><?php echo $nombre; ?></h2>
                 <h3><?php echo $row["calle"]; ?></h3>
-                <h3><?php echo $row["postal"]; ?></h3>
+                <h3><?php echo $row["cod_postal"]; ?></h3>
                 <h3><?php echo $row["horario"]; ?></h3>
                 <?php echo $row["mapa"]; ?>
             <?php else: ?>

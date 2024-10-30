@@ -23,7 +23,13 @@
             <a href="/services/services.php">Servicios</a>
             <a href="/oficines/oficines.php">Oficinas</a>
             <a href="/contacts/contacts.php">Contacto</a>
-            <a href="/clients/view/clients.php">Acceso clientes</a>
+            <?php
+                if(!isset($_SESSION["nombre"])){
+                    echo '<a href="/clients/view/clients.php">Acceso clientes</a>';
+                } else{
+                    echo '<a href="/clients/model/logout.php">Cerrar sesión</a>';
+                }
+            ?>
         </nav>
     </header>
     <main>

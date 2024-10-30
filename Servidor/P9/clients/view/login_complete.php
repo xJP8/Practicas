@@ -26,7 +26,7 @@
                 if(!isset($_SESSION["nombre"])){
                     echo '<a href="/clients/view/clients.php">Acceso clientes</a>';
                 } else{
-                    echo '<a href="../clients/model/logout.php">Cerrar sesión</a>';
+                    echo '<a href="/clients/model/logout.php">Cerrar sesión</a>';
                 }
             ?>
         </nav>

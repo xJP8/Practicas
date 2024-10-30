@@ -12,7 +12,7 @@
     $nombre = htmlspecialchars($_POST['nombre']);
     $contra = htmlspecialchars($_POST['contra']);
 
-    $sql = "SELECT nombre FROM clientes WHERE nombre = " . "'" . $nombre . "'" . " AND contra = " . "'" . $contra . "'";
+    $sql = "SELECT nombre FROM clientes WHERE nombre = " . "'" . $nombre . "'" . " AND contrasena = " . "'" . $contra . "'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
