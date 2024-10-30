@@ -28,7 +28,7 @@
     </header>
     <main>
         <div>
-            <form action="mail.php" method="post">
+            <form action="" method="post">
                 <input type="text" id="name" name="name" placeholder="Nombre" required><br>
                 <input type="email" id="email" name="email" placeholder="Email" required><br>
                 <input type="number" id="number" name="number" placeholder="Teléfono" required><br>
