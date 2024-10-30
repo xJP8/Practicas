@@ -19,30 +19,29 @@
     <input type="number" name="tamano" id="tamano" placeholder="Tamaño" oninput="cambiarTamanoTexto()">
     <hr>
     Negrita
-    <input type="checkbox" class="estilo" name="negrita" id="negrita">
+    <input type="checkbox" class="estilo" name="negrita" id="negrita" onchange="alternarNegrita()">
     <br>
     Cursiva
-    <input type="checkbox" class="estilo" name="cursiva" id="cursiva">
+    <input type="checkbox" class="estilo" name="cursiva" id="cursiva" onchange="alternarCursiva()">
     <br>
     Subrayado
-    <input type="checkbox" class="estilo" name="subrayado" id="subrayado">
+    <input type="checkbox" class="estilo" name="subrayado" id="subrayado" onchange="alternarSubrayado()">
     <hr>
-    <img src="" alt="Arial" id="img">
-    <img src="" alt="Arial">
-    <img src="" alt="Arial">
+    <img src="" alt="Arial" onclick="cambiarTipografia('arial')">
+    <img src="" alt="Times New Roman" onclick="cambiarTipografia('Times New Roman')">
     <hr>
     Color Fondo
-    <input type="color" name="color" id="bk_color">
+    <input type="color" name="color" id="bk_color" oninput="cambiarFondo()">
     <br>
     <br>
     <br>
     Color Borde:
     <br>
     Blanco
-    <input type="radio" name="borde" id="blanco">
+    <input type="radio" name="borde" id="blanco" onchange="cambiarBorde('white')">
     <br>
     Negro
-    <input type="radio" name="borde" id="negro">
+    <input type="radio" name="borde" id="negro" onchange="cambiarBorde('black')">
     <hr>
     <input type="text" name="resultado" id="resultado" disabled>
     <script src="ejercicioI.js"></script>
