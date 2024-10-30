@@ -1,13 +1,19 @@
 <?php
     session_start();
+    
+    if(!isset($_SESSION["nombre"])){
+        header("Location: /clients/view/clients.php");
+        exit();
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
-    <title>Services</title>
+    <title>Contactos</title>
 </head>
 <body>
     <header>
@@ -26,12 +32,11 @@
             ?>
         </nav>
     </header>
-    
     <main>
         <div>
-            <form action="" method="post">
-                <input type="file" name="file" id="file">
-                <button>Enviar</button>
+            <h1>¿Seguro que quiere cerrar sesión?</h1>
+            <form action="../model/logout.php" method="post">
+                <button type="submit">Confirmar</button>
             </form>
         </div>
     </main>

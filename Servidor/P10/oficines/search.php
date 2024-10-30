@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <header>
         <h1>Bancos JP</h1>
         <nav>
-            <a href="../index.php">Inicio</a>
+            <a href="/index.php">Inicio</a>
             <a href="/services/services.php">Servicios</a>
             <a href="/oficines/oficines.php">Oficinas</a>
             <a href="/contacts/contacts.php">Contacto</a>
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 if(!isset($_SESSION["nombre"])){
                     echo '<a href="/clients/view/clients.php">Acceso clientes</a>';
                 } else{
-                    echo '<a href="/clients/model/logout.php">Cerrar sesión</a>';
+                    echo '<a href="/clients/view/client_logout.php">Cerrar sesión</a>';
                 }
             ?>
         </nav>
