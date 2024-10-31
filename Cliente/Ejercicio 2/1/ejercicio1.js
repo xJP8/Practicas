@@ -27,7 +27,25 @@ function dibujarCuadrado(){
 function dibujarDiamante(){
     let alto = document.getElementById('diamond_alto').value;
     let diamnte = "";
+    let ancho = 0;
+    let anchoMax = Math.round(alto/2);
+    let incrementar=true;
     for (let i = 0; i < alto; i++) {
-        
+
+        if (ancho == anchoMax) {
+            incrementar = false;
+        }
+        if (incrementar) {
+            ancho++;
+        }else{
+            ancho--;
+        }
+
+        for (let j = 0; j < ancho; j++) {
+
+            diamnte +="*";            
+        }
+        diamnte+="<br>"
     }
+    document.write(diamnte)
 }
