@@ -10,9 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit(); // Detener el script después de redirigir
     } else {
         $servername = "sql7.freesqldatabase.com";
-        $username = "sql7741535";
-        $password = "zIYqQLGvQl";
-        $dbname = "sql7741535";
+        $username = "sql7742696";
+        $password = "u18NRnscUx";
+        $dbname = "sql7742696";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
         $conn->set_charset("utf8mb4");
