@@ -12,12 +12,14 @@
     $nombre = htmlspecialchars($_POST['nombre']);
     $contra = htmlspecialchars($_POST['contra']);
 
-    $sql = "SELECT nombre FROM clientes WHERE nombre = " . "'" . $nombre . "'" . " AND contrasena = " . "'" . $contra . "'";
+    $sql = "SELECT id, nombre FROM clientes WHERE nombre = " . "'" . $nombre . "'" . " AND contrasena = " . "'" . $contra . "'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         session_start();
-        $_SESSION["nombre"] = $nombre; 
+        $row = $result->fetch_assoc();
+        $_SESSION["id"] = $row["id"];
+        $_SESSION["nombre"] = $row["nombre"]; 
         header("Location: ../view/login_complete.php");
         exit();
     } else {

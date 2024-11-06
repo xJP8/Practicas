@@ -41,6 +41,31 @@
                     <td>Cuenta</td>
                     <td>Saldo</td>
                 </tr>
+                <?php
+                    $servername = "sql7.freesqldatabase.com";
+                    $username = "sql7742696";
+                    $password = "u18NRnscUx";
+                    $dbname = "sql7742696";
+                
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    if ($conn->connect_error) {
+                        die("Conexión fallida: " . $conn->connect_error);
+                    }
+                
+                    $id = $_SESSION["id"];
+                
+                    $sql = "SELECT cuenta, saldo FROM cuentas WHERE client_id = " . $id;
+                    $result = $conn->query($sql);
+                
+                    if ($result->num_rows > 0) {
+                        
+                        //TODO POR HACER
+                    } else {
+                        header("Location: ../view/login_refuze.php");
+                        exit();
+                    }
+                    $conn->close();
+                ?>
                 <tr>
                     <td>Jose</td>
                     <td>1982.00 €</td>

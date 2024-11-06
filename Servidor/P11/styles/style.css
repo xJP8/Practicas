@@ -65,15 +65,29 @@ select{
     }
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    
+    tr {
+        background-color: #333;
+        &:hover {
+            background-color: #555;
+        }
+    }
+
+}
+
 footer {
     text-align: center;
     padding: 10px 0;
     background-color: var(--color-fondo);
     border-top: 1px solid var(--color-borde);
-}
-
-
-table{
-    border: #fff;
-    border-width: 2px;
 }
