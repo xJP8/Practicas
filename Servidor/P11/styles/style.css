@@ -71,3 +71,9 @@ footer {
     background-color: var(--color-fondo);
     border-top: 1px solid var(--color-borde);
 }
+
+
+table{
+    border: #fff;
+    border-width: 2px;
+}
