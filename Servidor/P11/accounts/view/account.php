@@ -54,22 +54,21 @@
                 
                     $id = $_SESSION["id"];
                 
-                    $sql = "SELECT cuenta, saldo FROM cuentas WHERE client_id = " . $id;
+                    $sql = "SELECT numero_cuenta, saldo FROM cuentas";
                     $result = $conn->query($sql);
                 
                     if ($result->num_rows > 0) {
-                        
-                        //TODO POR HACER
+                        while ($fila = $result->fetch_assoc()) {
+                            echo "<tr>
+                                    <td>" . $fila['numero_cuenta'] . "</td>
+                                    <td>" . $fila['saldo'] . "</td>
+                                  </tr>";
+                        }
                     } else {
-                        header("Location: ../view/login_refuze.php");
-                        exit();
+                        echo "<tr><td colspan='2'>No hay cuentas registradas.</td></tr>";
                     }
                     $conn->close();
                 ?>
-                <tr>
-                    <td>Jose</td>
-                    <td>1982.00 €</td>
-                </tr>
             </table>
         </div>
     </main>
