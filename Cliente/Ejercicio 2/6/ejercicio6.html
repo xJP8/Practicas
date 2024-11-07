@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe con tamaño ajustable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        iframe {
+            border: 2px solid #ccc;
+        }
+        #controls {
+            margin-top: 20px;
+        }
+        .control {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video en Iframe con Tamaño Ajustable</h1>
+    
+    <!-- Iframe para el video -->
+    <iframe id="videoIframe" width="560" height="315" 
+            src="https://www.youtube.com/embed/ktv5vseGTSY?si=wrBOCfIAxQeMT7Np" 
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+    
+    <div id="controls">
+        <div class="control">
+            <label for="widthRange">Ancho del Iframe:</label>
+            <input type="range" id="widthRange" min="300" max="1000" value="560">
+            <span id="widthValue">560</span> px
+        </div>
+        <div class="control">
+            <label for="heightRange">Alto del Iframe:</label>
+            <input type="range" id="heightRange" min="200" max="700" value="315">
+            <span id="heightValue">315</span> px
+        </div>
+    </div>
+
+    <script src="ejercicio6.js"></script>
+</body>
+</html>
