@@ -1,4 +1,3 @@
-
 ## Tablas
 
 ``` SQL
