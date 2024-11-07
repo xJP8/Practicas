@@ -21,7 +21,7 @@ function dibujarCuadrado(){
         cuadrado+="*";
     }
     
-    document.write(cuadrado)
+    document.getElementById("cuadrado").innerHTML = cuadrado;
 }
 
 function dibujarDiamante(){
@@ -47,5 +47,5 @@ function dibujarDiamante(){
         }
         diamnte+="<br>"
     }
-    document.write(diamnte)
+    document.getElementById("diamond").innerHTML = diamnte;
 }
