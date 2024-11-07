@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre = htmlspecialchars($_POST['oficina']);
     if ($nombre == null || $nombre == "") {
         header("Location: /oficines/oficines.php");
-        exit(); // Detener el script después de redirigir
+        exit();
     } else {
         $servername = "sql7.freesqldatabase.com";
         $username = "sql7742696";
