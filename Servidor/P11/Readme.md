@@ -39,17 +39,8 @@ INSERT INTO cuentas (cliente_id, numero_cuenta, saldo) VALUES (1, '0987654321', 
 
 ## BBDD
 
-> Host:<br>
-> sql7.freesqldatabase.com
-
-> Database name:<br>
-> sql7742696
-
-> Database user:<br>
-> sql7742696
-
-> Database password:<br>
-> u18NRnscUx
-
-> Port number:<br>
-> 3306
+> Host: sql7.freesqldatabase.com
+> Database name: sql7744137
+> Database user: sql7744137
+> Database password: meKvU4kasn
+> Port number: 3306
