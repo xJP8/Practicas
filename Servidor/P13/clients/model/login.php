@@ -9,8 +9,8 @@
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    $nombre = htmlspecialchars($_POST['nombre']);
-    $contra = htmlspecialchars($_POST['contra']);
+    $nombre = $_POST['nombre'];
+    $contra = $_POST['contra'];
 
     $sql = "SELECT id, nombre FROM clientes WHERE nombre = '$nombre' AND contrasena = '$contra'";
     $result = $conn->query($sql);
@@ -23,7 +23,8 @@
         header("Location: ../view/login_complete.php");
         exit();
     } else {
-        echo "$sql";
+        header("Location: ../view/login_refuze.php");
+        exit();
     }
     $conn->close();
 ?>  
