@@ -1,5 +1,5 @@
 # Examen de Jesús Pérez Enríquez 2º Daw
-Hola profe, escribo este documento por si acaso no se ve de la forma adecuada:
+Hola Fermín, escribo este documento por si acaso no se ve de la forma adecuada:
 
 Así debería verse: 
 ![Imagen Muestra](images/image.png)

@@ -1,0 +1,45 @@
+﻿ul li:nth-child(2n+1){
+color:blue;
+}
+
+ul li:nth-of-type(){
+
+}
+
+h1,h2[]{
+color:blue;
+}
+
+h1:first-child::before   {  }
+
+p:nth-of-type(1)::first-line{
+
+}
+
+p:nth-of-type()::before{
+
+}
+
+ul{
+color:green;
+}
+
+:{
+font-family:Arial;
+}
+
+div > p {
+
+}
+a[]{
+color:grey;
+}
+
+p:::first-letter{
+text-transform: lowercase; 
+
+}
+div a[href]{
+color:red;
+}
+h2:last-child::  { content: "Contenido2 "; }
