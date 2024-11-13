@@ -1,45 +1,53 @@
-﻿ul li:nth-child(2n+1){
-color:blue;
+﻿ul li{
+    &:nth-child(n){
+        color:red;
+    }
+    &:nth-child(2n+1){
+        color:blue;
+    }
 }
 
 ul li:nth-of-type(){
 
 }
 
-h1,h2[]{
+h1,h2[class ^= "tit"]{
 color:blue;
 }
 
 h1:first-child::before   {  }
 
 p:nth-of-type(1)::first-line{
-
+    text-transform: uppercase;
 }
 
 p:nth-of-type()::before{
 
 }
 
-ul{
-color:green;
+ul~p{
+    color:green;
 }
 
-:{
-font-family:Arial;
+::not(p){
+    font-family:arial;
 }
 
 div > p {
 
 }
-a[]{
+
+a[href *= "goo"]{
 color:grey;
 }
 
-p:::first-letter{
-text-transform: lowercase; 
-
+p:nth-last-of-type(1)::first-letter{
+    text-transform: lowercase; 
+    color: red;
 }
-div a[href]{
+div a[href $= "com"]{
 color:red;
 }
-h2:last-child::  { content: "Contenido2 "; }
+h2:last-child::before{
+    content: "Contenido2 ";
+}
