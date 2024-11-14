@@ -1,15 +1,20 @@
 #ex01{
-	
+	&:hover{
+        translate: 10px 15px;
+    }
 }
 #ex02{
-	
+    &:hover{
+        scale: 0.95;
+    }
+}
 #ex03{
-	
-	
-
-	
-	
+	&:hover{
+        rotate:50deg;
+    }
 }
 #ex04{
-	
+	&:hover{
+        transform: skew(10deg, 20deg);
+    }
 }

@@ -5,11 +5,11 @@ table, table td, table tr {
 
 table {
 	border:1px black solid;
-	border-radius:  ?  px;
-	min-width: ? px;
+	border-radius: 10px;
+	min-width: 20px;
 	font-family: Helvetica,Arial;
-	
-	/* Centrar la tabla en el navegador*/
+	display: flex;
+	justify-content: center;
 }
 
 table td {
@@ -17,14 +17,14 @@ table td {
 }
 
 table tr:first-child td:first-child {
-	?  :5px 0px 0px 0px;
+	border-radius: 5px 0px 0px 0px;
 }
 
-table tr:first-child td:last-? {
+table tr:first-child td:last-child {
 	border-radius:0px 5px 0px 0px;
 }
 
-table tr:last-child td:first-? {
+table tr:last-child td:first-child {
 	border-radius:0px 0px 0px 5px;
 }
 
@@ -41,7 +41,7 @@ table tr:nth-child(2n) {
 	background: #87CEEB;
 }
 
-table tr:nth-child( ? ){
+table tr:nth-child(2n+1){
 	background: #ADD8E6;
 }
 
