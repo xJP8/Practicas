@@ -4,7 +4,7 @@ $nombre = "";
 $oficinaEncontrada = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nombre = htmlspecialchars($_POST['oficina']);
+    $nombre = $_POST['oficina'];
     if ($nombre == null || $nombre == "") {
         header("Location: /oficines/oficines.php");
         exit();
