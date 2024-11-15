@@ -54,9 +54,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     cell.addEventListener('drop', handleDrop);
   });
 
-  //! --------------------------!//
+
+  //!---------------------------!//
   //! Funcionalidad Controlador !//
-  //! --------------------------!//
+  //!---------------------------!//
   function nextTurn(){
     checkWin()
     changeTurn();
@@ -73,16 +74,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let celdas = document.querySelectorAll('.tablero td');
     let tablero = [];
 
-    for (let i = 0; i < celdas.length; i++) {
-      tablero.push(celdas[i]);
-    }
-
-    for (let i = 0; i < tablero.length; i++) {
-      
-      
-    }
-
-    
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        tablero[i][j] = celdas[i+j];
+        console.log(celdas[i+j]);
+      }
+    }    
 
   }
 
