@@ -58,8 +58,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   //! Funcionalidad Controlador !//
   //! --------------------------!//
   function nextTurn(){
-    // TODO comprobar victoria
-
+    checkWin()
     changeTurn();
   }
 
@@ -76,7 +75,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     for (let i = 0; i < celdas.length; i++) {
       tablero.push(celdas[i]);
-      console.log(celdas[i]);
+    }
+
+    for (let i = 0; i < tablero.length; i++) {
+      
+      
     }
 
     
