@@ -1,5 +1,11 @@
+@font-face {
+    font-family: 'Halo_Dek';
+    src: url('/fonts/Halo_Dek.ttf') format('truetype');
+}
+
 *{
     text-align: center;
+    font-family: "Halo_Dek";
 }
 
 body{
@@ -17,6 +23,46 @@ body{
     align-items: center;
     display: flex;
     justify-content: center;
+}
+
+dialog {
+    background-image: url("/img/cartel.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-color: transparent;
+    border: none;
+
+    height: 60vh;
+    width: 50vw;
+
+    outline: none;
+    button{
+        outline: none;
+    }
+}
+#modo{
+    h1{
+        font-size: 50px;
+    }
+    p{
+        margin-top: -15px;
+    }
+    & button{
+        background-color: rgba(165, 101, 42, 0.5);
+        border-color: transparent;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: -10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        &:hover{
+            border-color: rgba(158, 89, 25, 0.7);
+            box-shadow: 0 0 10px rgba(189, 157, 15, 0.5);
+        }
+    }
 }
 
 table{
@@ -37,8 +83,4 @@ ul{
     border-radius: 20px;
     padding: 0;
     list-style-type: none;
-}
-
-li > img{
-    cursor: grab;
 }

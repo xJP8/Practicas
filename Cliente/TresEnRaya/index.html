@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="js/script.js"></script>
     <title>✖️ Tres en Raya ⭕</title>
 </head>
 <body>
@@ -39,5 +38,13 @@
         <li><img src="img/circulo.png" alt="vacio" height="100" width="100" draggable="false"></li>
         <li><img src="img/circulo.png" alt="vacio" height="100" width="100" draggable="false"></li>
     </ul>
+    <dialog id="modo" onkeydown="prevenirEscape(event)">
+        <h1>Modo</h1>
+        <p>Selecciona modo de juego</p>
+        <br>
+        <button onclick="selectMode('pvp')"><img src="img/jugador.png" alt="pvp" height="100" draggable="false"></button>
+        <button onclick="selectMode('pve')"><img src="img/ai.png" alt="pve" height="100" draggable="false"></button>
+    </dialog>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
