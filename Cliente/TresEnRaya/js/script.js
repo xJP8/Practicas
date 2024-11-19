@@ -3,6 +3,7 @@
 //!---------------------!//
 
 const dialogo = document.getElementById('modo');
+const result = document.getElementById('resultado');
 let elemnArras = null;
 
 dialogo.showModal();  
@@ -14,6 +15,14 @@ function selectMode(modo) {
     multijugador = true;
   }
   dialogo.close();
+}
+
+function mostrarResultado(tit){
+  
+  const ti = result.querySelector('h1');
+  ti.innerHTML = tit;
+
+  result.showModal();
 }
 
 function prevenirEscape(event) {
@@ -82,6 +91,10 @@ function siguienteTurno() {
   }
 }
 
+function resultado(text){
+  mostrarResultado(text);
+}
+
 //!----------------------!//
 //! Funcionalidad Modelo !//
 //!----------------------!//
@@ -102,16 +115,16 @@ let multijugador = false;
 function comprobarVictoria() {
   let celdasVacias = tablero.filter(celda => celda === 'vacio');
 
-  if (celdasVacias.length === 0) {
-    console.log('¡Empate!');
-    return true;
-  }
-
   for (let [a, b, c] of combinacionesGanadoras) {
     if (tablero[a] === tablero[b] && tablero[b] === tablero[c] && tablero[a] !== 'vacio') {
-      console.log(`¡Victoria de ${tablero[a]}!`);
+      resultado(`¡Victoria de ${tablero[a]}!`);
       return true;
     }
+  }
+
+  if (celdasVacias.length === 0) {
+    resultado('¡Empate!');
+    return true;
   }
 
   return false;
@@ -140,7 +153,51 @@ function cambiarTurno() {
 let cantCircu=0;
 
 function botJugar() {
-  botRandom();
+  if (botGanar()) {
+    return null;
+  } else if (botDefender()){
+    return null;
+  } else{
+    botRandom();
+  }
+}
+
+function botGanar() {
+  for (let i = 0; i < 9; i++) {
+    if (tablero[i] === 'vacio') {
+      tablero[i] = 'circulo';
+  
+      for (let [a, b, c] of combinacionesGanadoras) {
+        if (tablero[a] === tablero[b] && tablero[b] === tablero[c] && tablero[a] !== 'vacio' && tablero[a] === 'circulo') {
+          botMover(i);
+          return true;
+        }
+      }
+  
+      tablero[i] = 'vacio';
+    }
+  }
+
+  return false;
+}
+
+function botDefender() {
+  for (let i = 0; i < 9; i++) {
+    if (tablero[i] === 'vacio') {
+      tablero[i] = 'cruz';
+  
+      for (let [a, b, c] of combinacionesGanadoras) {
+        if (tablero[a] === tablero[b] && tablero[b] === tablero[c] && tablero[a] !== 'vacio' && tablero[a] === 'cruz') {
+          botMover(i);
+          return true;
+        }
+      }
+  
+      tablero[i] = 'vacio';
+    }
+  }
+
+  return false;
 }
 
 function botRandom(){
@@ -169,5 +226,3 @@ function botMover(pos) {
   cantCircu++;
   siguienteTurno();
 }
-
-
