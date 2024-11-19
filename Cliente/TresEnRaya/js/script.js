@@ -76,6 +76,7 @@ document.querySelectorAll('table td').forEach(celda => {
 //! Funcionalidad Controlador !//
 //!---------------------------!//
 function siguienteTurno() {
+  actualizarTablero();
   if (!comprobarVictoria()) {
     cambiarTurno();
   }
@@ -91,29 +92,35 @@ const combinacionesGanadoras = [
 ];
 
 const celdas = document.querySelectorAll('.tablero td img');
-const tablero = Array.from(celdas).map(celda => 
+let tablero = Array.from(celdas).map(celda => 
   celda.src.split('/').pop().replace('.png', '')
 );
-  
-const celdasVacias = tablero.filter(celda => celda === 'vacio');
 
 let turno = false; //* False ➡️ Cruz || True ➡️ Círculo
 let multijugador = false;
 
 function comprobarVictoria() {
+  let celdasVacias = tablero.filter(celda => celda === 'vacio');
+
   if (celdasVacias.length === 0) {
-    alert('¡Empate!');
+    console.log('¡Empate!');
     return true;
   }
 
   for (let [a, b, c] of combinacionesGanadoras) {
     if (tablero[a] === tablero[b] && tablero[b] === tablero[c] && tablero[a] !== 'vacio') {
-      alert(`¡Victoria de ${tablero[a]}!`);
+      console.log(`¡Victoria de ${tablero[a]}!`);
       return true;
     }
   }
 
   return false;
+}
+
+function actualizarTablero(){
+  tablero = Array.from(celdas).map(celda => 
+    celda.src.split('/').pop().replace('.png', '')
+  );
 }
 
 function cambiarTurno() {
@@ -122,28 +129,24 @@ function cambiarTurno() {
   if (multijugador) {
     cambiarBloqueo(!turno, turno);
   } else {
-    botJugar();
-  }
-}
-
-function botJugar() {
-  if (botGanar() == true) {
-  //} else if (botDefender() == true) {
-  } else { botMover(); }
-}
-
-function botGanar() {
-  for (let [a, b, c] of combinacionesGanadoras) {
-    if (tablero[a] === tablero[b] && tablero[b] === tablero[c] && tablero[a] !== 'vacio' && tablero[a] === 'cruz') {
-      console.log(`¡Victoria de ${tablero[a]}!`);
-      return true;
+    if (turno==true) {
+      botJugar();
     }
   }
 }
 
-function botMover(){
+
+//! BOT !//
+let cantCircu=0;
+
+function botJugar() {
+  botRandom();
+}
+
+function botRandom(){
   let movimientosPosibles = [];
   let movimiento;
+  let intentos=0;
 
   for (let i = 0; i < tablero.length; i++) {
     if (tablero[i] == 'vacio') {
@@ -153,13 +156,18 @@ function botMover(){
 
   do {
     movimiento = Math.floor(Math.random() * 9);
-  } while (!movimientosPosibles.includes(movimiento));
+    intentos++;
+  } while (!movimientosPosibles.includes(movimiento)&&intentos<9);
 
-  tablero[movimiento] = 'circulo';
-  console.log(movimiento);
-  
-  const celdaSeleccionada = document.querySelectorAll('.tablero td img')[movimiento];
-  celdaSeleccionada.src = 'img/circulo.png';
+  botMover(movimiento);
+}
 
+function botMover(pos) {
+  const fichCirculo = document.querySelectorAll('#circ li img');
+  celdas[pos].src = 'img/circulo.png';
+  fichCirculo[cantCircu].src = 'img/vacio.png';
+  cantCircu++;
   siguienteTurno();
 }
+
+
