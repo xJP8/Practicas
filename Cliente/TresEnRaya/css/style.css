@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Halo_Dek';
-    src: url('/fonts/Halo_Dek.ttf') format('truetype');
+    src: url('../fonts/Halo_Dek.ttf') format('truetype');
 }
 
 *{
@@ -11,7 +11,7 @@
 body{
     background-color: rgba(78, 52, 12, 0.568);
 
-    background-image: url("/img/fondo.png");
+    background-image: url("../img/fondo.png");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@ body{
 }
 
 dialog {
-    background-image: url("/img/cartel.png");
+    background-image: url("../img/cartel.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
