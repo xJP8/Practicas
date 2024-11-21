@@ -1,4 +1,5 @@
 <?php
+    // Si no existe sesión redirección al Formulario de Login //
     session_start();
     
     if(!isset($_SESSION["nombre"])){
@@ -23,6 +24,7 @@
             <a href="/oficines/oficines.php">Oficinas</a>
             <a href="/contacts/contacts.php">Contacto</a>
             <?php
+                // Si existe sessión se muestra Acceso. Si no, Cuentas y Cerrar Sesion //
                 if(!isset($_SESSION["nombre"])){
                     echo '<a href="/clients/view/clients.php">Acceso clientes</a>';
                 } else{
