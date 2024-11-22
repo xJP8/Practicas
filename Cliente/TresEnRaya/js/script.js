@@ -6,8 +6,10 @@ const dialogo = document.getElementById('modo');
 const result = document.getElementById('resultado');
 let elemnArras = null;
 
+// Dialogo Inicial //
 dialogo.showModal();  
 
+// Este metodo se usa para elegir el modo de juego //
 function selectMode(modo) {
   if (modo=='pve') {
     multijugador = false;
@@ -17,6 +19,7 @@ function selectMode(modo) {
   dialogo.close();
 }
 
+// Este metodo muestra el resultado de la partida [Victoria Cruz, Victoria Circulo, Empate] //
 function mostrarResultado(tit){
   
   const ti = result.querySelector('h1');
@@ -25,12 +28,14 @@ function mostrarResultado(tit){
   result.showModal();
 }
 
+// Esto simplemente es pa que no se pueda pulsar el escape en los dialogos //
 function prevenirEscape(event) {
   if (event.key === 'Escape') {
     event.preventDefault(); 
   }
 }
 
+//! Metodos Para El Arrastre de las Fichas !//
 function iniciarArrastre(e) {
   elemnArras = this;
   e.dataTransfer.effectAllowed = 'move';
@@ -63,6 +68,7 @@ function manejarSoltar(e) {
   return false;
 }
 
+// Metodo para alternar los turnos //
 function cambiarBloqueo(cruz, circulo) {
   document.querySelectorAll('#cruz li img').forEach(elemento => {
     elemento.setAttribute('draggable', cruz);
@@ -72,6 +78,7 @@ function cambiarBloqueo(cruz, circulo) {
   });
 }
 
+// Eventos //
 document.querySelectorAll('ul li img').forEach(imagen => {
   imagen.addEventListener('dragstart', iniciarArrastre);
 });
@@ -91,6 +98,7 @@ function siguienteTurno() {
   }
 }
 
+// Se le pasa el resultado para mostrarlo //
 function resultado(text){
   mostrarResultado(text);
 }
@@ -112,6 +120,8 @@ let tablero = Array.from(celdas).map(celda =>
 let turno = false; //* False ➡️ Cruz || True ➡️ Círculo
 let multijugador = false;
 
+
+// Comprueba si hay alguna dicha ganadora //
 function comprobarVictoria() {
   let celdasVacias = tablero.filter(celda => celda === 'vacio');
 
@@ -130,12 +140,14 @@ function comprobarVictoria() {
   return false;
 }
 
+// Actualiza de forma Logica el tablero, sobre todo para el modo PvE //
 function actualizarTablero(){
   tablero = Array.from(celdas).map(celda => 
     celda.src.split('/').pop().replace('.png', '')
   );
 }
 
+// Funcionalidad de los turnos //
 function cambiarTurno() {
   turno = !turno;
 
@@ -152,6 +164,7 @@ function cambiarTurno() {
 //! BOT !//
 let cantCircu=0;
 
+// Directrices de la jugabilidad del BOT //
 function botJugar() {
   if (botGanar()) {
     return null;
@@ -162,6 +175,7 @@ function botJugar() {
   }
 }
 
+// El bot intenta ganar //
 function botGanar() {
   for (let i = 0; i < 9; i++) {
     if (tablero[i] === 'vacio') {
@@ -181,6 +195,7 @@ function botGanar() {
   return false;
 }
 
+// El bot intenta defender //
 function botDefender() {
   for (let i = 0; i < 9; i++) {
     if (tablero[i] === 'vacio') {
@@ -200,6 +215,7 @@ function botDefender() {
   return false;
 }
 
+// El bot mueve de forma aleatoria en una posición libre //
 function botRandom(){
   let movimientosPosibles = [];
   let movimiento;
@@ -219,6 +235,7 @@ function botRandom(){
   botMover(movimiento);
 }
 
+// Funcionalidad de mover para el bot //
 function botMover(pos) {
   const fichCirculo = document.querySelectorAll('#circ li img');
   celdas[pos].src = 'img/circulo.png';
