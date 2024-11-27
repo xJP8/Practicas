@@ -1,7 +1,10 @@
 body{
     margin-left: 30%;
     margin-right: 30%;
-    background-color: wheat;
+    background-image: url(../images/fondo.avif);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +21,7 @@ a{
         color: brown;
     }
     &:visited{
-        color: tomato;
+        color: chocolate;
     }
 }
 button{
