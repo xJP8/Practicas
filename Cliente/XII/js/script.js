@@ -107,3 +107,22 @@ function sendForm(){
             break;
     }
 }
+
+/**
+ * 
+ */
+function reset() {
+    let nombre = document.getElementById("name");
+    let pass = document.getElementById("pass");
+    let email = document.getElementById("email");
+    let fecha = document.getElementById("fecha");
+    nombre.value = "";
+    pass.value = "";
+    email.value = "";
+    fecha.value = "";
+
+    validateName();
+    validatePass();
+    validateEmail();
+    validateDate();
+}
