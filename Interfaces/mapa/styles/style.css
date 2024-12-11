@@ -1,10 +1,9 @@
 body{
     background-image: url(../images/fondo.jpg);
     background-size: cover;
-}
-div{
-    background-image: url(../images/mapa.webp);
-    background-size: cover;
-    width: 270px;
-    height: 200px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
