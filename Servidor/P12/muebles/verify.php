@@ -7,8 +7,8 @@
     }
 
     $dbHost = "localhost"; // Dirección Host
-    $dbUser = "root"; // Nombre Usuario
-    $dbPass = "root"; // Contraseña Usuario
+    $dbUser = "user"; // Nombre Usuario
+    $dbPass = "1234"; // Contraseña Usuario
     $dbName = "muebles"; // Nombre Base de Datos
     $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 

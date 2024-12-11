@@ -46,7 +46,42 @@
      <H1>
 	Informaci&oacute;n de la pieza seleccionada
      </H1>
-	Hay XX unidades en almac&eacute;n de la pieza con nombre: XX.
+     <?php
+          $dbHost = "localhost"; // Dirección Host
+          $dbUser = "user"; // Nombre Usuario
+          $dbPass = "1234"; // Contraseña Usuario
+          $dbName = "muebles"; // Nombre Base de Datos
+          $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
+
+          // Comprobamos que la conexión funcione.
+          if ($conn->connect_error) {
+               die("Error en la base de datos");
+          }
+
+          $pieza = $_POST["pieza"];
+
+          // Creación, preparación y ejecución de la Query.
+          $sql = "SELECT P.nombre, sum(E.unidades) FROM Pieza P, Estante E WHERE P.cod = E.cod_pieza AND P.nombre = ?";
+          $stmt = $conn->prepare($sql);
+          $stmt->bind_param("s", $pieza);
+          $stmt->execute();
+
+          // Obtención de los resultados.
+          $resoult = $stmt->get_result();
+          $msg = ""; // Mensaje a mostrar al usuario.
+
+          if ($resoult->num_rows>0) {
+               $row = $resoult->fetch_assoc();
+               $msg = "Hay ".$row["sum(E.unidades)"]." unidades en almacén de la pieza con nombre: ".$row["nombre"].".";
+          } else {
+               $msg = "No se encontraron resultados.";
+          }
+
+          // Cerramos los recursos y mostramos mensaje.
+          $stmt->close();
+          $conn->close();
+          echo $msg;
+     ?>
      <BR>
     </TD>
    </TR>

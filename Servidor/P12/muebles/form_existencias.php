@@ -61,8 +61,8 @@
 		<OPTION></OPTION>
           <?php           
                $dbHost = "localhost"; // Dirección Host
-               $dbUser = "root"; // Nombre Usuario
-               $dbPass = "root"; // Contraseña Usuario
+               $dbUser = "user"; // Nombre Usuario
+               $dbPass = "1234"; // Contraseña Usuario
                $dbName = "muebles"; // Nombre Base de Datos
                $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
            
@@ -72,7 +72,7 @@
                }
            
                // Creación y ejecución de la Query.
-               $sql = "SELECT nombre FROM Mueble";
+               $sql = "SELECT nombre FROM Pieza";
                $result = $conn->query($sql);
 
                if ($result->num_rows > 0) { // Si encuentra existencias las muestra.

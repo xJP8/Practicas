@@ -51,7 +51,38 @@
 		<B>Precio</B>
         </TD>
        </TR>
-       <TR><TD>XX</TD><TD ALIGN='RIGHT'>XX</TD></TR>
+     <?php
+          $dbHost = "localhost"; // Dirección Host
+          $dbUser = "user"; // Nombre Usuario
+          $dbPass = "1234"; // Contraseña Usuario
+          $dbName = "muebles"; // Nombre Base de Datos
+          $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
+
+          // Comprobamos que la conexión funcione.
+          if ($conn->connect_error) {
+               die("Error en la base de datos");
+          }
+
+          // Creación y ejecución de la Query.
+          $sql = "SELECT nombre, precio FROM Mueble";
+          $result = $conn->query($sql);
+
+          if ($result->num_rows > 0) { // Si encuentra existencias las muestra.
+               while($row = $result->fetch_assoc()) {
+                    echo "<TR>
+                          <TD ALIGN='CENTER'>" . $row["nombre"] . "</TD>
+                          <TD ALIGN='CENTER'>" . $row["precio"] . "</TD>
+                          </TR>";
+               }
+          } else { // Si no encuentra existencias muestra mensaje de que no hay.
+               echo "<TR>
+                     <TD ALIGN='CENTER' COLSPAN=2>No hay muebles en la base de datos</TD>
+                     </TR>";
+          }
+
+          // Cerramos los recursos y mostramos mensaje.
+          $conn->close();
+     ?>
      </TABLE>
     </TD>
    </TR>

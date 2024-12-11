@@ -170,3 +170,18 @@ INSERT INTO `Usuario` (`user`, `pass`) VALUES
 ('sdomingo', 'domingo');
 
 
+--------------------------------------------------------
+
+-- Añadido por mi
+
+-- Crear un nuevo usuario
+CREATE USER 'user'@'localhost' IDENTIFIED BY '1234';
+
+-- Otorgar permisos de solo lectura en las tablas necesarias
+GRANT SELECT ON muebles.Estante TO 'user'@'localhost';
+GRANT SELECT ON muebles.Mueble TO 'user'@'localhost';
+GRANT SELECT ON muebles.Pieza TO 'user'@'localhost';
+GRANT SELECT ON muebles.Usuario TO 'user'@'localhost';
+
+-- Aplicar los cambios
+FLUSH PRIVILEGES;
