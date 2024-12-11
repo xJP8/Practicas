@@ -52,10 +52,10 @@
         </TD>
        </TR>
      <?php
-          $dbHost = "localhost"; // Dirección Host
-          $dbUser = "user"; // Nombre Usuario
-          $dbPass = "1234"; // Contraseña Usuario
-          $dbName = "muebles"; // Nombre Base de Datos
+          $dbHost = "sql7.freemysqlhosting.net"; // Dirección Host
+          $dbUser = "sql7751449"; // Nombre Usuario
+          $dbPass = "VGD4EMEjQA"; // Contraseña Usuario
+          $dbName = "sql7751449"; // Nombre Base de Datos
           $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 
           // Comprobamos que la conexión funcione.
@@ -71,7 +71,7 @@
                while($row = $result->fetch_assoc()) {
                     echo "<TR>
                           <TD ALIGN='CENTER'>" . $row["nombre"] . "</TD>
-                          <TD ALIGN='CENTER'>" . $row["precio"] . "</TD>
+                          <TD ALIGN='CENTER'>" . number_format($row["precio"], 2) . " €</TD>
                           </TR>";
                }
           } else { // Si no encuentra existencias muestra mensaje de que no hay.

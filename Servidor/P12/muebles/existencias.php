@@ -47,18 +47,21 @@
 	Informaci&oacute;n de la pieza seleccionada
      </H1>
      <?php
-          $dbHost = "localhost"; // Dirección Host
-          $dbUser = "user"; // Nombre Usuario
-          $dbPass = "1234"; // Contraseña Usuario
-          $dbName = "muebles"; // Nombre Base de Datos
+          $dbHost = "sql7.freemysqlhosting.net"; // Dirección Host
+          $dbUser = "sql7751449"; // Nombre Usuario
+          $dbPass = "VGD4EMEjQA"; // Contraseña Usuario
+          $dbName = "sql7751449"; // Nombre Base de Datos
           $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 
           // Comprobamos que la conexión funcione.
           if ($conn->connect_error) {
-               die("Error en la base de datos");
+               die("No se ha encontrado la pieza solicitada.");
           }
 
           $pieza = $_POST["pieza"];
+          if (!isset($pieza)) {
+               die("Error en la petición.");
+          }
 
           // Creación, preparación y ejecución de la Query.
           $sql = "SELECT P.nombre, sum(E.unidades) FROM Pieza P, Estante E WHERE P.cod = E.cod_pieza AND P.nombre = ?";
