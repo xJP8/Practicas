@@ -45,9 +45,8 @@ function validatePass(){
  * - icloud.com
  */
 function validateEmail() {
-    const input = document.getElementById('email');
+    const email = document.getElementById('email').value;
     const resultadoEmail = document.getElementById('resultadoEmail');
-    const email = input.value;
 
     // Expresión regular para los dominios permitidos
     const regex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com|yahoo\.com|icloud\.com)$/;
