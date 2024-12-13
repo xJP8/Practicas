@@ -58,8 +58,8 @@
                die("No se ha encontrado la pieza solicitada.");
           }
 
-          $pieza = $_POST["pieza"];
-          if (!isset($pieza)) {
+          $pieza = isset($_POST["pieza"]) ? $_POST["pieza"] : "";
+          if ($pieza == "") {
                die("Error en la petición.");
           }
 
@@ -75,7 +75,11 @@
 
           if ($resoult->num_rows>0) {
                $row = $resoult->fetch_assoc();
-               $msg = "Hay ".$row["sum(E.unidades)"]." unidades en almacén de la pieza con nombre: ".$row["nombre"].".";
+               if ($row["nombre"] != ""|| $row["nombre"] != null) {
+                    $msg = "Hay ".$row["sum(E.unidades)"]." unidades en almacén de la pieza con nombre: ".$row["nombre"].".";
+               }else{
+                    $msg = "No se encontraron resultados.";
+               }
           } else {
                $msg = "No se encontraron resultados.";
           }

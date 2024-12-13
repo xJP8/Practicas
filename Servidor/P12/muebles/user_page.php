@@ -42,9 +42,9 @@
      ?>	
     </TD>
     <TD WIDTH=85% ALIGN=CENTER VALIGN=CENTER>
-     <H1>
-	Bienvenido usuario
-     </H1>
+     <?php
+          echo "<H1>Bienvenido ".$_SESSION["user"]."</H1>";
+     ?>
     </TD>
    </TR>
   </TABLE>

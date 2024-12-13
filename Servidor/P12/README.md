@@ -56,17 +56,17 @@ Las páginas estáticas se suministran en el archivo “www Muebles.zip” dispo
 ### 4. Se pide
 Las tareas a realizar son:
 
-<input type="checkbox"> 1. Establecer plan de pruebas de validación.
+~~<input type="checkbox"> 1. Establecer plan de pruebas de validación.~~
 
-<input type="checkbox"> 2. Desplegar la base de datos en la máquina Lubuntu que tiene LAMP y phpMyAdmin ya instalados.
+~~<input type="checkbox"> 2. Desplegar la base de datos en la máquina Lubuntu que tiene LAMP y phpMyAdmin ya instalados.~~
 
-<input type="checkbox"> 3. Desarrollar la aplicación WEB con consultas a la base de datos a partir de las páginas estáticas.
+~~<input type="checkbox"> 3. Desarrollar la aplicación WEB con consultas a la base de datos a partir de las páginas estáticas.~~
 
-<input type="checkbox"> 4. Desplegar la aplicación.
+~~<input type="checkbox"> 4. Desplegar la aplicación.~~
 
-<input type="checkbox"> 5. Pasar el plan de pruebas.
+~~<input type="checkbox"> 5. Pasar el plan de pruebas.~~
 
-<input type="checkbox"> 6. Crear una memoria de todas las tareas realizadas.
+~~<input type="checkbox"> 6. Crear una memoria de todas las tareas realizadas.~~
 
 Enviad la práctica resuelta a gs.trabajos@gmail.com con asunto "DAW - DAWES - Práctica 12 - Gestión de almacén".
 
