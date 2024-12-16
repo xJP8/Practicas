@@ -1,15 +1,29 @@
-let teclado = document.getElementById('teclado');
-let raton = document.getElementById('raton');
+let video = document.getElementById('video');
 
-document.addEventListener('keypress', function(event) {
-    teclado.style.backgroundColor = "cyan";
-});
+function action() {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+}
 
-document.addEventListener('mousedown', function(event) {
-    raton.style.backgroundColor = "yellow";
-});
+function redimensionar(tamano) {
+    video.width = tamano;
+}
 
-document.addEventListener('mousemove', function(event) {
-    raton.style.backgroundColor = "white";
-    teclado.style.backgroundColor = "white";
-});
+function mute() {
+    video.muted = !video.muted;
+}
+
+
+function volume() {
+    let vol = document.getElementById('vol');
+    let volumeValue = vol.value / 100;
+    video.volume = Math.max(0, Math.min(1, volumeValue));
+}
+
+function time() {
+    let time = document.getElementById('time');
+    video.currentTime = time.value;
+}

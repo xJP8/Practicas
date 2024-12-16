@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <script defer src="js/script.js"></script>
+    <script defer src="/js/script.js"></script>
 </head>
-<body style="text-align: center; display: flex; justify-content: center; gap: 10px;">
-    <iframe src="" frameborder="0"></iframe>
+<body>
+    <video src="/img/video.mp4" id="video" width="500px" controls></video>
+    <br>
+    <button onclick="action()">Play / Pause</button>
+    <button onclick="redimensionar(500)">Big</button>
+    <button onclick="redimensionar(250)">Medium</button>
+    <button onclick="redimensionar(125)">Small</button>
+    <button onclick="mute()">Mute</button>
+    <input type="range" min="0" max="100" value="100" oninput="setVolume()" id="vol">
+    <input type="range" min="0" max="100" value="0" oninput="setTime()" id="time">
 </body>
 </html>
