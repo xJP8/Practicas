@@ -12,10 +12,10 @@ let btnForward = document.getElementById('forward');
 function control() {
     if (video.paused) {
         video.play();
-        btnPlayPause.innerHTML = '<img src="pause.png" alt="⏸">';
+        btnPlayPause.innerHTML = '⏸';
     } else {
         video.pause();
-        btnPlayPause.innerHTML = '<img src="play.png" alt="▶">';
+        btnPlayPause.innerHTML = '▶';
     }
 };
 
@@ -29,7 +29,7 @@ function stop(){
 function mute() {
     video.muted = !video.muted;
     if(video.muted){
-        btnMute.innerHTML = '<img src="volume_mute.png" alt="🔇">';
+        btnMute.innerHTML = '🔇';
     } else {
         changeVolume();
     }
@@ -54,13 +54,13 @@ function changeVolume() {
     let volumeLevel = volumeSlider.value;
     if (volumeLevel == 0) {
         video.volume = 0;
-        btnMute.innerHTML = '<img src="volume_mute.png" alt="🔇">';
+        btnMute.innerHTML = '🔇';
     } else if (volumeLevel == 1) {
         video.volume = 0.5;
-        btnMute.innerHTML = '<img src="volume_low.png" alt="🔉">';
+        btnMute.innerHTML = '🔉';
     } else {
         video.volume = 1;
-        btnMute.innerHTML = '<img src="volume_high.png" alt="🔊">';
+        btnMute.innerHTML = '🔊';
     }
 }
 
