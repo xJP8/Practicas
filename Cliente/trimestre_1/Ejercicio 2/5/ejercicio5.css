@@ -1,9 +1,0 @@
-@font-face{font-family: "Study"; src: url("study_clash/Study\ Clash.otf");}
-
-*{
-    font-size: 25px;
-}
-
-input{
-    font-family: "Study";
-}
