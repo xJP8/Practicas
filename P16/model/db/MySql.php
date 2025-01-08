@@ -5,7 +5,7 @@
         private $host = "localhost"; // Dirección Host
         private $dbname = "muebles_posada"; // Nombre Base de Datos
         private $user = "root"; // Nombre Usuario
-        private $pass = ""; // Contraseña Usuario
+        private $pass = "root"; // Contraseña Usuario
 
         public function __construct() {
             try {

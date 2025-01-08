@@ -20,12 +20,28 @@
             }
         }
 
-        public function login($name, $password) {
+        public function createUser() {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $username = $_POST['user'];
+                $password = $_POST['pass'];
+    
+                // Validar datos (puedes añadir más validaciones)
+                if (empty($username) || empty($password)) {
+                    die("Todos los campos son obligatorios.");
+                }
+                $user = new User($username, $password);
+                $this->login($user);
+            } else {
+                die("Método no permitido.");
+            }
+        }
+
+        public function login(User $user) {
             $sql = "SELECT * FROM usuario WHERE user = ? AND pass = ?";
-            $user = $this->db->query($sql, [$name, $password]);
+            $user = $this->db->query($sql, [$user->getName(), $user->getPassword()]);
             if ($user) {
-                $this->session->start($name);
-                echo "Bienvenido $name";
+                $this->session->start($user->getName());
+                echo "Bienvenido $user->getName()";
                 // header("Location: UserPageView.php");
                 // exit();
             } else {

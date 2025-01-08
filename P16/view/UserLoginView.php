@@ -2,6 +2,10 @@
   require_once "../controller/UserLoginViewController.php";
   $controller = new UserLoginViewController();
   $controller->checkSession();
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $controller->login($_POST['user'], $_POST['pass']);
+  }
 ?>
 
 <HTML>
@@ -44,10 +48,10 @@
      <H1>Identif&iacute;quese
      </H1>
      <!-- Formulario de identificación -->
-    <FORM NAME="" ACTION="<?php $controller->login($_POST['user'], $_POST['pass']); ?>" METHOD="POST">
+    <FORM NAME="" ACTION="../controller/UserLoginViewController.php" METHOD="POST">
       <TABLE>
        <TR>
-        <TD ALIGN="RIGHT">
+      <TD ALIGN="RIGHT">
 	 Usuario:
         </TD>
         <TD>

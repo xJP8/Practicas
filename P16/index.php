@@ -1,5 +1,19 @@
 <?php
+     const PATH = "../controller/%sController.php";
+
      session_start();
+
+     $controller = "Index";
+     if (!empty($_GET['controller'])) {
+         $controller = $_GET['controller'];
+     }
+
+     $ruta = sprintf(PATH, $controller);
+     if(is_file($ruta)){
+         require_once $ruta;
+     } else{
+         die("Controlador no encontrado");
+     }
 ?>
 <HTML>
  <HEAD>
