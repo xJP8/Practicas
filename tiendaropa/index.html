@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="display: flex; flex-direction: column; align-items: center;">
+    <header>
+        <h1>Tienda de Ropa</h1>
+    </header>
+
+    <main style="text-align: center;">
+        <div class="producto destacado">
+            <h2>Camisa de Algodón</h2>
+            <img src="img/algodon.jpg" alt="" height="150px">
+            <p class="texto">Suave y cómoda.</p>
+            <p class="texto precio">20€</p>
+        </div>
+
+        <div class="producto">
+            <h2>Pantalón Casual</h2>
+            <img src="img/pantalon.webp" alt="" height="150px">
+            <p class="texto">Perfecto para el día a día.</p>
+            <p class="texto precio">35€</p>
+        </div>
+
+        <button id="cambiarEstilo">Cambiar a modo oscuro</button>
+    </main>
+    <marquee class="producto" behavior="" direction="">Ofertas Navideñas 50% de descuento hasta el 10/01/25</marquee>
+    <footer>
+        <p>&copy; 2025 Tienda de Ropa</p>
+    </footer>
+
+    <script>
+        // Usando ID en JavaScript para alternar entre modo oscuro y claro
+        let modoOscuro = false;
+
+        document.getElementById('cambiarEstilo').addEventListener('click', function() {
+            if (!modoOscuro) {
+                // Activar modo oscuro
+                document.body.style.backgroundColor = '#333';
+                document.body.style.color = 'beige';
+
+                // Cambiar tamaño y tipo de letra del encabezado
+                document.querySelector('header h1').style.fontSize = '2.5rem';
+                document.querySelector('header h1').style.fontFamily = 'Georgia, serif';
+
+                // Cambiar estilo de los productos
+                const productos = document.querySelectorAll('.producto');
+                productos.forEach(producto => {
+                    producto.style.border = '2px solid #fff';
+                    producto.style.padding = '20px';
+                    producto.style.color = '#ff9800';
+                });
+
+                this.textContent = 'Cambiar a modo claro';
+                modoOscuro = true;
+            } else {
+                // Volver a modo claro
+                document.body.style.backgroundColor = 'beige';
+                document.body.style.color = '#000';
+
+                // Restaurar estilos del encabezado
+                document.querySelector('header h1').style.fontSize = '2rem';
+                document.querySelector('header h1').style.fontFamily = 'Arial, sans-serif';
+
+                // Restaurar estilo de los productos
+                const productos = document.querySelectorAll('.producto');
+                productos.forEach(producto => {
+                    producto.style.border = '1px solid #ddd';
+                    producto.style.padding = '15px';
+                    producto.style.color = '#000';
+                });
+
+                this.textContent = 'Cambiar a modo oscuro';
+                modoOscuro = false;
+            }
+        });
+    </script>
+</body>
+</html>

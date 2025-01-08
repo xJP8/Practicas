@@ -1,0 +1,48 @@
+body{
+    background-color: beige;
+}
+
+/* Clase para estilos generales */
+.producto {
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: black;
+    border-radius: 10px;
+}
+.producto.destacado:hover{
+    box-shadow: 0 0 10px #ff9800;
+}
+
+.producto:hover{
+    box-shadow: 0 0 10px lightgreen;
+}
+
+/* Clase múltiple */
+.producto.destacado {
+    border-color: #ff9800;
+}
+
+/* Clase compartida */
+.texto {
+    font-size: 14px;
+}
+
+/* Clase compartida y específica */
+.texto.precio {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* ID específico */
+#cambiarEstilo {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
