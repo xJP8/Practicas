@@ -1,10 +1,13 @@
 <?php
-     session_start();
+     require_once "../controller/ExistenciaViewController.php";
+     $controller = new ExistenciaViewController();
+     $controller->checkSession();
 ?>
+
 <HTML>
  <HEAD>
   <TITLE>
-	Inicio
+	Disponibilidad de pieza
   </TITLE>
  </HEAD>
  <BODY>
@@ -26,7 +29,7 @@
 	<A HREF="listado.php">Productos</A>
 	<BR>
 	<BR>
-	<?php 
+     <?php 
           if (isset($_SESSION["user"])) {
               echo "<A HREF='form_existencias.php'>Disponibilidad de piezas</A>
 	               <BR>
@@ -39,9 +42,12 @@
     </TD>
     <TD WIDTH=85% ALIGN=CENTER VALIGN=CENTER>
      <H1>
-	Bienvenido a la nueva forma de entender el hogar
+	Informaci&oacute;n de la pieza seleccionada
      </H1>
-	En Muebles Posada hacemos realidad tus deseos.
+     <?php
+          echo $controller;
+     ?>
+     <BR>
     </TD>
    </TR>
   </TABLE>

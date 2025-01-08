@@ -1,11 +1,9 @@
 <?php
-  session_start();
-  
-  if (isset($_SESSION["user"])) {
-    header("Location: user_page.php");
-    exit();
-  }
+  require_once "../controller/UserLoginViewController.php";
+  $controller = new UserLoginViewController();
+  $controller->checkSession();
 ?>
+
 <HTML>
  <HEAD>
   <TITLE>
@@ -46,14 +44,14 @@
      <H1>Identif&iacute;quese
      </H1>
      <!-- Formulario de identificación -->
-     <FORM NAME="login" ACTION="verify.php" METHOD="POST">
+    <FORM NAME="" ACTION="<?php $controller->login($_POST['user'], $_POST['pass']); ?>" METHOD="POST">
       <TABLE>
        <TR>
         <TD ALIGN="RIGHT">
 	 Usuario:
         </TD>
         <TD>
-	 <INPUT TYPE="TEXT" NAME="user">
+	 <INPUT TYPE="TEXT" NAME="user" required>
         </TD>
        </TR>
        <TR>
@@ -61,7 +59,7 @@
 	 Contrase&ntilde;a:
         </TD>
         <TD>
-	 <INPUT TYPE="password" NAME="pass">
+	 <INPUT TYPE="password" NAME="pass" required>
         </TD>
        </TR>
        <TR>

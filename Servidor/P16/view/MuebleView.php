@@ -1,10 +1,12 @@
 <?php
-     session_start();
+  require_once "../controller/MuebleViewController.php";
+  $controller = new MuebleViewController(); 
 ?>
+
 <HTML>
  <HEAD>
   <TITLE>
-	Inicio
+	Listado de muebles
   </TITLE>
  </HEAD>
  <BODY>
@@ -16,7 +18,7 @@
      </H1>
     </TD>
    </TR>
-  </TABLE>
+  </TABLE> 
   <TABLE HEIGHT=85% WIDTH=100%>
    <TR>
     <TD WIDTH=15% BGCOLOR="DDFFFF" VALIGN=CENTER>
@@ -39,9 +41,22 @@
     </TD>
     <TD WIDTH=85% ALIGN=CENTER VALIGN=CENTER>
      <H1>
-	Bienvenido a la nueva forma de entender el hogar
+	Listado de productos
      </H1>
-	En Muebles Posada hacemos realidad tus deseos.
+     <BR>
+     <TABLE BORDER=1>
+       <TR>
+        <TD ALIGN="CENTER" BGCOLOR=E7E7E7>
+		<B>Nombre</B>
+        </TD>
+        <TD ALIGN="CENTER" BGCOLOR=E7E7E7>
+		<B>Precio</B>
+        </TD>
+       </TR>
+     <?php
+          echo $controller;
+     ?>
+     </TABLE>
     </TD>
    </TR>
   </TABLE>

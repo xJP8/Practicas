@@ -1,15 +1,13 @@
 <?php
-     session_start();
-     
-     if (!isset($_SESSION["user"])) {
-          header("Location: login.php");
-          exit();
-     }
+     require_once "../controller/PiezaViewController.php";
+     $controller = new PiezaViewController();
+     $controller->checkSession();
 ?>
+
 <HTML>
  <HEAD>
   <TITLE>
-	Existencias
+	PIEZAS
   </TITLE>
  </HEAD>
  <BODY>
@@ -60,29 +58,7 @@
 	 <SELECT NAME="pieza">
 		<OPTION></OPTION>
           <?php           
-               $dbHost = "sql7.freemysqlhosting.net"; // Dirección Host
-               $dbUser = "sql7751449"; // Nombre Usuario
-               $dbPass = "VGD4EMEjQA"; // Contraseña Usuario
-               $dbName = "sql7751449"; // Nombre Base de Datos
-               $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
-           
-               // Comprobamos que la conexión funcione.
-               if ($conn->connect_error) {
-                   die("Error en la base de datos");
-               }
-           
-               // Creación y ejecución de la Query.
-               $sql = "SELECT nombre FROM Pieza";
-               $result = $conn->query($sql);
-
-               if ($result->num_rows > 0) { // Si encuentra existencias las muestra.
-                    while($row = $result->fetch_assoc()) {
-                         echo "<OPTION>".$row['nombre']."</OPTION>";
-                    }
-               }
-           
-               // Cerramos los recursos.
-               $conn->close();
+               echo $controller;
           ?>
 	 </SELECT>
         </TD>

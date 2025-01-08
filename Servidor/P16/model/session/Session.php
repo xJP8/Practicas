@@ -1,18 +1,26 @@
 <?php
     class Session{
-        public static function start() {
+        public function __construct() {
             session_start();
         }
 
-        public static function close() {
+        public function __destruct() {
+            $this->close();
+        }
+
+        public function start($name) {
+            $_SESSION["name"] = $name;
+        }
+
+        public function close() {
             session_destroy();
         }
 
-        public static function isStarted() {
-            return isset($_SESSION["user"]);
+        public function isActive():bool {
+            return isset($_SESSION["name"]);
         }
 
-        public static function redirect($ruta) {
+        public function redirect($ruta):void {
             header("Location: " . $ruta);
             exit();
         }
