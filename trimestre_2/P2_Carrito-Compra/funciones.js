@@ -1,47 +1,49 @@
- window.onload = init;
-    function init(){
-        botonEnvio = document.querySelector('[type="button"]');
-        nuevoItem = document.querySelector('[type="text"]');
-        listaCompra = document.getElementById("listaCompra");
-        botonEnvio.addEventListener("click",anadir);
-        document.getElementById("resetear").addEventListener("click",resetear);
-        rellenarContenido();
-    }
+window.onload = init;
 
-    function anadir(e){
-        evento = e || window.event;
-        if (nuevoItem.value == ""){
-            evento.preventDefault();
-        }else{
-        var lista = document.createElement("li");
-        lista.innerHTML = nuevoItem.value;
-        lista.addEventListener("dblclick",eliminarLi);
+function init() {
+    const botonEnvio = document.getElementById("botonEnvio");
+    const nuevoItem = document.getElementById("anadir");
+    const listaCompra = document.getElementById("listaCompra");
+    const resetearBtn = document.getElementById("resetear");
+
+    botonEnvio.addEventListener("click", () => anadir(nuevoItem, listaCompra));
+    resetearBtn.addEventListener("click", () => resetear(listaCompra));
+    rellenarContenido(listaCompra);
+}
+
+function anadir(nuevoItem, listaCompra) {
+    if (nuevoItem.value.trim() === "") {
+        alert("Por favor, introduce un artículo válido.");
+    } else {
+        const lista = document.createElement("li");
+        lista.textContent = nuevoItem.value;
+        lista.addEventListener("dblclick", eliminarLi);
         listaCompra.appendChild(lista);
         nuevoItem.value = "";
-        }
-        actualizarCookie();
-    } 
-
-
-    function actualizarCookie(){
-        setCookie("compra",listaCompra.innerHTML,7);
+        actualizarCookie(listaCompra);
     }
+}
 
-    function resetear(){
-        listaCompra.innerHTML ="";
-        removeCookie("compra");
+function actualizarCookie(listaCompra) {
+    setCookie("compra", listaCompra.innerHTML, 7);
+}
+
+function resetear(listaCompra) {
+    listaCompra.innerHTML = "";
+    removeCookie("compra");
+}
+
+function rellenarContenido(listaCompra) {
+    if (detectCookie("compra")) {
+        listaCompra.innerHTML = getCookie("compra");
+        const elementosLista = listaCompra.getElementsByTagName("li");
+        Array.from(elementosLista).forEach((li) => {
+            li.addEventListener("dblclick", eliminarLi);
+        });
     }
+}
 
-    function rellenarContenido(){
-        var i=0;
-        if (detectCookie("compra")){
-            listaCompra.innerHTML = getCookie("compra");
-            //los elementos añadidos no tienen el comportamientoLi.
-            elementosLista = document.getElementsByTagName("li");
-            while(i<elementosLista.length){
-                elementosLista[i].addEventListener("dblclick",eliminarLi);
-                i++;
-            }
-        }
-    };
-    
+function eliminarLi(event) {
+    event.target.remove();
+    actualizarCookie(document.getElementById("listaCompra"));
+}
