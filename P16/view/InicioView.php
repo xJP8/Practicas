@@ -1,7 +1,7 @@
 <HTML>
  <HEAD>
   <TITLE>
-	Clientes
+	Inicio
   </TITLE>
  </HEAD>
  <BODY>
@@ -22,9 +22,10 @@
      ?>	
     </TD>
     <TD WIDTH=85% ALIGN=CENTER VALIGN=CENTER>
-     <?php
-          echo "<H1>Bienvenido ".$_SESSION["user"]."</H1>";
-     ?>
+     <H1>
+	Bienvenido a la nueva forma de entender el hogar
+     </H1>
+	En Muebles Posada hacemos realidad tus deseos.
     </TD>
    </TR>
   </TABLE>
