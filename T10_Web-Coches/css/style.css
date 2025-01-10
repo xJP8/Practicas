@@ -1,0 +1,136 @@
+body{
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+header{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    nav{
+        ul{
+            padding: 5px;
+            list-style: none;
+            li:first-child{
+                border-radius: 10px 0 0 10px;
+            }
+            li:last-child{
+                border-radius: 0 10px 10px 0;
+            }
+            li {
+                background-color: #555;
+                padding: 15px;
+                display: inline;
+                a{
+                    color: #fff;
+                    text-decoration: none;
+                }
+                &:hover{
+                    background-color: #666;
+    
+                }
+            }
+        }
+    }
+}
+
+body.dark header {
+    background-color: #555;
+}
+
+body.dark nav ul li {
+    background-color: #777;
+}
+
+body.dark nav ul li a {
+    color: #ddd;
+}
+
+main{
+    margin: 20px;
+    text-align: center;
+    section{
+        div{
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #bebebe;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            article{
+                margin: 5px;
+                background-color: #fff;
+                border-radius: 10px;    
+                height: 450px;
+                h3{
+                    font-size: 40px;
+                    height: 75px;
+                }
+                p{
+                    font-size: 25px;
+                    span{
+                        color: #4caf50;
+                    }
+                }
+                
+            }
+            article:hover{
+                box-shadow: 0 0 10px #333;
+            }
+        }
+    }
+}
+
+body.dark main section div {
+    background-color: #444;
+}
+
+body.dark main section div article {
+    background-color: #666;
+}
+
+#ajustes{
+    display : flex;
+    text-align: center;
+    justify-content: center;
+    div{
+        margin: 20px;
+    }
+}
+
+footer{
+    margin-top: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+body.dark footer {
+    background-color: #555;
+}
+
+noscript dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+}

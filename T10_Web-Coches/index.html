@@ -3,9 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tienda de Coches</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html">Coches</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="ajustes">
+            <div>
+                <h2>Solicitar Cita</h2>
+                <p>¿Necesitas hablar con uno de nuestros Agentes?</p>
+                <button onclick="solicitarCita()">Ahora</button>
+                <p id="hora"></p>
+            </div>
+            <div>
+                <h2>Cambiar Tema</h2>
+                <p>¿No ves bien la pagina?</p>
+                <button onclick="cambiarTema()">Cambiar Tema</button>
+            </div>
+        </section>
+        <section>
+            <h2>Últimos coches añadidos</h2>
+            <div>
+                <article>
+                    <h3>BMW I7 M70 xDrive</h3>
+                    <iframe src="img/BMW_I7_M70_xDrive.png" frameborder="0">
+                        <p>Error al Cargar</p>
+                    </iframe>
+                    <p>230.000 <span>€</span></p>
+                    <a href="#">Más Información</a>
+                </article>
+                <article>
+                    <h3>BMW X6</h3>
+                    <iframe src="img/BMW_X6.png" frameborder="0">
+                        <p>Error al Cargar</p>
+                    </iframe>
+                    <p>175.000 <span>€</span></p>
+                    <a href="#">Más Información</a>
+                </article>
+                <article>
+                    <h3>BMW X7 M60</h3>
+                    <iframe src="img/BMW_X7_M60.png" frameborder="0">
+                        <p>Error al Cargar</p>
+                    </iframe>
+                    <p>150.000 <span>€</span></p>
+                    <a href="#">Más Información</a>
+                </article>
+                <article>
+                    <h3>BMW XS</h3>
+                    <iframe src="img/BMW_XS.png" frameborder="0">
+                        <p>Error al Cargar</p>
+                    </iframe>
+                    <p>120.000 <span>€</span></p>
+                    <a href="#">Más Información</a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <noscript>
+        <dialog>
+            <h1>¡Alerta!</h1>
+            <p>Debes activar el uso de "JavaScript" para que la web funcione</p>
+        </dialog>
+    </noscript>
+    <footer>
+        Derechos Reservados &copy; 2020
+    </footer>
 </body>
 </html>
