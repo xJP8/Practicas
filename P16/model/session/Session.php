@@ -4,10 +4,13 @@
             session_start();
         }
 
+        public function login($user){
+            $_SESSION['user'] = $user;
+        }
+
         public function isAutenticated(){
             return isset($_SESSION['user']);
         }
-
 
         public function haveAccess($controller){
             $isAutenticated = $this->isAutenticated();

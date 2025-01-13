@@ -29,14 +29,14 @@
      <BR>
      <BR>
      <!-- Formulario de selección de pieza -->
-     <FORM NAME="existencias" ACTION="existencias.php" METHOD="POST">
+     <FORM NAME="existencia" ACTION="index.php?controller=Existencia" METHOD="POST">
       <TABLE>
        <TR>
         <TD ALIGN="RIGHT">
          Escoja la pieza
         </TD>
         <TD>
-	 <SELECT NAME="pieza">
+	 <SELECT NAME="existencia">
 		<OPTION></OPTION>
           <?php           
                echo $piezas;

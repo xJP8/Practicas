@@ -25,7 +25,7 @@
     <H1>Identif&iacute;quese
     </H1>
     <!-- Formulario de identificación -->
-  <FORM NAME="" ACTION="../controller/UserLoginViewController.php" METHOD="POST">
+  <FORM NAME="" ACTION="?controller=UserLogin" METHOD="POST">
     <TABLE>
       <TR>
     <TD ALIGN="RIGHT">

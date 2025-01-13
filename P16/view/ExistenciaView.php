@@ -26,7 +26,7 @@
 	Informaci&oacute;n de la pieza seleccionada
      </H1>
      <?php
-          echo $controller;
+          echo $existencia;
      ?>
      <BR>
     </TD>

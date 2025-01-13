@@ -5,7 +5,7 @@
             <A HREF="index.php?controller=Mueble">Productos</A>
             <BR>
             <BR>';
-    if (isset($_SESSION["name"])) {
+    if (isset($_SESSION["user"])) {
         echo "<A HREF='index.php?controller=Pieza'>Disponibilidad de piezas</A>
              <BR>
              <BR>
