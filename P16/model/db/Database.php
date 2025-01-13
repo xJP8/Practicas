@@ -27,15 +27,14 @@
             $sql = "SELECT nombre, precio FROM Mueble";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
-            $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $muebles = "";
-            foreach ($resultado as $mueble) {
-                $muebles .= "<tr>";
-                $muebles .= "<td>{$mueble['nombre']}</td>";
-                $muebles .= "<td>{$mueble['precio']}</td>";
-                $muebles .= "</tr>";
-            }
-            return $muebles;
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function getPiezas() {
+            $sql = "SELECT nombre FROM Pieza";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 ?>

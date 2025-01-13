@@ -2,6 +2,6 @@
 
 | Antes | Después |
 |-------|---------|
-| FromExistencias | Piezas |
+| FormExistencias | Piezas |
 | Listado | Mueble |
 | Login | UserLogin |

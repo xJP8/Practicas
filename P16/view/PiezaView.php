@@ -39,7 +39,7 @@
 	 <SELECT NAME="pieza">
 		<OPTION></OPTION>
           <?php           
-               echo $controller;
+               echo $piezas;
           ?>
 	 </SELECT>
         </TD>

@@ -1,28 +1,29 @@
 <?php
     class Session{
-        public function __construct() {
+        public function __construct(){
             session_start();
         }
 
-        public function __destruct() {
-            $this->close();
+        public function isAutenticated(){
+            return isset($_SESSION['user']);
         }
 
-        public function start($name) {
-            $_SESSION["name"] = $name;
-        }
 
-        public function close() {
-            session_destroy();
-        }
-
-        public function isActive():bool {
-            return isset($_SESSION["name"]);
-        }
-
-        public function redirect($ruta):void {
-            header("Location: " . $ruta);
-            exit();
+        public function haveAccess($controller){
+            $isAutenticated = $this->isAutenticated();
+            $accessList = [
+                'any' => ['Inicio', 'Mueble'],
+                'anonymous' => ['UserLogin'],
+                'user' => ['Existencia', 'Pieza', 'UserPage', 'Logout']
+            ];
+            if (in_array($controller, $accessList['any'])) {
+                return true;
+            } else if ($isAutenticated && in_array($controller, $accessList['user'])) {
+                return true;
+            } else if (!$isAutenticated && in_array($controller, $accessList['anonymous'])) {
+                return true;
+            }
+            return false;
         }
     }
 ?>

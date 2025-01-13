@@ -23,7 +23,7 @@
     </TD>
     <TD WIDTH=85% ALIGN=CENTER VALIGN=CENTER>
      <?php
-          echo "<H1>Bienvenido ".$_SESSION["user"]."</H1>";
+          echo $MSG_WELCOME;
      ?>
     </TD>
    </TR>
