@@ -36,7 +36,12 @@
         </TD>
        </TR>
        <?php
-          echo $muebles;
+          foreach ($mueblesBD as $mueble) {
+            $muebles .= "<tr>";
+            $muebles .= "<td>{$mueble['nombre']}</td>";
+            $muebles .= "<td>{$mueble['precio']}</td>";
+            $muebles .= "</tr>";
+        }
        ?>
      </TABLE>
     </TD>

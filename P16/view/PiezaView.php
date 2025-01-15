@@ -39,7 +39,9 @@
 	 <SELECT NAME="existencia">
 		<OPTION></OPTION>
           <?php           
-               echo $piezas;
+               foreach ($piezasBD as $pieza) {
+                    $piezas .= "<OPTION>{$pieza['nombre']}</OPTION>";
+                    }
           ?>
 	 </SELECT>
         </TD>

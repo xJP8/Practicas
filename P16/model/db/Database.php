@@ -23,12 +23,7 @@
             $this->conn = null;
         }
 
-        public function getMuebles() {
-            $sql = "SELECT nombre, precio FROM Mueble";
-            $stmt = $this->conn->prepare($sql);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        }
+        
 
         public function getPiezas() {
             $sql = "SELECT nombre FROM Pieza";
