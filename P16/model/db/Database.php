@@ -49,9 +49,6 @@
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($pieza);
             $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            echo "Hay ".$stmt["sum(E.unidades)"];
-
             return null;
         }
     }
