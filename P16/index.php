@@ -1,5 +1,4 @@
 <?php
-    require_once __DIR__ . '/model/session/Session.php';
     $PATH = __DIR__ . "/controller/%sViewController.php";
     $controller = "Inicio"; // Controlador por defecto.
     
@@ -13,7 +12,7 @@
     $isAutenticated = isset($_SESSION['user']); // Cambiar a true para simular usuario autenticado
     $accessList = [
         'any' => ['Inicio', 'Mueble'], // Controladores a los que se puede acceder siempre.
-        'anonymous' => ['UserLogin'], // Controladores a los que se puede acceder sin autenticación.
+        'anonymous' => ['UserLogin', 'User'], // Controladores a los que se puede acceder sin autenticación.
         'user' => ['Existencia', 'Pieza', 'UserPage', 'Logout'] // Controladores a los que se puede acceder si se está autenticado.
     ];
 

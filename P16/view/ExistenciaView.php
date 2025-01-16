@@ -26,7 +26,7 @@
 	Informaci&oacute;n de la pieza seleccionada
      </H1>
      <?php
-          echo $existencia;
+          echo "Hay ".$existenciaDB["total_unidades"]." unidades en almacén de la pieza con nombre: ".$existenciaDB["nombre"].".";
      ?>
      <BR>
     </TD>

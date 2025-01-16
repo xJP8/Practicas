@@ -37,10 +37,10 @@
        </TR>
        <?php
           foreach ($mueblesBD as $mueble) {
-            $muebles .= "<tr>";
-            $muebles .= "<td>{$mueble['nombre']}</td>";
-            $muebles .= "<td>{$mueble['precio']}</td>";
-            $muebles .= "</tr>";
+            echo "<tr>";
+            echo "<td>{$mueble['nombre']}</td>";
+            echo "<td>{$mueble['precio']}.00€</td>";
+            echo "</tr>";
         }
        ?>
      </TABLE>

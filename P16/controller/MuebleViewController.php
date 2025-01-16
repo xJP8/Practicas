@@ -1,8 +1,8 @@
 <?php
-    require_once __DIR__ . "/../model/db/Database.php";
+    require_once __DIR__ . "/../model/entities/Mueble.php";
 
-    $db = new Database();
-    $mueblesBD = $db->getMuebles();
+    $mueble = new Mueble();
+    $mueblesBD = $mueble->getMuebles();
     
     require_once __DIR__ . "/../view/MuebleView.php";
 ?>

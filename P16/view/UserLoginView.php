@@ -25,7 +25,7 @@
     <H1>Identif&iacute;quese
     </H1>
     <!-- Formulario de identificación -->
-  <FORM NAME="" ACTION="?controller=UserLogin" METHOD="POST">
+  <FORM NAME="" ACTION="?controller=User" METHOD="POST">
     <TABLE>
       <TR>
     <TD ALIGN="RIGHT">

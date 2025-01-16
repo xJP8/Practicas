@@ -1,12 +1,8 @@
 <?php
-    require_once __DIR__ . "/../model/db/Database.php";
+    require_once __DIR__ . "/../model/entities/Existencia.php";
     
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $db = new Database();
-        $db->getExistencia($_POST['existencia']);
-    } else{
-        $existencia = "No se encontraron resultados.";
-    }
+    $existencia = new Existencia();
+    $existenciaDB = $existencia->getExistencia($_POST['existencia']);
 
     require_once __DIR__ . "/../view/ExistenciaView.php";
 ?>

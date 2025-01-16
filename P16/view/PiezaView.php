@@ -40,8 +40,8 @@
 		<OPTION></OPTION>
           <?php           
                foreach ($piezasBD as $pieza) {
-                    $piezas .= "<OPTION>{$pieza['nombre']}</OPTION>";
-                    }
+                    echo "<OPTION>{$pieza['nombre']}</OPTION>";
+               }
           ?>
 	 </SELECT>
         </TD>

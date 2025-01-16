@@ -1,17 +1,16 @@
 <?php
     require_once __DIR__ . "/../db/Database.php";
-    class Mueble{
-
+    class User {
         private $db;
-        
+
         public function __construct() {
             $this->db = new Database();
         }
 
-        public function getMuebles() {
-            $sql = "SELECT nombre, precio FROM Mueble";
+        public function getUser($user, $pass){
+            $sql = "SELECT user FROM Usuario WHERE user = ? AND pass = ?";
             $stmt = $this->db->getConn()->prepare($sql);
-            $stmt->execute();
+            $stmt->execute([$user, $pass]);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
