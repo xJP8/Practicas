@@ -3,7 +3,7 @@
     $user = new User();
     $userDB = $user->getUser($_POST['user'], $_POST['pass']);
     
-    if ($user) {
+    if ($userDB) {
         $_SESSION["user"] = $_POST['user'];
         header('Location: index.php?controller=UserPage');
         exit();
