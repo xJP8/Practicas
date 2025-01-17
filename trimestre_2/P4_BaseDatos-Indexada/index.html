@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script defer>
+    function checkCompatibility() {
+        if (!window.indexedDB) {
+            alert("Tu navegador no soporta una versión estable de indexedDB. Tal y como las características no serán validas");
+        }
+    }
+
+    function createDB(){
+        var request = indexedDB.open("Deportes" );
+        request.onerror = function(event) {
+            alert("Error al abrir la base de datos");
+        };
+        request.onsuccess = function(event) {
+            db = request.result;
+            alert("Base de datos abierta");
+        };
+    }
+
+    function createTable(){
+        var request = db.createObjectStore("Deportes", {keyPath: "id"});
+    }
+
+    function addData() {
+        const data = [
+            {id: 1, nombre: "Futbol", descripcion: "Deporte de equipo"},
+            {id: 2, nombre: "Baloncesto", descripcion: "Deporte de equipo"},
+            {id: 3, nombre: "Tenis", descripcion: "Deporte individual"}
+        ];
+
+
+
+        var transaction = db.transaction(["Deportes"], "readwrite");
+    }
+</script>
+<body>
+    <button onclick="checkCompatibility()">Cheack</button>
+    <button onclick="createDB()">Create</button>
+</body>
+</html>1
