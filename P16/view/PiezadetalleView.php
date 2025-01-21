@@ -26,7 +26,11 @@
 	Informaci&oacute;n de la pieza seleccionada
      </H1>
      <?php
-          echo "Hay ".$existenciaDB["total_unidades"]." unidades en almacén de la pieza con nombre: ".$existenciaDB["nombre"].".";
+          if ($piezasBD["total_unidades"] <= 0) {
+               echo "No se han encontrado unidades en el almacén.";
+          } else{
+               echo "Hay ".$piezasBD["total_unidades"]." unidades en almacén de la pieza con nombre: ".$piezasBD["nombre"].".";
+          }
      ?>
      <BR>
     </TD>

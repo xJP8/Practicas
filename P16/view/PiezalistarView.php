@@ -29,7 +29,7 @@
      <BR>
      <BR>
      <!-- Formulario de selección de pieza -->
-     <FORM NAME="existencia" ACTION="index.php?controller=Existencia" METHOD="POST">
+     <FORM NAME="existencia" ACTION="index.php?controller=Pieza&action=detalle" METHOD="POST">
       <TABLE>
        <TR>
         <TD ALIGN="RIGHT">

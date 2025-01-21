@@ -1,4 +1,8 @@
 <?php
+    ini_set('display_errors', 0);
+    ini_set('display_startup_errors', 0);
+    error_reporting(E_ALL);
+
     $PATH = __DIR__ . "/controller/%sViewController.php";
     $controller = "Inicio"; // Controlador por defecto.
     
@@ -13,7 +17,7 @@
     $accessList = [
         'any' => ['Inicio', 'Mueble'], // Controladores a los que se puede acceder siempre.
         'anonymous' => ['UserLogin', 'User'], // Controladores a los que se puede acceder sin autenticación.
-        'user' => ['Existencia', 'Pieza', 'UserPage', 'Logout'] // Controladores a los que se puede acceder si se está autenticado.
+        'user' => ['Pieza', 'UserPage', 'Logout'] // Controladores a los que se puede acceder si se está autenticado.
     ];
 
     if (in_array($controller, $accessList['any'])) { // Comprobar si el controlador existe.
@@ -28,6 +32,6 @@
         $ruta = sprintf($PATH, $controller); 
         require_once $ruta; 
     } else{ // Si no se tiene acceso al controlador, cargar el controlador por defecto.
-        require_once sprintf($PATH, "Inicio");
+        header("Location: index.php?controller=Inicio");
     }
 ?>

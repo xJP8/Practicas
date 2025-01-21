@@ -39,7 +39,7 @@
           foreach ($mueblesBD as $mueble) {
             echo "<tr>";
             echo "<td>{$mueble['nombre']}</td>";
-            echo "<td>{$mueble['precio']}.00€</td>";
+            echo "<td>".number_format($mueble['precio'], 2)."€</td>";
             echo "</tr>";
         }
        ?>
