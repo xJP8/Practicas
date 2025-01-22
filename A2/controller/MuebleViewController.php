@@ -7,6 +7,10 @@
         $pagina = $_GET['pagina'];
     }
 
+    if (!is_numeric($pagina)) {
+        header("Location: index.php?controller=Mueble&pagina=1");
+    }
+
     $mueble = new Mueble();
     
     $pagAnt = $pagina - 1;
@@ -16,8 +20,8 @@
         header("Location: index.php?controller=Mueble&pagina=$pagUlt");
     } else if ($pagina < 1) {
         header("Location: index.php?controller=Mueble&pagina=1");
-    }
-
+    } 
+    
     $mueblesBD = $mueble->getMuebles($pagina);
 
     

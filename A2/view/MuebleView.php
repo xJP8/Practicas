@@ -51,7 +51,7 @@
       <?php if($pagAnt >= 1): ?>
        <a href="index.php?controller=Mueble&pagina=<?php echo $pagAnt; ?>" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">&lsaquo; Anterior</a>
       <?php endif; ?>
-      <span style="padding: 8px 16px; background-color: #f1f1f1; border-radius: 5px;"><?php echo $pagina; ?></span>
+      <span style="padding: 8px 16px; background-color: #f1f1f1; border-radius: 5px;"><?php echo $pagina . "/" . $pagUlt; ?></span>
       <?php if($pagPos <= $pagUlt): ?>
        <a href="index.php?controller=Mueble&pagina=<?php echo $pagPos; ?>" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">Siguiente &rsaquo;</a>
       <?php endif; ?>
