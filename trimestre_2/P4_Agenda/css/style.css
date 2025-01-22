@@ -3,7 +3,6 @@
     --color-secundario: #6C757D;
     --color-terciario: #ff7b00;
 }
-
 body{
     background-color: var(--color-secundario);
     font-family: Arial, sans-serif;
@@ -15,86 +14,16 @@ body{
 section{
     background-color: white;
     width: 100%;
-    justify-content: center;
     height: 90vh;
-    &#list{
-        #buscador{
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1rem;
-            input{
-                width: 100%;
-                padding: 0.5rem;
-                border: 1px solid var(--color-primario);
-                border-radius: 5px;
-                &:focus{
-                    outline-color: var(--color-terciario);
-                }
-            }
-            button{
-                background-color: var(--color-primario);
-                color: white;
-                padding: 0.5rem;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                &:hover{
-                    background-color: var(--color-terciario);
-                }
-            }
-        }
-        div{
-            margin-left: 2%;
-            display: flex;
-            padding: 1rem;
-            &#nuevoContacto{
-                width: 85%;
-                border-radius: 20px;
-                img{
-                    width: 50px;
-                    height: 50px;
-                }
-                span{
-                    margin-left: 1rem;
-                }
-                &:hover{
-                    background-color: var(--color-primario);
-                    color: white;
-                }
-            }
-            &.contacto{
-                margin-top: 5px;
-                margin-bottom: 5px;
-                border: 3px solid var(--color-primario);
-                border-top: none;
-                border-right: none;
-                border-bottom: none;
-
-                display: flex;
-                gap: 1rem;
-                img{
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                }
-                h3{
-                    margin: 0;
-                }
-                &:hover{
-                    background-color: var(--color-primario);
-                    border-color: var(--color-terciario);
-                    color: white;
-                }
-            }
-        }
-    }
-    #contacto{
+}
+#list{
+    #buscador{
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         gap: 1rem;
-        padding: 1rem;
+        margin: 1rem;
         input{
+            width: 100%;
             padding: 0.5rem;
             border: 1px solid var(--color-primario);
             border-radius: 5px;
@@ -114,8 +43,93 @@ section{
             }
         }
     }
-}
+    div{
+        margin-left: 2%;
+        display: flex;
+        padding: 1rem;
+        &#nuevoContacto{
+            width: 85%;
+            border-radius: 20px;
+            img{
+                width: 50px;
+                height: 50px;
+            }
+            span{
+                margin-left: 1rem;
+            }
+            &:hover{
+                background-color: var(--color-primario);
+                color: white;
+            }
+        }
+        &.contacto{
+            width: 85%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 3px solid var(--color-primario);
+            border-top: none;
+            border-right: none;
+            border-bottom: none;
 
+            display: flex;
+            gap: 1rem;
+            img{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+            h3{
+                margin: 0;
+            }
+            &:hover{
+                background-color: var(--color-primario);
+                border-color: var(--color-terciario);
+                color: white;
+            }
+        }
+    }
+}
+#formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    form{
+        select{
+            padding: 0.5rem;
+            border: 1px solid var(--color-primario);
+            border-radius: 5px;
+            &:focus{
+                outline-color: var(--color-terciario);
+            }
+        }
+        input{
+            padding: 0.5rem;
+            width: 65%;
+            border: 1px solid var(--color-primario);
+            border-radius: 5px;
+            &:focus{
+                outline-color: var(--color-terciario);
+            }
+        }
+        input:not(#telefono){
+            width: 90%;
+        }
+
+    }
+    button{
+        background-color: var(--color-primario);
+        color: white;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+            background-color: var(--color-terciario);
+        }
+    }
+}
 .hidden {
     display: none;
 }
