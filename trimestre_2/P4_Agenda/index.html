@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const formSection = document.getElementById('form');
+            const minWidth = 600; // Ajusta este valor según tus necesidades
+
+            function checkWidth() {
+                if (window.innerWidth < minWidth) {
+                    formSection.classList.add('hidden');
+                } else {
+                    formSection.classList.remove('hidden');
+                }
+            }
+
+            window.addEventListener('resize', checkWidth);
+            checkWidth();
+        });
+    </script>
+</head>
+<body>
+    <section id="list">
+        <header id="buscador">
+            <input type="text" id="search" placeholder="Buscar...">
+            <button type="button" onclick="search()">Buscar</button>
+        </header>
+        <article id="contactos">
+            <div id="nuevoContacto"><img src="img/Nuevo_Contacto.png" alt="+"><span>Nuevo Contacto</span></div>
+            <hr width="95%">
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+        </article>
+    </section>
+    <section id="form">
+        <h1 id="titulo">Titulo</h1>
+        <form action="php/insert.php" method="post">
+            <input type="text" name="name" placeholder="Nombre" id="nombre" required>
+            <input type="number" name="phone" placeholder="Telefono" id="telefono" required>
+            <input type="email" name="email" placeholder="Email" id="email">
+            <input type="text" name="empresa" placeholder="Email" id="empresa">
+            <button type="submit">Guardar</button>
+        </form>
+    </section>
+</body>
+</html>
