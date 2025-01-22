@@ -1,29 +1,45 @@
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-nav {
-    margin: 0 auto;
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav {
+    margin: 0;
 }
 
 .nav-list {
     list-style: none;
+    margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
 }
 
 .nav-item {
-    margin: 0 15px;
+    margin-left: 20px;
 }
 
 .nav-link {
-    color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    color: white;
+    font-size: 16px;
 }
 
 .nav-link:hover {
@@ -32,69 +48,115 @@ nav {
 
 .article {
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section {
-    text-align: center;
 }
 
 .section-title {
-    font-size: 36px;
+    text-align: center;
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
 .productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
 }
 
 .producto {
-    background-color: #f9f9f9;
+    float: left;
+    width: 90%;
+    margin: 1%;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-    width: calc(25% - 40px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
     text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .producto-img {
     max-width: 100%;
-    height: auto;
+    height: 300px;
     border-radius: 5px;
 }
 
 .producto-title {
-    font-size: 24px;
+    font-size: 20px;
     margin: 10px 0;
 }
 
 .producto-desc {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
 }
 
 .producto-price {
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
-    margin-bottom: 10px;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
 .producto-btn {
+    padding: 10px 15px;
     background-color: #28a745;
-    color: #fff;
+    color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 .producto-btn:hover {
     background-color: #218838;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.article {
+    width: 75%;
+    padding: 20px;
+}
+
+.aside {
+    width: 20%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-left: 1px solid #ddd;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.aside-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.aside-list {
+    list-style: none;
+    padding: 0;
+}
+
+.aside-list li {
+    margin-bottom: 10px;
+}
+
+.aside-link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.aside-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+footer{
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
