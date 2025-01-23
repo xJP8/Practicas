@@ -17,6 +17,7 @@ section{
     height: 90vh;
 }
 #list{
+    padding: 1rem;
     #buscador{
         display: flex;
         justify-content: center;
