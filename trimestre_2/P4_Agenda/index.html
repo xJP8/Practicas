@@ -1,86 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
 </head>
 <body>
     <section id="list">
         <header id="buscador">
             <input type="text" id="search" placeholder="Buscar...">
-            <button type="button" onclick="search()">Buscar</button>
+            <button type="button" onclick="buscar()">Buscar</button>
         </header>
         <article id="contactos">
             <div id="nuevoContacto"><img src="img/Nuevo_Contacto.png" alt="+"><span>Nuevo Contacto</span></div>
             <hr width="95%">
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
-            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <!-- Aquí van los contactos -->
+            <div class="contacto" onclick="openInfo()"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <!-- Aquí terminan los contactos -->
         </article>
     </section>
     <section id="formulario">
-        <h1 id="titulo">Titulo</h1>
-        <form action="php/insert.php" method="post">
-            <input type="text" name="name" placeholder="Nombre" id="nombre" required>
+        <h1 id="titulo"></h1> <!-- El nombre del contacto seleccionado -->
+        <div action="" method="post">
+            <input type="text" name="name" placeholder="Nombre" id="form_nombre" required> <!-- El nombre del contacto seleccionado -->
             <br><br>
-            <select name="prefijo" id="prefijoTlf" required>
+            <select name="prefijo" id="form_prefijo" required> <!-- El prefijo del teléfono del contacto seleccionado -->
                 <option value="34">+34</option>
                 <option value="33">+33</option>
                 <option value="39">+39</option>
                 <option value="1">+1</option>
             </select>
-            <input type="number" name="phone" placeholder="Telefono" id="telefono" required>
+            <input type="number" name="phone" placeholder="Telefono" id="form_telefono" required> <!-- El teléfono del contacto seleccionado -->
             <br><br>
-            <input type="email" name="email" placeholder="Email" id="email">
+            <input type="email" name="email" placeholder="Email" id="form_email"> <!-- El email del contacto seleccionado -->
             <br><br>
-            <input type="text" name="empresa" placeholder="Empresa" id="empresa">
+            <input type="text" name="empresa" placeholder="Empresa" id="form_empresa"> <!-- La empresa del contacto seleccionado -->
             <br><br>
-            <button type="submit">Guardar</button>
-        </form>
+            <button onclick="addContact()">Guardar</button>
+        </div>
     </section>
     <dialog id="dialogo">
         <h1>Titulo</h1>
-        <form action="" method="post">
-            <input type="text" name="name" placeholder="Nombre" id="nombre" required>
+        <div action="" method="post">
+            <input type="text" name="name" placeholder="Nombre" id="dialog_nombre" required>
             <br><br>
-            <select name="prefijo" id="prefijoTlf" required>
+            <select name="prefijo" id="dialog_prefijo" required>
                 <option value="34">+34</option>
                 <option value="33">+33</option>
                 <option value="39">+39</option>
                 <option value="1">+1</option>
             </select>
-            <input type="number" name="phone" placeholder="Telefono" id="telefono" required>
+            <input type="number" name="phone" placeholder="Telefono" id="dialog_telefono" required>
             <br><br>
-            <input type="email" name="email" placeholder="Email" id="email">
+            <input type="email" name="email" placeholder="Email" id="dialog_email">
             <br><br>
-            <input type="text" name="empresa" placeholder="Empresa" id="empresa">
+            <input type="text" name="empresa" placeholder="Empresa" id="dialog_empresa">
             <br><br>
-            <button type="submit">Guardar</button>
-        </form>
+            <button onclick="addContact()">Guardar</button>
+        </div>
     </dialog>
-
-    <script>
-        function checkScreenSize() {
-            const formulario = document.getElementById('formulario');
-            if (window.innerWidth < 600) {
-                formulario.classList.add('hidden');
-            } else {
-                formulario.classList.remove('hidden');
-            }
-        }
-
-        window.addEventListener('resize', checkScreenSize);
-        window.addEventListener('load', checkScreenSize);
-    </script>
 </body>
 </html>

@@ -42,6 +42,9 @@ section{
             &:hover{
                 background-color: var(--color-terciario);
             }
+            &:active{
+                scale: 0.98;
+            }
         }
     }
     #contactos {
@@ -64,6 +67,9 @@ section{
                 &:hover{
                     background-color: var(--color-primario);
                     color: white;
+                }
+                &:active{
+                    scale: 0.98;
                 }
             }
             &.contacto{
@@ -90,6 +96,9 @@ section{
                     border-color: var(--color-terciario);
                     color: white;
                 }
+                &:active{
+                    scale: 0.98;
+                }
             }
         }
     }
@@ -98,7 +107,7 @@ section{
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    form{
+    div{
         margin: 10%;
         select{
             padding: 0.5rem;
@@ -117,7 +126,7 @@ section{
                 outline-color: var(--color-terciario);
             }
         }
-        input:not(#telefono){
+        input:not(#form_telefono){
             width: 78%;
         }
 
@@ -131,6 +140,9 @@ section{
         cursor: pointer;
         &:hover{
             background-color: var(--color-terciario);
+        }
+        &:active{
+            scale: 0.98;
         }
     }
 }
