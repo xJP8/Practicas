@@ -43,59 +43,62 @@ section{
             }
         }
     }
-    div{
-        margin-left: 2%;
-        display: flex;
-        padding: 1rem;
-        &#nuevoContacto{
-            width: 85%;
-            border-radius: 20px;
-            img{
-                width: 50px;
-                height: 50px;
-            }
-            span{
-                margin-left: 1rem;
-            }
-            &:hover{
-                background-color: var(--color-primario);
-                color: white;
-            }
-        }
-        &.contacto{
-            width: 85%;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            border: 3px solid var(--color-primario);
-            border-top: none;
-            border-right: none;
-            border-bottom: none;
-
+    #contactos {
+        overflow-y: auto;
+        max-height: 80vh; /* Ajusta este valor según sea necesario */
+        div{
+            margin-left: 2%;
             display: flex;
-            gap: 1rem;
-            img{
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
+            padding: 1rem;
+            &#nuevoContacto{
+                width: 85%;
+                border-radius: 20px;
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
+                span{
+                    margin-left: 1rem;
+                }
+                &:hover{
+                    background-color: var(--color-primario);
+                    color: white;
+                }
             }
-            h3{
-                margin: 0;
-            }
-            &:hover{
-                background-color: var(--color-primario);
-                border-color: var(--color-terciario);
-                color: white;
+            &.contacto{
+                width: 85%;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                border: 3px solid var(--color-primario);
+                border-top: none;
+                border-right: none;
+                border-bottom: none;
+    
+                display: flex;
+                gap: 1rem;
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+                h3{
+                    margin: 0;
+                }
+                &:hover{
+                    background-color: var(--color-primario);
+                    border-color: var(--color-terciario);
+                    color: white;
+                }
             }
         }
     }
 }
-#formulario{
-    display: flex;
-    flex-direction: column;
+#formulario{    
     align-items: center;
     gap: 1rem;
     padding: 1rem;
     form{
+        margin: 10%;
         select{
             padding: 0.5rem;
             border: 1px solid var(--color-primario);
@@ -114,7 +117,7 @@ section{
             }
         }
         input:not(#telefono){
-            width: 90%;
+            width: 78%;
         }
 
     }

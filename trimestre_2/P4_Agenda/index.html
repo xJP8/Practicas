@@ -18,9 +18,17 @@
             <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
             <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
             <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+            <div class="contacto"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
         </article>
     </section>
-    <section id="formulario" class="hidden">
+    <section id="formulario">
         <h1 id="titulo">Titulo</h1>
         <form action="php/insert.php" method="post">
             <input type="text" name="name" placeholder="Nombre" id="nombre" required>
@@ -40,5 +48,19 @@
             <button type="submit">Guardar</button>
         </form>
     </section>
+
+    <script>
+        function checkScreenSize() {
+            const formulario = document.getElementById('formulario');
+            if (window.innerWidth < 600) {
+                formulario.classList.add('hidden');
+            } else {
+                formulario.classList.remove('hidden');
+            }
+        }
+
+        window.addEventListener('resize', checkScreenSize);
+        window.addEventListener('load', checkScreenSize);
+    </script>
 </body>
 </html>
