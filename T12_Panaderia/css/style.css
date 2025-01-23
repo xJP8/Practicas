@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: #007bff;
+}
+
+.language-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.language-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 120px; /* Asegura un tamaño mínimo */
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+.language-dropdown:hover .language-menu {
+    display: block;
+}
+
+.language-menu li {
+    padding: 5px 15px;
+    white-space: nowrap; /* Evita que el texto se corte */
+}
+
+.language-menu li a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.language-menu li a:hover {
+    color: #007bff;
+    background-color: #f1f1f1;
+}
+
+/* Asegura que el menú no se salga de la pantalla */
+.language-menu {
+    right: 0;
+    left: auto;
+}
+
+@media (max-width: 768px) {
+    .language-menu {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
