@@ -35,14 +35,14 @@
 		<B>Precio</B>
         </TD>
        </TR>
-       <?php
+        <?php
           foreach ($mueblesBD as $mueble) {
             echo "<tr>";
             echo "<td>{$mueble['nombre']}</td>";
             echo "<td>".number_format($mueble['precio'], 2)."€</td>";
             echo "</tr>";
-        }
-       ?>
+          }
+        ?>
      </TABLE>
     </TD>
    </TR>
