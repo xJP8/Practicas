@@ -122,6 +122,18 @@ function showContact(id) {
  * Funcion que se encarga de mostrar el formulario para añadir un contacto.
  */
 function showForm() {
+
+    let nombre = document.getElementById(version+'nombre');
+    let telefono = document.getElementById(version+'telefono');
+    let email = document.getElementById(version+'email');
+    let empresa = document.getElementById(version+'empresa');
+
+    nombre.value = "";
+    telefono.value = "";
+    email.value = "";
+    empresa.value = "";
+
+
     let tituloElements = document.getElementsByClassName("titulo");
     let btnEliminar = document.getElementsByClassName("btnEliminar");
     let btnGuardar = document.getElementsByClassName("btnGuardar");
