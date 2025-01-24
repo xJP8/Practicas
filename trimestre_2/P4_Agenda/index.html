@@ -11,54 +11,66 @@
     <section id="list">
         <header id="buscador">
             <input type="text" id="search" placeholder="Buscar...">
-            <button type="button" onclick="buscar()">Buscar</button>
+            <button type="button" onclick="search()">Buscar</button>
         </header>
         <article id="contactos">
-            <div id="nuevoContacto"><img src="img/Nuevo_Contacto.png" alt="+"><span>Nuevo Contacto</span></div>
+            <div id="nuevoContacto" onclick="showForm()"><img src="img/Nuevo_Contacto.png" alt="+"><span>Nuevo Contacto</span></div>
             <hr width="95%">
             <!-- Aquí van los contactos -->
-            <div class="contacto" onclick="openInfo()"><img src="img/Contacto.png" alt="contacto"><h3>Pablo Motos</h3></div>
+             <div id="contact_list">
+               <!-- 
+                <div class="contacto" onclick="showContact('Pablo Motos')">
+                    <img src="img/Contacto.png" alt="contacto">
+                    <div>
+                        <h3>Pablo Motos</h3>
+                        <p>+34 601 21 62 69</p>
+                    </div>
+                </div>
+               -->
+             </div>
             <!-- Aquí terminan los contactos -->
         </article>
     </section>
     <section id="formulario">
-        <h1 id="titulo"></h1> <!-- El nombre del contacto seleccionado -->
-        <div action="" method="post">
-            <input type="text" name="name" placeholder="Nombre" id="form_nombre" required> <!-- El nombre del contacto seleccionado -->
+        <h1 class="titulo">Nuevo Contacto</h1> 
+        <div>
+            <input type="text" name="name" placeholder="Nombre" id="f_nombre" required> 
             <br><br>
-            <select name="prefijo" id="form_prefijo" required> <!-- El prefijo del teléfono del contacto seleccionado -->
+            <select name="prefijo" id="f_prefijo" required> 
                 <option value="34">+34</option>
                 <option value="33">+33</option>
                 <option value="39">+39</option>
                 <option value="1">+1</option>
             </select>
-            <input type="number" name="phone" placeholder="Telefono" id="form_telefono" required> <!-- El teléfono del contacto seleccionado -->
+            <input type="number" name="phone" placeholder="Telefono" id="f_telefono" required> 
             <br><br>
-            <input type="email" name="email" placeholder="Email" id="form_email"> <!-- El email del contacto seleccionado -->
+            <input type="email" name="email" placeholder="Email" id="f_email"> 
             <br><br>
-            <input type="text" name="empresa" placeholder="Empresa" id="form_empresa"> <!-- La empresa del contacto seleccionado -->
+            <input type="text" name="empresa" placeholder="Empresa" id="f_empresa"> 
             <br><br>
-            <button onclick="addContact()">Guardar</button>
+            <button onclick="deleteContact()" class="btnEliminar">Eliminar</button>
+            <button onclick="addContact()" class="btnGuardar">Guardar</button>
         </div>
     </section>
     <dialog id="dialogo">
-        <h1>Titulo</h1>
-        <div action="" method="post">
-            <input type="text" name="name" placeholder="Nombre" id="dialog_nombre" required>
+        <h1 class="titulo">Nuevo Contacto</h1>
+        <div>
+            <input type="text" name="name" placeholder="Nombre" id="d_nombre" required>
             <br><br>
-            <select name="prefijo" id="dialog_prefijo" required>
+            <select name="prefijo" id="d_prefijo" required>
                 <option value="34">+34</option>
                 <option value="33">+33</option>
                 <option value="39">+39</option>
                 <option value="1">+1</option>
             </select>
-            <input type="number" name="phone" placeholder="Telefono" id="dialog_telefono" required>
+            <input type="number" name="phone" placeholder="Telefono" id="d_telefono" required>
             <br><br>
-            <input type="email" name="email" placeholder="Email" id="dialog_email">
+            <input type="email" name="email" placeholder="Email" id="d_email">
             <br><br>
-            <input type="text" name="empresa" placeholder="Empresa" id="dialog_empresa">
+            <input type="text" name="empresa" placeholder="Empresa" id="d_empresa">
             <br><br>
-            <button onclick="addContact()">Guardar</button>
+            <button onclick="deleteContact()" class="btnEliminar">Eliminar</button>
+            <button onclick="addContact()" class="btnGuardar">Guardar</button>
         </div>
     </dialog>
 </body>
