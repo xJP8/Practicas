@@ -77,6 +77,33 @@ body{
     }
 }
 
+/* ====== */
+/* Main */
+/* ====== */
+main {
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+main h1 {
+    color: var(--secondary-color);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+main p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+main iframe {
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
 
 /* ====== */
 /* Footer */
