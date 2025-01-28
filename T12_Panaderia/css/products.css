@@ -29,6 +29,7 @@ body{
 
 .logo{
     margin-left: 5%;
+    width: 50px;
 }
 
 .menu-list {
@@ -124,11 +125,37 @@ main {
     text-align: center;
     background-color: var(--accent-color);
     border-radius: 10px;
+    img{
+        width: 90%;
+        border-radius: 10px;
+    }
 }
 aside {
     grid-column: 3/4;
     background-color: var(--accent-color);
     border-radius: 10px;
+    h2 {
+        text-align: center;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+        margin-left: 10px;
+        gap: 25px;
+        a{
+            background-color: var(--primary-color);
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 10px;
+            border-radius: 10px;
+            &:hover{
+                background-color: var(--secondary-color);
+                color: var(--accent-color);
+            }
+        }
+    }
 }
 
 /* ====== */
