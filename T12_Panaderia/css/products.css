@@ -1,6 +1,6 @@
 :root{
-    --primary-color: #f5deb3; /* Chocolate */
-    --secondary-color: #d2691e; /* Wheat */
+    --primary-color: #f5deb3; /* Wheat */
+    --secondary-color: #d2691e; /* Chocolate */
     --accent-color: #ffebcd; /* Blanched Almond */
     --background-color: #fffaf0; /* Floral White */
     --text-color: #333; /* Dark Gray */
@@ -29,7 +29,7 @@ body{
 
 .logo{
     margin-left: 5%;
-    width: 50px;
+    width: 75px;
     &:hover{
         scale: 1.05;
     }
