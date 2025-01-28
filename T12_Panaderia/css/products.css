@@ -30,6 +30,9 @@ body{
 .logo{
     margin-left: 5%;
     width: 50px;
+    &:hover{
+        scale: 1.05;
+    }
 }
 
 .menu-list {
@@ -128,6 +131,9 @@ main {
     img{
         width: 90%;
         border-radius: 10px;
+        &:hover{
+            scale: 1.05;
+        }
     }
 }
 aside {

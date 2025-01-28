@@ -30,6 +30,9 @@ body{
 .logo{
     margin-left: 5%;
     width: 50px;
+    &:hover{
+        scale: 1.05;
+    }
 }
 
 .menu-list {
