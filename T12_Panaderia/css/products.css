@@ -57,7 +57,7 @@ body{
     }
 }
 
-.lenguage-list {
+.lenguage-list, .products-list {
     display: none;
     background-color: var(--primary-color);
     padding: 5px;
@@ -75,22 +75,8 @@ body{
     border-radius: 5px;
 
     .lenguage-list {
-        position: absolute;
+        position: fixed;
         right: 0%;
-        top: 8%;
-        display: flex;
-    }
-}
-
-.products-list {
-    display: none;
-    background-color: var(--primary-color);
-    padding: 5px;
-    border-radius: 0 0 5px 5px;
-    flex-direction: column;
-    list-style: none;
-    margin-left: auto;
-    &:hover {
         display: flex;
     }
 }
@@ -101,9 +87,8 @@ body{
     border-radius: 5px;
 
     .products-list {
-        position: absolute;
-        right: 7%;
-        top: 8%;
+        position: fixed;
+        right: 10%;
         display: flex;
     }
 }

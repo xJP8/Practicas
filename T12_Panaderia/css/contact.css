@@ -109,41 +109,36 @@ main h1 {
     margin-bottom: 10px;
 }
 
-main p {
-    font-size: 1.2em;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-main .extra {
+form {
     display: flex;
-}
-
-main section:not(.extra) {
-    flex: 0 1 50%;
-    margin: 0 10px;
-    background-color: var(--accent-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 30%;
+    padding: 10px;
+    background-color: var(--primary-color);
     border-radius: 10px;
-    text-align: center;
+    color: var(--text-color);
 }
 
-main .extra section {
-    padding: 5px;
-    img{
-        width: 50%;
-        border-radius: 10px;
-    }
-    button{
-        background-color: var(--primary-color);
-        color: var(--text-color);
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 10px;
-        &:hover{
-            background-color: var(--secondary-color);
-            color: var(--accent-color);
-        }
+form input, form textarea {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+}
+
+form button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    &:hover{
+        background-color: var(--secondary-color);
     }
 }
 
