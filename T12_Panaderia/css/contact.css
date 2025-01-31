@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+
 :root{
     --primary-color: #f5deb3; /* Wheat */
     --secondary-color: #d2691e; /* Chocolate */
@@ -7,7 +9,7 @@
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Color Emoji', 'Roboto', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
@@ -27,12 +29,8 @@ body{
     color: var(--text-color)
 }
 
-.logo{
-    margin-left: 5%;
-    width: 75px;
-    &:hover{
-        scale: 1.05;
-    }
+.logo:hover{
+    scale: 1.05;
 }
 
 .menu-list {
