@@ -10,7 +10,6 @@
 
 body{
     font-family: 'Noto Color Emoji', 'Roboto', sans-serif;
-
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
@@ -96,13 +95,14 @@ body{
 /* Main */
 /* ====== */
 main {
+    min-height: 70vh;
     padding: 20px;
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: 'Roboto', sans-serif;
 }
 
-main h1 {
+main h1{
     color: var(--secondary-color);
     font-size: 2em;
     margin-bottom: 10px;
@@ -174,7 +174,6 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 5px 5%;
     background-color: var(--secondary-color);
     color: var(--text-color)
 }
@@ -182,20 +181,19 @@ footer {
 .redes{
     display: flex;
     flex-direction: column;
-    margin: 3%;
-    padding: 10px;
+    padding: 20px;
+    margin:10px;
     a{
         text-decoration: none;
         color: var(--text-color);
         border-radius: 10px;
-        padding: 10px;
+        padding: 5px;
         &:hover{
             background-color: var(--primary-color);
         }
     }
     img{
-        width: 50px;
-        height: 50px;
+        width: 25px;
         border-radius: 50%;
     }
 }
@@ -203,8 +201,9 @@ footer {
 .contacto{
     display: flex;
     flex-direction: column;
-    margin: 3%;
-    padding: 10px;
+    padding: 5px;
+    margin:10px;
+
     a{
         text-decoration: none;
         color: var(--text-color);

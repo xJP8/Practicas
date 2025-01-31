@@ -44,7 +44,7 @@ Líneas generales del diseño online:
   Usé colores pasteles para darle un aspecto cálido y acogedor al sitio web.
 
 - Tipografía:
-  - Fuente principal: 'Roboto', sans-serif
+  - Fuente principal: 'Noto Color Emoji', 'Roboto', sans-serif
   - Tamaños de fuente:
     - Títulos: 2em
     - Subtítulos: 1.5em
@@ -52,6 +52,7 @@ Líneas generales del diseño online:
     - Texto pequeño: 0.875em
 
   Usé la fuente 'Roboto' porque es fácil de leer y se ve bien en pantallas digitales.
+  Además usé 'Noto Color Emoji' para que siempre se vieran de manera igual los emojis de la web.
 
 - Estilos de botones:
   - Fondo: var(--primary-color)
@@ -92,6 +93,7 @@ Líneas generales del diseño online:
   - Efecto hover: fondo var(--accent-color)
 
   Usé enlaces sin subrayado para que se vean más limpios y modernos.
+  Además el logo de la web, es un enlace al inicio de su mismo idioma.
 
 - Carrusel:
   - Botones de navegación: fondo var(--primary-color), color var(--text-color), bordes redondeados 5px
@@ -105,7 +107,55 @@ Líneas generales del diseño online:
   - Enlaces: sin subrayado, color var(--text-color), efecto hover: fondo var(--primary-color)
 
   Usé un fondo de color secundario en el footer para que se destaque y sea fácil de encontrar.
+  Además añadi 3 seciones:
+    - Redes Sociales -> Son iconos enlace a las redes sociales de MigasAmigas.
+    - Copyright -> Muestra el copyright de la web.
+    - Contacto -> En ella puedes ir a la pagina de contacto
 
 
 Empleando el XHTML. Codifica la estructura de tu página principal empleando tablas. 
 RESPUESTA
+
+  La estructura del proyecto es la siguiente:
+
+  MigasAmigas/
+    css/
+      contact.css -> Esta es la hoja de estilo de la pagina de contacto.
+      products.css -> Esta es la hoja de estilo de todos los productos (panadería, pastelería, empanadas).
+      style.css -> Esta es la hoja de estilo de todos los inicios (index, ES/index, PT/index).
+    
+    js/
+      script.js -> Este se encarga exclusivamente del carrousel de las paginas de Inicio.
+
+    img/
+      logo.png -> Logo principal de la pagina.
+      inicio/ -> Aquí se encuentran todas las imagenes del inicio (Carrousel).
+      products/ -> Aquí se encuentran todas las imagenes de los productos.
+        empanadas/
+        panaderia/
+        pasteleria/
+      redes/ -> Aquí se encuentran todos los iconos de las redes sociales de MigasAmigas.
+
+    PT/ -> Esto es el directorio para el Idioma (Portugués)
+      index.html -> Pagina de Inicio.
+      contacto.html -> Pagina de Contacto.
+      panaderia.html -> Pagina de Panadería.
+      pasteleria.html -> Pagina de Pastelería.
+      empanadas.html -> Pagina de Empanadas.
+    ES/ -> Esto es el directorio para el Idioma (Castellano)
+      index.html -> Pagina de Inicio.
+      contacto.html -> Pagina de Contacto.
+      panaderia.html -> Pagina de Panadería.
+      pasteleria.html -> Pagina de Pastelería.
+      empanadas.html -> Pagina de Empanadas.
+
+    index.html -> Pagina de Inicio por defecto (Castellano).
+    README.md -> Este mismo fichero.
+
+    ¿Por qué he hecho esto así?
+
+    Yo creo que la organización, es correcta para el tamaño del proyecto, podría ser más exaustiva, pero como tampoco era tan grande el proyecto creo que así es más eficiente a la hora de trbajar con las rutas.
+
+    Tuve que "duplicar" el archivo de Inicio para el castellano, puesto que si no las rutas se volvían una completa locura a la hora de tener que hacer redirecciones.
+
+    Desde todas las paginas puedes cambiar de idioma y te manda a la misma pagina en la que estás pero con el idioma cambiado.
