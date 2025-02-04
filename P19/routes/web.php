@@ -4,7 +4,7 @@ use App\Http\Controllers\MuebleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('inicio');
+    return view('Inicio');
 });
 
-Route::get('/mueble', [MuebleController::class, 'show']);
+Route::get('/mueble/{pagina}', [MuebleController::class, 'show'])->name('Mueble.show');;

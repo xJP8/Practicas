@@ -41,19 +41,19 @@
       @endforeach
      </TABLE>
     <div style="margin-top: 20px;">
-      <?php if($pagina > 1): ?>
-      <a href="index.php?controller=Mueble&pagina=1" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">&laquo; Primero</a>
-      <?php endif; ?>
-      <?php if($pagAnt >= 1): ?>
-       <a href="index.php?controller=Mueble&pagina=<?php echo $pagAnt; ?>" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">&lsaquo; Anterior</a>
-      <?php endif; ?>
-      <span style="padding: 8px 16px; background-color: #f1f1f1; border-radius: 5px;"><?php echo $pagina . "/" . $pagUlt; ?></span>
-      <?php if($pagPos <= $pagUlt): ?>
-       <a href="index.php?controller=Mueble&pagina=<?php echo $pagPos; ?>" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">Siguiente &rsaquo;</a>
-      <?php endif; ?>
-      <?php if($pagina < $pagUlt): ?>
-      <a href="index.php?controller=Mueble&pagina=<?php echo $pagUlt; ?>" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">Último &raquo;</a>
-      <?php endif; ?>
+     @if($pagina > 1)
+      <a href="{{ url('/mueble/' . 1) }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">&laquo; Primero</a>
+     @endif
+     @if($pagAnt >= 1)
+       <a href="{{ url('/mueble/' . $pagAnt) }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">&lsaquo; Anterior</a>
+     @endif
+      <span style="padding: 8px 16px; background-color: #f1f1f1; border-radius: 5px;">{{$pagina}}/{{$pagUlt}}</span>
+     @if($pagPos <= $pagUlt)
+       <a href="{{ url('/mueble/' . $pagPos) }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">Siguiente &rsaquo;</a>
+     @endif
+      @if($pagina < $pagUlt)
+      <a href="{{ url('/mueble/' . $pagUlt) }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">Último &raquo;</a>
+      @endif
     </div>     
     </TD>
    </TR>
