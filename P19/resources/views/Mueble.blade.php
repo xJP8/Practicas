@@ -42,17 +42,17 @@
      </TABLE>
     <div style="margin-top: 20px;">
       @if($pagina > 1)
-      <a href="{{ url('Mueble/1') }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">&laquo; Primero</a>
+      <a href="{{ url('mueble/1') }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">&laquo; Primero</a>
       @endif
       @if($pagAnt >= 1)
-       <a href="{{ url('Mueble/' . $pagAnt) }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">&lsaquo; Anterior</a>
+       <a href="{{ url('mueble/' . $pagAnt) }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">&lsaquo; Anterior</a>
       @endif
       <span style="padding: 8px 16px; background-color: #f1f1f1; border-radius: 5px;">{{ $pagina . '/' . $pagUlt }}</span>
       @if($pagPos <= $pagUlt)
-       <a href="{{ url('Mueble/' . $pagPos) }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">Siguiente &rsaquo;</a>
+       <a href="{{ url('mueble/' . $pagPos) }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">Siguiente &rsaquo;</a>
       @endif
       @if($pagina < $pagUlt)
-      <a href="{{ url('Mueble/' . $pagUlt) }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">Último &raquo;</a>
+      <a href="{{ url('mueble/' . $pagUlt) }}" style="text-decoration: none; padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 5px;">Último &raquo;</a>
       @endif
     </div>
     </TD>

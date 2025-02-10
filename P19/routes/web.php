@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('Inicio');
 });
 
-Route::get('/ruta', [MuebleController::class, 'show']);
+Route::get('/mueble/{pagina}', [MuebleController::class, 'show'])->name('mueble');
