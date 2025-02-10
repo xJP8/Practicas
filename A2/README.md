@@ -1,0 +1,1 @@
+Se pide hacer el listado de muebles de la práctica 12 pero utilizando el Modelo Vista Controlador, programación orientada a objetos y paginando dicho listado con un máximo de 10 elementos por página.
