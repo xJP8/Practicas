@@ -1,4 +1,4 @@
-<a href="{{ url('Inicio') }}">Principal</a>
+<a href="{{ url('') }}">Principal</a>
 <br><br>
 <a href="{{ url('Mueble') }}">Productos</a>
 <br><br>

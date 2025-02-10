@@ -17,7 +17,7 @@
   <TABLE HEIGHT=85% WIDTH=100%>
    <TR>
     <TD WIDTH=15% BGCOLOR="DDFFFF" VALIGN=CENTER>
-    @include('partials.navigation')
+    @include('partials.nav')
     </TD>
     <TD WIDTH=85% ALIGN=CENTER VALIGN=CENTER>
      <H1>
