@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MuebleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,3 +9,5 @@ Route::get('/', function () {
 });
 
 Route::get('/mueble/{pagina}', [MuebleController::class, 'show'])->name('mueble');
+
+Route::get('/User/{view}', [UserController::class, 'show'])->name('user');
