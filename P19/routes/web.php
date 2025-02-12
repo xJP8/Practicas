@@ -8,6 +8,6 @@ Route::get('/', function () {
     return view('Inicio');
 });
 
-Route::get('/mueble/{pagina}', [MuebleController::class, 'show'])->name('mueble');
+Route::get('/mueble/{page?}', [MuebleController::class, 'show'])->name('mueble');
 
 Route::get('/User/{view}', [UserController::class, 'show'])->name('user');
