@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SelectornumericoComponent } from './selectornumerico/selectornumerico.component';
+import { NumAleatorioComponent } from "./num-aleatorio/num-aleatorio.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SelectornumericoComponent],
+  imports: [RouterOutlet, NumAleatorioComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
