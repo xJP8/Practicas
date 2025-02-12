@@ -59,7 +59,7 @@ section:nth-child(even) {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -75,7 +75,7 @@ section:nth-child(even) {
 
 .grid-item img, .grid-item iframe {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
