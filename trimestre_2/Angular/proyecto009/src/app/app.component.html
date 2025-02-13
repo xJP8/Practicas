@@ -1,25 +1,32 @@
-<form [formGroup]="formularioConversion" (ngSubmit)="submit()">
-  <p>Ingrese número decimal:
-    <input type="text" formControlName="numerodecimal">
+<form [formGroup]="formularioContacto" (ngSubmit)="submit()">
+  <p>Nombre:
+    <input type="text" formControlName="nombre" required>
+    @if(this.formularioContacto.get('nombre')?.errors?.['required']) {
+    <span>(El nombre no puede quedar vacío)</span>
+    }
+    @if(this.formularioContacto.get('nombre')?.errors?.['minlength']) {
+    <span>(Debe tener como mínimo 10 caracteres)</span>
+    }
   </p>
-  <p>Convertir a:<br>
-    <input type="radio" formControlName="base" value="octal">Octal
-    <input type="radio" formControlName="base" value="hexadecimal">Hexadecimal
+  <p>Mail:
+    <input type="text" formControlName="mail">
+    @if(this.formularioContacto.get('mail')?.errors?.['required']) {
+    <span>(El mail no puede quedar vacío)</span>
+    }
+    @if(this.formularioContacto.get('mail')?.errors?.['email']) {
+    <span>(El mail no es válido)</span>
+    }
   </p>
-  <p>Elevar a:<br>
-    <select formControlName="potencia">
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-    </select>
-  </p>  
-  <p><input type="checkbox" formControlName="largo">Mostrar cantidad de dígitos
+  <p>Mensaje<br>
+    <textarea rows="10" cols="70" formControlName="mensaje"></textarea>
   </p>
-  <p><button type="submit">Confirmar</button></p>
+  @if(this.formularioContacto.get('mensaje')?.errors?.['required']) {
+  <div>(El mensaje no puede quedar vacío)</div>
+  }
+  @if(this.formularioContacto.get('mensaje')?.errors?.['maxlength']) {
+  <div>(Debe tener como máximo 500 caracteres)</div>
+  }
+  <button type="submit">Confirmar</button>
 </form>
-<div>
-  <p>Conversion:{{conversion}}</p>
-  <p>Potencia:{{potenciaNumero}}</p>
-  <p>Cantidad de dígitos:{{cantidad}}</p>  
-</div>
+<div>{{resultado}}</div>
 <router-outlet />
