@@ -3,38 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
-{
-    public function show($pagina) {
-        $view = 'Mueble';
-        $db = new Mueble();
+class UserController extends Controller {
+    public function showLogin() {
+        return view('user.login');
+    }
+    
+    public function showPage() {
+        return view('user.page');
+    }
 
-        $pagAnt = $pagina - 1;
-        $pagPos = $pagina + 1;
-        $pagUlt = $db->getNumPaginas();
 
-        // Validar que la página sea un número
-        if ($pagina == null || !is_numeric($pagina)){
-            return redirect()->route('mueble', ['pagina' => 1]);
+    public function login(Request $request) {
+        // Obtiene solo los campos 'nombre' y 'password' del objeto Request
+        $credentials = $request->only('user', 'pass');
+        
+        // Intenta autenticar al usuario con las credenciales proporcionadas
+        if (Auth::attempt($credentials)) {
+            // Si la autenticación es exitosa, redirige al usuario a la página deseada
+            return redirect()->intended('user/page');
         }
-
-        // Validar que la página sea un número dentro del rango
-        if ($pagina < 1 ){
-            return redirect()->route('mueble', ['pagina' => 1]);
-        } else if ($pagina > $pagUlt){
-            return redirect()->route('mueble', ['pagina' => $pagUlt]);
-        }
-
-        // Obtener los muebles de la base de datos
-        $mueblesBD = $db->getMuebles($pagina);
-
-        $data["pagina"] = $pagina;
-        $data["pagAnt"] = $pagAnt;
-        $data["pagPos"] = $pagPos;
-        $data["mueblesBD"] = $mueblesBD;
-        $data["pagUlt"] = $pagUlt;
-
-        return view($view, $data);
+        
+        // Si la autenticación falla, redirige al usuario de vuelta a la página de login
+        return redirect('user/login');
     }
 }

@@ -3,9 +3,9 @@
 <a href="{{ url('mueble/1') }}">Productos</a>
 <br><br>
 @if (session('user'))
-    <a href="{{ url('Pieza/Listar') }}">Disponibilidad de piezas</a>
+    <a href="{{ url('pieza/listar') }}">Disponibilidad de piezas</a>
     <br><br>
-    <a href="{{ url('Logout') }}">Cerrar sesión</a>
+    <a href="{{ url('user/logout') }}">Cerrar sesión</a>
 @else
-    <a href="{{ url('UserLogin') }}">Acceso clientes</a>
+    <a href="{{ url('user/login') }}">Acceso clientes</a>
 @endif
