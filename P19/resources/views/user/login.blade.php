@@ -23,7 +23,7 @@
     <H1>Identif&iacute;quese
     </H1>
     <!-- Formulario de identificación -->
-  <FORM ACTION="{{ route('user/login') }}" METHOD="POST">
+  <FORM ACTION="{{ route('login') }}" METHOD="POST">
   @csrf
     <TABLE>
       <TR>

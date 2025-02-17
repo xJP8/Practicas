@@ -2,7 +2,7 @@
 <br><br>
 <a href="{{ url('mueble/1') }}">Productos</a>
 <br><br>
-@if (session('user'))
+@if (Auth::check())
     <a href="{{ url('pieza/listar') }}">Disponibilidad de piezas</a>
     <br><br>
     <a href="{{ url('user/logout') }}">Cerrar sesión</a>

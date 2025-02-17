@@ -16,8 +16,7 @@ class UserController extends Controller {
     }
 
 
-    public function login(Request $request)
-    {
+    public function login(Request $request) {
         // Obtiene solo los campos 'user' y 'pass' del objeto Request
         $credentials = $request->only('user', 'pass');
 
@@ -35,5 +34,8 @@ class UserController extends Controller {
         return redirect('user/login')->withErrors(['login' => 'Credenciales incorrectas']);
     }
 
-
+    public function logout() {
+        Auth::logout();
+        return view('user.login');
+    }
 }
