@@ -1,7 +1,7 @@
 <HTML>
  <HEAD>
   <TITLE>
-	Clientes
+	Disponibilidad de pieza
   </TITLE>
  </HEAD>
  <BODY>
@@ -17,12 +17,18 @@
   <TABLE HEIGHT=85% WIDTH=100%>
    <TR>
     <TD WIDTH=15% BGCOLOR="DDFFFF" VALIGN=CENTER>
-    @include('partials.nav')
+     @include('partials.nav')	
     </TD>
     <TD WIDTH=85% ALIGN=CENTER VALIGN=CENTER>
-    @if(Auth::check())
-      <h1>Hola, {{ Auth::user()->user }}</h1>
-    @endif
+     <H1>
+	Informaci&oacute;n de la pieza seleccionada
+     </H1>
+          @if ($piezasBD["total_unidades"] <= 0) 
+               No se han encontrado unidades en el almacén.
+          @else
+               Hay {{ $piezasBD["total_unidades"] }} unidades en almacén de la pieza con nombre: {{ $piezasBD["nombre"] }}.
+          @endif
+     <BR>
     </TD>
    </TR>
   </TABLE>
