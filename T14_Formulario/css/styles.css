@@ -1,0 +1,43 @@
+
+body {
+    background-image: url("/img/fondo.jpg");
+    background-size: cover;
+    font-family: 'Cursive', sans-serif;
+    color: #800000;
+    display: flex;
+    justify-content: center;
+}
+
+h1, h2 {
+    font-family: 'Brush Script MT', cursive;
+    color: #ff69b4;
+}
+
+form {
+    background-color: #fff0f5;
+    border: 2px solid #ff1493;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+}
+
+input[type="text"], input[type="radio"], input[type="checkbox"], select {
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #ff69b4;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
