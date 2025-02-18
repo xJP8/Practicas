@@ -27,7 +27,7 @@ Route::get('user/logout', [UserController::class, 'logout']);
 // Rutas Piezas //
 // ------------ //
 
-Route::get('pieza/lista', [PiezaController::class, 'showLista'])->middleware('auth')->name('lista');
-Route::post('pieza/lista', [PiezaController::class, 'listar']);
+Route::get('pieza/lista', [PiezaController::class, 'showLista'])->middleware('auth')->name('listar');
+Route::post('pieza/lista', [PiezaController::class, 'detallar']);
 
-Route::get('pieza/detalle', [UserController::class, 'showDetalle'])->middleware('auth')->name('detalle');
+Route::get('pieza/detalle', [PiezaController::class, 'showDetalle'])->middleware('auth')->name('detalle');

@@ -27,8 +27,9 @@
      <BR>
      <BR>
      <!-- Formulario de selección de pieza -->
-     <FORM NAME="existencia" ACTION="{{ listar }}" METHOD="POST">
-      <TABLE>
+     <FORM NAME="existencia" ACTION="{{ route('listar') }}" METHOD="POST">
+     @csrf 
+     <TABLE>
        <TR>
         <TD ALIGN="RIGHT">
          Escoja la pieza
