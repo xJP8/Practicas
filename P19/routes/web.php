@@ -16,7 +16,7 @@ Route::get('/mueble/{page?}', [MuebleController::class, 'show'])->name('mueble')
 // -------------- //
 // Rutas Usuarios //
 // -------------- //
-Route::get('user/login', [UserController::class, 'showLogin'])->middleware('guest')->name('login');
+Route::get('user/login', [UserController::class, 'showLogin'])->middleware(['guest', 'NoCache'])->name('login');
 Route::post('user/login', [UserController::class, 'login']);
 
 Route::get('user/page', [UserController::class, 'showPage'])->middleware('auth')->name('page');

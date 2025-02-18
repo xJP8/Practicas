@@ -23,10 +23,10 @@
      <H1>
 	Informaci&oacute;n de la pieza seleccionada
      </H1>
-          @if ($pieza->unidades <= 0) 
+          @if ($unidades <= 0) 
                No se han encontrado unidades en el almacén.
           @else
-               Hay {{ $pieza->unidades }} unidades en almacén de la pieza con nombre: {{ $pieza->unidades }}.
+               Hay {{ $unidades }} unidades en almacén de la pieza con nombre: {{ $nombre }}.
           @endif
      <BR>
     </TD>
