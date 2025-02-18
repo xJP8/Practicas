@@ -3,8 +3,7 @@
 # Configuración de servidores FTP
 # Formato: "servidor usuario contraseña ruta_remota"
 SERVERS=(
-    "servidor1.com usuario1 contraseña1 /ruta/en/servidor1"
-    "servidor2.com usuario2 contraseña2 /ruta/en/servidor2"
+    "localhost user user FTP/"
     # Añade más servidores aquí
 )
 
@@ -31,7 +30,7 @@ descargar_archivos() {
     quote USER $USER
     quote PASS $PASS
     cd $REMOTE_DIR
-    ls -1 | grep "$FECHA_ACTUAL" > /tmp/ftp_files.txt
+    ls | grep "$FECHA_ACTUAL" > /tmp/ftp_files.txt
     !mkdir -p "$LOCAL_DIR/$SERVER"
     while read -r file; do
         get "$file" "$LOCAL_DIR/$SERVER/$file"
