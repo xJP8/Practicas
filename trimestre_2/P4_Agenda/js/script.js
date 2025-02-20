@@ -128,11 +128,12 @@ function showForm() {
     let email = document.getElementById(version+'email');
     let empresa = document.getElementById(version+'empresa');
 
-    nombre.value = "";
-    telefono.value = "";
-    email.value = "";
-    empresa.value = "";
-
+    if (nombre != null || telefono != null || email != null || empresa != null) {
+        nombre.value = "";
+        telefono.value = "";
+        email.value = "";
+        empresa.value = "";
+    }
 
     let tituloElements = document.getElementsByClassName("titulo");
     let btnEliminar = document.getElementsByClassName("btnEliminar");
