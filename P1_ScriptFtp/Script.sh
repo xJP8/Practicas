@@ -1,56 +1,45 @@
 #!/bin/bash
 
-# Configuración de servidores FTP
-# Formato: "servidor usuario contraseña ruta_remota"
-SERVERS=(
-    "localhost user user FTP/"
-    # Añade más servidores aquí
-)
+# Archivo de log
+LOG_FILE="Log.txt"
 
-# Obtener la fecha actual en formato yyyymmdd
-FECHA_ACTUAL=$(date +"%Y%m%d")
+# Lista de servidores FTP
+SERVERS=("localhost")
 
-# Ruta local para guardar los archivos
-LOCAL_DIR="./descargas"
+# Credenciales FTP (usuario y contraseña)
+FTP_USER="user"
+FTP_PASS="user"
 
-# Crear el directorio local si no existe
-mkdir -p "$LOCAL_DIR"
+# Generar el nombre del archivo dinámicamente (usando la fecha actual)
+FILE_FORMAT=$(date +"%Y_%m_%d")-*
 
-# Función para descargar archivos de un servidor FTP
-descargar_archivos() {
-    local SERVER=$1
-    local USER=$2
-    local PASS=$3
-    local REMOTE_DIR=$4
-
-    echo "Conectando a $SERVER..."
-
-    # Conectar al servidor FTP y descargar los archivos
-    ftp -n $SERVER <<END_SCRIPT
-    quote USER $USER
-    quote PASS $PASS
-    cd $REMOTE_DIR
-    ls | grep "$FECHA_ACTUAL" > /tmp/ftp_files.txt
-    !mkdir -p "$LOCAL_DIR/$SERVER"
-    while read -r file; do
-        get "$file" "$LOCAL_DIR/$SERVER/$file"
-    done < /tmp/ftp_files.txt
+# Función para conectar y descargar el archivo
+download_file_from_ftp() {
+    local server=$1
+    echo "Conectando a $server..." | tee -a "$LOG_FILE"
+    
+    # Intentar descargar el archivo
+    ftp -n "$server" <<END_SCRIPT
+    user "$FTP_USER" "$FTP_PASS"
+    binary
+    get "$FILE_FORMAT"
     quit
 END_SCRIPT
 
-    # Limpiar archivo temporal
-    rm -f /tmp/ftp_files.txt
-
-    echo "Descarga desde $SERVER completada. Archivos guardados en $LOCAL_DIR/$SERVER"
+    # Verificar si la descarga fue exitosa
+    if [ $? -eq 0 ]; then
+        echo "Descarga completada desde $server." | tee -a "$LOG_FILE"
+    else
+        echo "Error al descargar el archivo desde $server." | tee -a "$LOG_FILE"
+    fi
 }
 
-# Iterar sobre cada servidor y descargar archivos
-for SERVER_INFO in "${SERVERS[@]}"; do
-    # Dividir la información del servidor
-    IFS=' ' read -r SERVER USER PASS REMOTE_DIR <<< "$SERVER_INFO"
-    
-    # Llamar a la función de descarga
-    descargar_archivos "$SERVER" "$USER" "$PASS" "$REMOTE_DIR"
+# Limpiar el archivo de log si existe
+> "$LOG_FILE"
+
+# Iterar sobre cada servidor y descargar el archivo
+for server in "${SERVERS[@]}"; do
+    download_file_from_ftp "$server"
 done
 
-echo "Proceso completado. Revisa la carpeta $LOCAL_DIR."
+echo "Proceso completado. Verifica el archivo de log: $LOG_FILE"
