@@ -128,12 +128,13 @@ function showForm() {
     let email = document.getElementById(version+'email');
     let empresa = document.getElementById(version+'empresa');
 
-    if (nombre != null || telefono != null || email != null || empresa != null) {
+    if (nombre && telefono && email && empresa) {
         nombre.value = "";
         telefono.value = "";
         email.value = "";
         empresa.value = "";
     }
+
 
     let tituloElements = document.getElementsByClassName("titulo");
     let btnEliminar = document.getElementsByClassName("btnEliminar");
@@ -211,20 +212,20 @@ function search() {
         indexNombre.openCursor().onsuccess = function(event) {
             let cursor = event.target.result;
             if (cursor) {
-                if (cursor.value.nombre.includes(text)) {
-                    results.push(cursor.value);
-                }
-                cursor.continue();
+            if (cursor.value.nombre.includes(text)) {
+                results.push(cursor.value);
             }
-        };
-
-        indexEmpresa.openCursor().onsuccess = function(event) {
-            let cursor = event.target.result;
-            if (cursor) {
+            cursor.continue();
+            } else if (results.length === 0) {
+            indexEmpresa.openCursor().onsuccess = function(event) {
+                let cursor = event.target.result;
+                if (cursor) {
                 if (cursor.value.empresa.includes(text)) {
                     results.push(cursor.value);
                 }
                 cursor.continue();
+                }
+            };
             }
         };
     }
