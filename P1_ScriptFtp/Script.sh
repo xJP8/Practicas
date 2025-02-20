@@ -1,41 +1,63 @@
 #!/bin/bash
 
-# Servidores FTP
-declare -A SERVIDORES
-SERVIDORES=(
-  ["localhost"]="user:user"
-  # ["ftp.servidor1.com"]="usuario1:password1"
-)
+# Lista de servidores FTP
+FTP_SERVERS=("192.168.4.72")
+FTP_USER="eddy"
+FTP_PASS="9887"
 
-# Ruta FTP
-CARPETA_REMOTA="FTP/"
+# Directorio local donde se guardarán los archivos descargados
+LOCAL_DIR="./downloads"
+mkdir -p $LOCAL_DIR
 
-# Ruta LOCAL
-CARPETA_LOCAL="./descargas"
-mkdir -p "$CARPETA_LOCAL"
+# Archivo de log
+LOG_FILE="./logs/"$(date +"%Y_%m_%d")"-"$(date +"%H:%M:%S")".log"
+mkdir -p ./logs
 
-# Fecha actual en formato YYYY_MM_DD
-FECHA=$(date +"%Y_%m_%d")
+# Fecha de ejecución (en formato YYYY-MM-DD)
+CURRENT_DATE=$(date +"%Y%m%d")
 
-# Archivo Log
-LOG_FILE=$FECHA"-Log.txt"
->> $LOG_FILE
+# Función para conectarse al servidor FTP y descargar los archivos
+download_files() {
+    local SERVER=$1
+    echo "[$(date +"%H:%M:%S")] - [INFO] - Conectando a $SERVER..." >> $LOG_FILE
+    
+    # Variable para contar archivos descargados
+    local FILES_DOWNLOADED=0
 
-# Recorrer los servidores
-for SERVIDOR in "${!SERVIDORES[@]}"; do
-
-  CREDENCIALES=${SERVIDORES[$SERVIDOR]} # usuario:password
-  USUARIO=${CREDENCIALES%%:*}
-  PASSWORD=${CREDENCIALES#*:}
-
-  echo "[ $(date +"%H:%M:%S") ] - Conectando a: "$SERVIDOR | tee -a "$LOG_FILE"
-
-ftp $SERVIDOR <<EOF 
-user $USUARIO $PASSWORD
-cd $CARPETA_REMOTA
-mget $FECHA*
+    ftp -inv $SERVER <<EOF 
+user $FTP_USER $FTP_PASS
+cd FTP/
+lcd $LOCAL_DIR
+mget $CURRENT_DATE*
 bye
 EOF
-  
 
-done 
+    # Comprobar si realmente se descargaron archivos
+    for file in $LOCAL_DIR/*$CURRENT_DATE*; do
+      if [ -f "$file" ]; then
+        ((FILES_DOWNLOADED++))
+      fi
+    done
+
+    if [ $FILES_DOWNLOADED -gt 0 ]; then
+      echo "[$(date +"%H:%M:%S")] - [INFO] - Archivos descargados de $SERVER correctamente." >> $LOG_FILE
+    else
+      echo "[$(date +"%H:%M:%S")] - [ERROR] - No se encontraron archivos nuevos para descargar de $SERVER." >> $LOG_FILE
+    fi
+}
+
+# Crear el archivo de log si no existe
+if [ ! -f $LOG_FILE ]; then
+    touch $LOG_FILE
+fi
+
+# Escribir encabezado en el log
+echo "[$(date +"%H:%M:%S")] - [INFO] - === Proceso de descarga FTP - $CURRENT_DATE ===" >> $LOG_FILE
+
+# Iterar sobre cada servidor y descargar los archivos
+for SERVER in "${FTP_SERVERS[@]}"; do
+    download_files $SERVER
+done
+
+# Finalizar log
+echo "[$(date +"%H:%M:%S")] - [INFO] - === Fin del proceso ===" >> $LOG_FILE
