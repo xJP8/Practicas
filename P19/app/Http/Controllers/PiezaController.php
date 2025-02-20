@@ -17,13 +17,22 @@ class PiezaController extends Controller {
         $unidades = session('unidades');
 
         
-        return view('pieza.detalle', compact('pieza')); // TODO falta compactar
+        return view('pieza.detalle', compact('nombre', 'unidades'));
     }
 
-    public function detallar(Request $request) {
+    public function detallar(Request $request) {     
+        
+        if (is_null($request->input('existencia'))) {
+            return redirect()->route('listar');
+        }
+        
         $unidades = Estante::where('cod_pieza', $request->input('existencia'))->sum('unidades');
         $piezaBD = Pieza::where('cod', $request->input('existencia'))->first();
 
+        if (is_null($piezaBD) || is_null($unidades)) {
+            return redirect()->route('detalle')->with('error', 'Pieza or unidades not found');
+        }
+        
         return redirect()->route('detalle')->with('nombre', $piezaBD->nombre)->with('unidades', $unidades);
     }
 

@@ -36,7 +36,7 @@
         @foreach($muebles as $mueble)
             <tr>
                 <td>{{ $mueble->nombre }}</td>
-                <td>{{ $mueble->precio }}</td>
+                <td>{{ $mueble->precio }}€</td>
             </tr>
         @endforeach
      </TABLE>

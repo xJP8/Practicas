@@ -36,6 +36,6 @@ class UserController extends Controller {
 
     public function logout() {
         Auth::logout();
-        return view('user.login');
+        return redirect('user/login');
     }
 }
