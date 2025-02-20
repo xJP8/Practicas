@@ -1,45 +1,41 @@
 #!/bin/bash
 
-# Archivo de log
-LOG_FILE="Log.txt"
+# Servidores FTP
+declare -A SERVIDORES
+SERVIDORES=(
+  ["localhost"]="user:user"
+  # ["ftp.servidor1.com"]="usuario1:password1"
+)
 
-# Lista de servidores FTP
-SERVERS=("localhost")
+# Ruta FTP
+CARPETA_REMOTA="FTP/"
 
-# Credenciales FTP (usuario y contraseña)
-FTP_USER="user"
-FTP_PASS="user"
+# Ruta LOCAL
+CARPETA_LOCAL="./descargas"
+mkdir -p "$CARPETA_LOCAL"
 
-# Generar el nombre del archivo dinámicamente (usando la fecha actual)
-FILE_FORMAT=$(date +"%Y_%m_%d")-*
+# Fecha actual en formato YYYY_MM_DD
+FECHA=$(date +"%Y_%m_%d")
 
-# Función para conectar y descargar el archivo
-download_file_from_ftp() {
-    local server=$1
-    echo "Conectando a $server..." | tee -a "$LOG_FILE"
-    
-    # Intentar descargar el archivo
-    ftp -n "$server" <<END_SCRIPT
-    user "$FTP_USER" "$FTP_PASS"
-    binary
-    get "$FILE_FORMAT"
-    quit
-END_SCRIPT
+# Archivo Log
+LOG_FILE=$FECHA"-Log.txt"
+>> $LOG_FILE
 
-    # Verificar si la descarga fue exitosa
-    if [ $? -eq 0 ]; then
-        echo "Descarga completada desde $server." | tee -a "$LOG_FILE"
-    else
-        echo "Error al descargar el archivo desde $server." | tee -a "$LOG_FILE"
-    fi
-}
+# Recorrer los servidores
+for SERVIDOR in "${!SERVIDORES[@]}"; do
 
-# Limpiar el archivo de log si existe
-> "$LOG_FILE"
+  CREDENCIALES=${SERVIDORES[$SERVIDOR]} # usuario:password
+  USUARIO=${CREDENCIALES%%:*}
+  PASSWORD=${CREDENCIALES#*:}
 
-# Iterar sobre cada servidor y descargar el archivo
-for server in "${SERVERS[@]}"; do
-    download_file_from_ftp "$server"
-done
+  echo "[ $(date +"%H:%M:%S") ] - Conectando a: "$SERVIDOR | tee -a "$LOG_FILE"
 
-echo "Proceso completado. Verifica el archivo de log: $LOG_FILE"
+ftp $SERVIDOR <<EOF 
+user $USUARIO $PASSWORD
+cd $CARPETA_REMOTA
+mget $FECHA*
+bye
+EOF
+  
+
+done 
