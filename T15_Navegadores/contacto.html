@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto y Redes - RetroGame Hub</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+    }
+    header {
+      background: #ffcc00;
+      padding: 20px;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      background: #444;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: #444;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 24px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+    form {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      background: #444;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+    }
+    form input:focus, form textarea:focus {
+      background: #ffcc00;
+      color: #000;
+      outline: none;
+    }
+    form button {
+      background: #444;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    form button:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>🎮 RetroGame Hub 🎮</header>
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="historia.html">📜 Historia</a>
+    <a href="ranking.html">🏆 Ranking</a>
+    <a href="noticias.html">📰 Noticias</a>
+    <a href="tienda.html">📦 Tienda</a>
+  </nav>
+  <div class="container">
+    <h2>Contacto y Redes</h2>
+    <p>Conéctate con nosotros a través de nuestras redes sociales o envíanos un mensaje.</p>
+    
+    <div class="social-icons">
+      <a href="#" title="Facebook"><img src="img/facebook.png" height="35px"></a>
+      <a href="#" title="Twitter"><img src="img/twitter.png" height="35px"></a>
+      <a href="#" title="Instagram"><img src="img/instagram.png" height="35px"></a>
+      <a href="#" title="YouTube"><img src="img/youtube.png" height="35px"></a>
+    </div>
+    
+    <form action="#" method="post">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar Mensaje</button>
+    </form>
+  </div>
+</body>
+</html>

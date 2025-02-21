@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emuladores y Descargas - RetroGame Hub</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+    }
+    header {
+      background: #ffcc00;
+      padding: 20px;
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #333;
+      padding: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px;
+      background: #444;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+    .container {
+      margin-top: 50px;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 32px;
+    }
+    .emulator-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .emulator-item {
+      background: #333;
+      border-radius: 10px;
+      padding: 20px;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .emulator-item:hover {
+      background: #ff5733;
+    }
+    .search-bar {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      padding: 10px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+    }
+    footer {
+      background: #222;
+      padding: 20px;
+      font-size: 12px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>🎮 RetroGame Hub 🎮</header>
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="historia.html">📜 Historia</a>
+    <a href="ranking.html">🏆 Ranking</a>
+    <a href="noticias.html">📰 Noticias</a>
+    <a href="tienda.html">📦 Tienda</a>
+  </nav>
+  <div class="container">
+    <h2>Emuladores y Descargas</h2>
+    <p>Encuentra los mejores emuladores para revivir los juegos retro. ¡Haz clic en cualquier opción para comenzar la descarga!</p>
+    
+    <input type="text" class="search-bar" placeholder="Buscar emuladores..." onkeyup="filterEmulators()">
+
+    <div class="emulator-list" id="emulatorList">
+      <div class="emulator-item" data-name="emulador nes">
+        <h3>Emulador NES</h3>
+        <p>Revive la nostalgia de los juegos de Nintendo Entertainment System con este emulador fácil de usar.</p>
+        <a href="#" style="color: #fff; text-decoration: none;">Descargar</a>
+      </div>
+      <div class="emulator-item" data-name="emulador snes">
+        <h3>Emulador SNES</h3>
+        <p>Vuelve a jugar títulos clásicos de Super Nintendo con este potente emulador.</p>
+        <a href="#" style="color: #fff; text-decoration: none;">Descargar</a>
+      </div>
+      <div class="emulator-item" data-name="emulador sega genesis">
+        <h3>Emulador Sega Genesis</h3>
+        <p>Disfruta de los mejores juegos de Sega Genesis en tu PC o dispositivo móvil con este emulador.</p>
+        <a href="#" style="color: #fff; text-decoration: none;">Descargar</a>
+      </div>
+      <div class="emulator-item" data-name="emulador playstation">
+        <h3>Emulador PlayStation</h3>
+        <p>Emula los juegos clásicos de PlayStation y revive los recuerdos de consolas clásicas de Sony.</p>
+        <a href="#" style="color: #fff; text-decoration: none;">Descargar</a>
+      </div>
+      <div class="emulator-item" data-name="emulador atari 2600">
+        <h3>Emulador Atari 2600</h3>
+        <p>Emula los juegos retro de Atari 2600 con esta increíble herramienta.</p>
+        <a href="#" style="color: #fff; text-decoration: none;">Descargar</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 RetroGame Hub - Todos los derechos reservados
+  </footer>
+
+  <script>
+    function filterEmulators() {
+      const searchValue = document.querySelector('.search-bar').value.toLowerCase();
+      const emulatorItems = document.querySelectorAll('.emulator-item');
+      
+      emulatorItems.forEach(item => {
+        const productName = item.getAttribute('data-name').toLowerCase();
+        if (productName.includes(searchValue) || searchValue === "") {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

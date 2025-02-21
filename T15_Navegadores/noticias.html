@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noticias Gaming - RetroGame Hub</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+    }
+    header {
+      background: #ffcc00;
+      padding: 20px;
+      font-size: 24px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      background: #444;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .tabs button {
+      background: #444;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Press Start 2P', cursive;
+    }
+    .tabs button:hover,
+    .tabs button.active {
+      background: #ffcc00;
+      color: #000;
+    }
+    .news-content {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      min-height: 300px;
+    }
+    .news-article {
+      display: none;
+    }
+    .news-article.active {
+      display: block;
+    }
+    .news-article h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .news-article p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <header>🎮 RetroGame Hub 🎮</header>
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="historia.html">📜 Historia</a>
+    <a href="ranking.html">🏆 Ranking</a>
+    <a href="noticias.html">📰 Noticias</a>
+    <a href="tienda.html">📦 Tienda</a>
+  </nav>
+  <div class="container">
+    <h2>Noticias Gaming</h2>
+    <p>Mantente al día con las últimas novedades del mundo retro y actual de los videojuegos.</p>
+    
+    <div class="tabs">
+      <button class="active" data-tab="general">General</button>
+      <button data-tab="lanzamientos">Lanzamientos</button>
+      <button data-tab="eventos">Eventos</button>
+    </div>
+
+    <div class="news-content">
+      <div class="news-article active" id="general">
+        <h3>Actualización General</h3>
+        <p>Descubre las noticias más relevantes del mundo gaming, con reportes de eventos, lanzamientos y análisis de tendencias en la industria de los videojuegos.</p>
+      </div>
+      <div class="news-article" id="lanzamientos">
+        <h3>Nuevos Lanzamientos Retro</h3>
+        <p>Explora los nuevos lanzamientos y reediciones de clásicos del pasado. Conoce las novedades que están haciendo vibrar a la comunidad retro.</p>
+      </div>
+      <div class="news-article" id="eventos">
+        <h3>Eventos y Convenciones</h3>
+        <p>Infórmate sobre ferias, convenciones y torneos que reúnen a fans y desarrolladores, creando un ambiente único en el mundo del gaming.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tabs button');
+    const articles = document.querySelectorAll('.news-article');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remover clase active de todos los botones y artículos
+        tabs.forEach(btn => btn.classList.remove('active'));
+        articles.forEach(article => article.classList.remove('active'));
+
+        // Activar el botón y el contenido correspondiente
+        tab.classList.add('active');
+        document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

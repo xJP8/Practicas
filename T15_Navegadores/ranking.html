@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking de Clásicos - RetroGame Hub</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+    }
+    header {
+      background: #ffcc00;
+      padding: 20px;
+      font-size: 24px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      background: #444;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .filters {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .filters h4 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    .filters label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+    .filters select,
+    .filters input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      background: #444;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+    }
+    .filters select:focus,
+    .filters input:focus {
+      background: #ffcc00;
+      color: black;
+    }
+    .ranking-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .ranking-item {
+      background: #ff5733;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+      transition: 0.3s;
+    }
+    .ranking-item:hover {
+      background: #c70039;
+    }
+    .ranking-item h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    @media (min-width: 768px) {
+      .content {
+        flex-direction: row;
+      }
+      .filters {
+        flex: 1;
+        max-width: 300px;
+      }
+      .ranking-list {
+        flex: 3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>🎮 RetroGame Hub 🎮</header>
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="historia.html">📜 Historia</a>
+    <a href="ranking.html">🏆 Ranking</a>
+    <a href="noticias.html">📰 Noticias</a>
+    <a href="tienda.html">📦 Tienda</a>
+  </nav>
+  <div class="container">
+    <div class="content">
+      <div class="filters">
+        <h4>Filtros</h4>
+        <label for="genre">Género:</label>
+        <select id="genre">
+          <option value="all">Todos</option>
+          <option value="platformer">Plataforma</option>
+          <option value="shooter">Shooter</option>
+          <option value="rpg">RPG</option>
+          <option value="fighting">Lucha</option>
+        </select>
+
+        <label for="platform">Plataforma:</label>
+        <select id="platform">
+          <option value="all">Todas</option>
+          <option value="nes">NES</option>
+          <option value="arcade">Arcade</option>
+          <option value="snes">SNES</option>
+          <option value="playstation">PlayStation</option>
+        </select>
+
+        <label for="search">Buscar:</label>
+        <input type="text" id="search" placeholder="Buscar juego..." onkeyup="filterRanking()">
+      </div>
+      <div class="ranking-list" id="ranking-list">
+        <div class="ranking-item" data-genre="platformer" data-platform="nes">
+          <h3>Super Mario Bros.</h3>
+          <p>El juego que marcó el inicio de la era moderna de los videojuegos. Clásico de NES.</p>
+          <p><strong>Rank: #1</strong></p>
+        </div>
+        <div class="ranking-item" data-genre="shooter" data-platform="arcade">
+          <h3>Pac-Man</h3>
+          <p>Un ícono de los arcades. Uno de los juegos más populares de todos los tiempos.</p>
+          <p><strong>Rank: #2</strong></p>
+        </div>
+        <div class="ranking-item" data-genre="rpg" data-platform="snes">
+          <h3>The Legend of Zelda</h3>
+          <p>Una de las franquicias más queridas. Introdujo la exploración y los puzzles en un solo juego.</p>
+          <p><strong>Rank: #3</strong></p>
+        </div>
+        <div class="ranking-item" data-genre="fighting" data-platform="playstation">
+          <h3>Street Fighter II</h3>
+          <p>Revolucionó los juegos de lucha, con personajes y movimientos memorables.</p>
+          <p><strong>Rank: #4</strong></p>
+        </div>
+        <div class="ranking-item" data-genre="platformer" data-platform="nes">
+          <h3>Donkey Kong</h3>
+          <p>Uno de los primeros juegos de arcade con Mario como protagonista.</p>
+          <p><strong>Rank: #5</strong></p>
+        </div>
+        <div class="ranking-item" data-genre="rpg" data-platform="playstation">
+          <h3>Final Fantasy VII</h3>
+          <p>Uno de los mejores RPGs de todos los tiempos, considerado un hito en la PlayStation.</p>
+          <p><strong>Rank: #6</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterRanking() {
+      const searchValue = document.getElementById('search').value.toLowerCase();
+      const genreValue = document.getElementById('genre').value.toLowerCase();
+      const platformValue = document.getElementById('platform').value.toLowerCase();
+
+      const rankingItems = document.querySelectorAll('.ranking-item');
+
+      rankingItems.forEach(item => {
+        const title = item.querySelector('h3').textContent.toLowerCase();
+        const genre = item.getAttribute('data-genre');
+        const platform = item.getAttribute('data-platform');
+
+        if (
+          (title.includes(searchValue) || searchValue === '') &&
+          (genre.includes(genreValue) || genreValue === 'all') &&
+          (platform.includes(platformValue) || platformValue === 'all')
+        ) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

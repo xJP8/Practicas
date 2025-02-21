@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foro de Jugadores - RetroGame Hub</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+    }
+    header {
+      background: #ffcc00;
+      padding: 20px;
+      font-size: 24px;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    nav.top-nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+      padding: 10px;
+    }
+    nav.top-nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      background: #444;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav.top-nav a:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .forum-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .forum-content {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      min-height: 300px;
+    }
+    .forum-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #333;
+      border-radius: 10px 10px 0 0;
+    }
+    .forum-header h2 {
+      margin: 0;
+      font-size: 16px;
+    }
+    .forum-nav {
+      display: flex;
+      gap: 10px;
+    }
+    .forum-nav button {
+      width: 40px;
+      height: 40px;
+      background: #444;
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .forum-nav button:hover, .forum-nav button.active {
+      background: #ffcc00;
+      color: #000;
+    }
+    .posts {
+      padding: 20px;
+    }
+    .post {
+      display: none;
+      background: #ff5733;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .post.active {
+      display: block;
+    }
+    .post:hover {
+      background: #c70039;
+    }
+    .post h3 {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .post p {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    @media (min-width: 768px) {
+      .forum-container {
+        flex-direction: row;
+      }
+      .forum-content {
+        flex: 3;
+      }
+      .forum-sidebar {
+        flex: 1;
+        background: #222;
+        padding: 20px;
+        border-radius: 10px;
+        height: fit-content;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>🎮 RetroGame Hub 🎮</header>
+  <nav class="top-nav">
+    <a href="index.html">🏠 Inicio</a>
+    <a href="historia.html">📜 Historia</a>
+    <a href="ranking.html">🏆 Ranking</a>
+    <a href="noticias.html">📰 Noticias</a>
+    <a href="tienda.html">📦 Tienda</a>
+  </nav>
+  <div class="container">
+    <div class="forum-container">
+      <!-- Contenido principal del foro -->
+      <div class="forum-content">
+        <div class="forum-header">
+          <h2>Foro de Jugadores</h2>
+          <div class="forum-nav">
+            <button data-category="general" class="active">1</button>
+            <button data-category="consejos">2</button>
+            <button data-category="retro">3</button>
+            <button data-category="off-topic">4</button>
+          </div>
+        </div>
+        <div class="posts">
+          <div class="post active" data-category="general">
+            <h3>[General] ¡Bienvenidos al foro!</h3>
+            <p>Comparte tus experiencias, anécdotas y opiniones sobre tus juegos retro favoritos. ¡Únete a la conversación!</p>
+          </div>
+          <div class="post" data-category="consejos">
+            <h3>[Consejos] Estrategias en Pac-Man</h3>
+            <p>¿Cuál es la mejor táctica para sobrevivir en Pac-Man? Comparte tus trucos y consejos.</p>
+          </div>
+          <div class="post" data-category="retro">
+            <h3>[Retro] Recuerdos de los 80's</h3>
+            <p>Comparte fotos y recuerdos de tus momentos jugando videojuegos en la infancia.</p>
+          </div>
+          <div class="post" data-category="off-topic">
+            <h3>[Off-Topic] Memes de videojuegos</h3>
+            <p>Comparte los mejores memes de videojuegos retro y actuales. ¡Ríete con la comunidad!</p>
+          </div>
+        </div>
+      </div>
+      <!-- Barra lateral del foro (opcional) -->
+      <div class="forum-sidebar">
+        <h2>Categorías</h2>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" class="sidebar-link" data-category="general" style="color: #ffcc00;">General</a></li>
+          <li><a href="#" class="sidebar-link" data-category="consejos" style="color: #ffcc00;">Consejos</a></li>
+          <li><a href="#" class="sidebar-link" data-category="retro" style="color: #ffcc00;">Retro</a></li>
+          <li><a href="#" class="sidebar-link" data-category="off-topic" style="color: #ffcc00;">Off-Topic</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.forum-nav button, .sidebar-link').forEach(button => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const category = button.getAttribute('data-category');
+
+        // Activar solo el botón seleccionado
+        document.querySelectorAll('.forum-nav button').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.forum-nav button[data-category="${category}"]`)?.classList.add('active');
+
+        // Mostrar solo los posts de la categoría seleccionada
+        document.querySelectorAll('.post').forEach(post => {
+          post.classList.toggle('active', post.getAttribute('data-category') === category);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroGame Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+        }
+        header {
+            background: #ffcc00;
+            padding: 20px;
+            font-size: 24px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: #444;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: #ffcc00;
+            color: #000;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .game-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .game-links a {
+            display: block;
+            background: #ff5733;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .game-links a:hover {
+            background: #c70039;
+        }
+    </style>
+</head>
+<body>
+    <header>🎮 RetroGame Hub 🎮</header>
+    <nav>
+        <a href="index.html">🏠 Inicio</a>
+        <a href="historia.html">📜 Historia</a>
+        <a href="ranking.html">🏆 Ranking</a>
+        <a href="noticias.html">📰 Noticias</a>
+        <a href="tienda.html">📦 Tienda</a>
+    </nav>
+    <div class="container">
+        <h2>¡Bienvenido al portal de los videojuegos retro!</h2>
+        <p>Explora el mundo de los juegos clásicos y revive la nostalgia.</p>
+        <div class="game-links">
+            <a href="catalogo.html">Catálogo de Juegos</a>
+            <a href="historia.html">Historia Gaming</a>
+            <a href="noticias.html">Noticias Gaming</a>
+            <a href="ranking.html">Ranking de Clásicos</a>
+            <a href="foro.html">Foro de Jugadores</a>
+            <a href="emuladores.html">Emuladores y Descargas</a>
+            <a href="tienda.html">Tienda Gaming</a>
+            <a href="contacto.html">Contacto y Redes</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Juegos - RetroGame Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+        }
+        header {
+            background: #ffcc00;
+            padding: 20px;
+            font-size: 24px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: #444;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: #ffcc00;
+            color: #000;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .accordion {
+            max-width: 900px;
+            margin: auto;
+        }
+        .accordion-item {
+            background: #ff5733;
+            margin: 10px 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            padding: 15px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 18px;
+            background: #c70039;
+        }
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            background: #ffcc00;
+            color: #000;
+        }
+    </style>
+    <script>
+        function toggleAccordion(element) {
+            var content = element.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>🎮 RetroGame Hub - Catálogo de Juegos 🎮</header>
+    <nav>
+        <a href="index.html">🏠 Inicio</a>
+        <a href="historia.html">📜 Historia</a>
+        <a href="ranking.html">🏆 Ranking</a>
+        <a href="noticias.html">📰 Noticias</a>
+        <a href="tienda.html">📦 Tienda</a>
+    </nav>
+    <div class="container">
+        <h2>Catálogo de Juegos</h2>
+        <p>Descubre los mejores juegos retro y revive la nostalgia.</p>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">Pac-Man</div>
+                <div class="accordion-content">Pac-Man es un icónico juego de arcade lanzado en 1980 por Namco.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">Super Mario Bros</div>
+                <div class="accordion-content">Super Mario Bros es un juego de plataformas lanzado en 1985 por Nintendo.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">The Legend of Zelda</div>
+                <div class="accordion-content">The Legend of Zelda es un juego de aventuras desarrollado por Nintendo en 1986.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">Tetris</div>
+                <div class="accordion-content">Tetris es un rompecabezas clásico creado por Alekséi Pázhitnov en 1984.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

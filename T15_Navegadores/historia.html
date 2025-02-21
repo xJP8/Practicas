@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de los Videojuegos - RetroGame Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+        }
+        header {
+            background: #ffcc00;
+            padding: 20px;
+            font-size: 24px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: #444;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: #ffcc00;
+            color: #000;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 900px;
+            margin: auto;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tabs a {
+            color: #fff;
+            background: #444;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .tabs a:hover {
+            background: #ffcc00;
+            color: #000;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .epoch {
+            display: none;
+        }
+        .epoch.active {
+            display: block;
+        }
+        .epoch h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .epoch p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>🎮 RetroGame Hub 🎮</header>
+    <nav>
+        <a href="index.html">🏠 Inicio</a>
+        <a href="historia.html">📜 Historia</a>
+        <a href="ranking.html">🏆 Ranking</a>
+        <a href="noticias.html">📰 Noticias</a>
+        <a href="tienda.html">📦 Tienda</a>
+    </nav>
+    <div class="container">
+        <h2>Historia de los Videojuegos</h2>
+        <p>Revive las distintas épocas que marcaron el mundo de los videojuegos, desde los primeros arcades hasta las consolas más icónicas.</p>
+
+        <div class="tabs">
+            <a href="#" onclick="showEpoch('80s')">🎮 Los 80's</a>
+            <a href="#" onclick="showEpoch('90s')">🕹 Los 90's</a>
+            <a href="#" onclick="showEpoch('2000s')">🕹 Los 2000's</a>
+        </div>
+
+        <div class="content">
+            <div class="epoch active" id="80s">
+                <h3>🎮 Los 80's: El Nacimiento de los Videojuegos</h3>
+                <p>En la década de los 80, los videojuegos se popularizaron masivamente. Juegos como "Pac-Man" y "Space Invaders" marcaron el inicio de la era dorada de los arcades. Las consolas como el NES (Nintendo Entertainment System) cambiaron para siempre la industria, llevando los videojuegos a los hogares.</p>
+            </div>
+
+            <div class="epoch" id="90s">
+                <h3>🕹 Los 90's: La Revolución 3D</h3>
+                <p>En los 90's, los videojuegos dieron un salto enorme hacia los gráficos 3D. Consolas como la PlayStation y la Nintendo 64 introdujeron mundos abiertos y personajes más detallados. Juegos icónicos como "Super Mario 64", "Final Fantasy VII" y "The Legend of Zelda: Ocarina of Time" definieron esta era.</p>
+            </div>
+
+            <div class="epoch" id="2000s">
+                <h3>🕹 Los 2000's: La Convergencia de Plataformas</h3>
+                <p>Los 2000's vieron la llegada de las consolas de nueva generación como la Xbox y PlayStation 2. Los juegos online tomaron una gran relevancia, y títulos como "Halo" y "World of Warcraft" definieron esta era. Además, las portátiles como la GameBoy Advance también tuvieron su momento de gloria.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showEpoch(epoch) {
+            const allEpochs = document.querySelectorAll('.epoch');
+            allEpochs.forEach((el) => {
+                el.classList.remove('active');
+            });
+            const activeEpoch = document.getElementById(epoch);
+            activeEpoch.classList.add('active');
+        }
+    </script>
+</body>
+</html>

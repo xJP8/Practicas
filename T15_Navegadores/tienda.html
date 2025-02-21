@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Merchandising - RetroGame Hub</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+    }
+    header {
+      background: #ffcc00;
+      padding: 20px;
+      font-size: 24px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      background: #444;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .search-bar input {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      background: #444;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+    .search-bar input:focus {
+      background: #ffcc00;
+      color: #000;
+      outline: none;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: #ff5733;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .product:hover {
+      background: #c70039;
+    }
+    .product h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .product p {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+    .product button {
+      background: #444;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+    }
+    .product button:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>🎮 RetroGame Hub 🎮</header>
+  <nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="historia.html">📜 Historia</a>
+    <a href="ranking.html">🏆 Ranking</a>
+    <a href="noticias.html">📰 Noticias</a>
+    <a href="tienda.html">📦 Tienda</a>
+  </nav>
+  <div class="container">
+    <h2>Tienda de Merchandising</h2>
+    <p>Descubre productos exclusivos de temática retro para los fans de los videojuegos clásicos.</p>
+    
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Buscar producto..." onkeyup="filterProducts()">
+    </div>
+    
+    <div class="products" id="products">
+      <div class="product" data-name="Camiseta Pac-Man">
+        <h3>Camiseta Pac-Man</h3>
+        <p>Camiseta de edición limitada con diseño pixel art inspirado en Pac-Man.</p>
+        <button>Comprar</button>
+      </div>
+      <div class="product" data-name="Taza Super Mario">
+        <h3>Taza Super Mario</h3>
+        <p>Taza con gráficos retro de Super Mario Bros. Ideal para los fanáticos.</p>
+        <button>Comprar</button>
+      </div>
+      <div class="product" data-name="Poster Zelda">
+        <h3>Poster Zelda</h3>
+        <p>Poster de alta calidad con arte inspirado en The Legend of Zelda.</p>
+        <button>Comprar</button>
+      </div>
+      <div class="product" data-name="Llavero Donkey Kong">
+        <h3>Llavero Donkey Kong</h3>
+        <p>Llavero de metal con diseño vintage basado en el clásico Donkey Kong.</p>
+        <button>Comprar</button>
+      </div>
+      <div class="product" data-name="Sudadera Retro">
+        <h3>Sudadera Retro</h3>
+        <p>Sudadera cómoda con estampado de diversos iconos de videojuegos retro.</p>
+        <button>Comprar</button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function filterProducts() {
+      const searchValue = document.getElementById('search').value.toLowerCase();
+      const products = document.querySelectorAll('.product');
+      
+      products.forEach(product => {
+        const productName = product.getAttribute('data-name').toLowerCase();
+        if (productName.includes(searchValue) || searchValue === "") {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
