@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Lista de servidores FTP
-FTP_SERVERS=("192.168.4.72")
-FTP_USER="eddy"
-FTP_PASS="9887"
+FTP_SERVERS=("localhost" "192.168.4.70")
+FTP_USER="user"
+FTP_PASS="user"
 
 # Directorio local donde se guardarán los archivos descargados
 LOCAL_DIR="./downloads"
@@ -22,7 +22,8 @@ download_files() {
     echo "[$(date +"%H:%M:%S")] - [INFO] - Conectando a $SERVER..." >> $LOG_FILE
     
     # Variable para contar archivos descargados
-    local FILES_DOWNLOADED=0
+    FILES_DOWNLOADED=0
+    FILES=""
 
     ftp -inv $SERVER <<EOF 
 user $FTP_USER $FTP_PASS
@@ -32,18 +33,13 @@ mget $CURRENT_DATE*
 bye
 EOF
 
-    # Comprobar si realmente se descargaron archivos
-    for file in $LOCAL_DIR/*$CURRENT_DATE*; do
-      if [ -f "$file" ]; then
-        ((FILES_DOWNLOADED++))
-      fi
-    done
-
-    if [ $FILES_DOWNLOADED -gt 0 ]; then
-      echo "[$(date +"%H:%M:%S")] - [INFO] - Archivos descargados de $SERVER correctamente." >> $LOG_FILE
-    else
-      echo "[$(date +"%H:%M:%S")] - [ERROR] - No se encontraron archivos nuevos para descargar de $SERVER." >> $LOG_FILE
+  # Comprobar si realmente se descargaron archivos
+  for file in $LOCAL_DIR/*$CURRENT_DATE*; do
+    if [ -f "$file" ] && [ "$(stat -c %Y "$file")" -ge "$(date -d "now - 1 minute" +%s)" ]; then
+      ((FILES_DOWNLOADED++))
+      FILES+="|-- "$(basename "$file")"\n"
     fi
+  done
 }
 
 # Crear el archivo de log si no existe
@@ -59,5 +55,13 @@ for SERVER in "${FTP_SERVERS[@]}"; do
     download_files $SERVER
 done
 
+if [ $FILES_DOWNLOADED -gt 0 ]; then
+  echo "[$(date +"%H:%M:%S")] - [INFO] - Archivos descargados:" >> $LOG_FILE
+  echo -e "$FILES" >> $LOG_FILE
+else
+  echo "[$(date +"%H:%M:%S")] - [ERROR] - No se encontraron archivos para descargar de $SERVER." >> $LOG_FILE
+fi
+
 # Finalizar log
 echo "[$(date +"%H:%M:%S")] - [INFO] - === Fin del proceso ===" >> $LOG_FILE
+
