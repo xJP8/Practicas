@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+}
+header {
+    background: #ffcc00;
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+nav.top-nav {
+    display: flex;
+    justify-content: center;
+    background: #333;
+    padding: 10px;
+}
+nav.top-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background: #444;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+nav.top-nav a:hover {
+    background: #ffcc00;
+    color: #000;
+}
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+.forum-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.forum-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 300px;
+}
+.forum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #333;
+    border-radius: 10px 10px 0 0;
+}
+.forum-header h2 {
+    margin: 0;
+    font-size: 16px;
+}
+.forum-nav {
+    display: flex;
+    gap: 10px;
+}
+.forum-nav button {
+    width: 40px;
+    height: 40px;
+    background: #444;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.forum-nav button:hover, .forum-nav button.active {
+    background: #ffcc00;
+    color: #000;
+}
+.posts {
+    padding: 20px;
+}
+.post {
+    display: none;
+    background: #ff5733;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.post.active {
+    display: block;
+}
+.post:hover {
+    background: #c70039;
+}
+.post h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.post p {
+    font-size: 12px;
+    line-height: 1.4;
+}
+@media (min-width: 768px) {
+    .forum-container {
+    flex-direction: row;
+    }
+    .forum-content {
+    flex: 3;
+    }
+    .forum-sidebar {
+    flex: 1;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+    }
+}

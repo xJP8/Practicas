@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+}
+header {
+    background: #ffcc00;
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background: #333;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background: #444;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+nav a:hover {
+    background: #ffcc00;
+    color: #000;
+}
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.tabs button {
+    background: #444;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Press Start 2P', cursive;
+}
+.tabs button:hover,
+.tabs button.active {
+    background: #ffcc00;
+    color: #000;
+}
+.news-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 300px;
+}
+.news-article {
+    display: none;
+}
+.news-article.active {
+    display: block;
+}
+.news-article h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.news-article p {
+    font-size: 14px;
+    line-height: 1.5;
+}
