@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Lista de servidores FTP
-FTP_SERVERS=("127.0.0.1" "192.168.4.70")
+FTP_SERVERS=("127.0.0.1")
 FTP_USER="user"
 FTP_PASS="user"
 
