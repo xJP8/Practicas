@@ -1,0 +1,22 @@
+/* Estilo para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Estilo para las celdas de la tabla */
+  td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  /* Estilo para las filas impares  */
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo para las filas al pasar el ratón sobre ellas */
+  tr:hover {
+    background-color: #e6e6e6;
+  }

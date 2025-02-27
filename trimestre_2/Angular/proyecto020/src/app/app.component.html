@@ -1,0 +1,10 @@
+<table>
+  @for(articulo of articulos;track $index) {
+  <tr>
+    <td>{{articulo.codigo}}</td>
+    <td>{{articulo.descripcion}}</td>
+    <td>{{articulo.precio}}</td>
+  </tr>
+  }
+</table>
+<router-outlet />
