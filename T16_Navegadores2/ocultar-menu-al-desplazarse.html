@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocultar Menú al Desplazarse</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            transition: top 0.3s;
+        }
+
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar" id="navbar">
+        <h1>Menú de Navegación</h1>
+    </div>
+
+    <div class="content">
+        <h2>Contenido de la página</h2>
+        <p>Desplázate hacia abajo y observa cómo se oculta el menú.</p>
+        <p>Más contenido...</p>
+        <p>Este es un párrafo de prueba para demostrar cómo se comporta el menú al desplazarse. Puedes agregar más contenido para ver el efecto.</p>
+        <p>El menú debería reducirse en tamaño cuando te desplazas hacia abajo y volver a su tamaño original cuando te desplazas hacia arriba.</p>
+        <p>Prueba a seguir desplazándote para ver cómo cambia el menú. Este es solo un texto de ejemplo.</p>
+        <p>El contenido adicional en la página ayuda a visualizar mejor el efecto del desplazamiento en el menú.</p>
+        <p>Continúa desplazándote para observar el comportamiento del menú. Este es otro párrafo de prueba.</p>
+        <p>El menú se reduce para proporcionar más espacio de visualización del contenido principal mientras te desplazas.</p>
+        <p>Este es un texto de prueba adicional para asegurarnos de que hay suficiente contenido en la página.</p>
+        <p>Gracias por probar esta funcionalidad. Esperamos que te haya sido útil para entender cómo funciona el menú al desplazarse.</p>
+    </div>
+
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                navbar.style.top = "-80px";  // Oculta el menú al desplazarse hacia abajo
+            } else {
+                navbar.style.top = "0";  // Muestra el menú al desplazarse hacia arriba
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Evita que el valor sea negativo
+        });
+    </script>
+
+</body>
+</html>

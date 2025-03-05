@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <a href="#home"><i class="fa fa-fw fa-home"></i> Inicio</a>
+  <a href="#services"><i class="fa fa-fw fa-wrench"></i> Servicios</a>
+  <a href="#clients"><i class="fa fa-fw fa-user"></i> Clientes</a>
+  <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contacto</a>
+</div>
+
+<div class="main">
+  <h2>Barra lateral con Iconos</h2>
+  <p>Aquí hay un párrafo de muestra para demostrar cómo se comporta el menú al desplazarse. Puedes agregar más contenido para ver el efecto.</p>
+  <p>El menú debería reducir su tamaño cuando te desplazas hacia abajo y volver a su tamaño original cuando te desplazas hacia arriba.</p>
+  <p>Sigue desplazándote para ver cómo cambia el menú. Este es solo un texto de muestra.</p>
+  <p>El contenido adicional en la página ayuda a visualizar mejor el efecto de desplazamiento en el menú.</p>
+  <p>Continúa desplazándote para observar el comportamiento del menú. Este es otro párrafo de muestra.</p>
+  <p>El menú se reduce para proporcionar más espacio de visualización para el contenido principal mientras te desplazas.</p>
+  <p>Este es un texto de muestra adicional para asegurar que haya suficiente contenido en la página.</p>
+  <p>Gracias por probar esta funcionalidad. Esperamos que haya sido útil para entender cómo funciona el menú al desplazarse.</p>
+</div>
+     
+</body>
+</html> 
