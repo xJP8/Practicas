@@ -1,0 +1,37 @@
+:root{
+    --bg-color-encabezado:#333;
+    --color-text:#fff;
+}
+
+header{
+    background-color: var(--bg-color-encabezado);
+    color:var(--color-text);
+    padding: 5px;
+}
+
+header h1{
+    text-align: center;
+    padding: 1rem;
+}
+
+nav ul{
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li a{
+    margin: 0 1rem;
+    color: var(--color-text);
+    text-decoration: none;
+    border: 1px solid var(--color-text);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+a img {
+    vertical-align: bottom;
+}
