@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+
 :root{
     --bg-color-encabezado:#333;
+    --bg-color-foter:#222;
+    --bg-component:#555;
     --color-text:#fff;
 }
 
@@ -7,6 +11,22 @@ header{
     background-color: var(--bg-color-encabezado);
     color:var(--color-text);
     padding: 5px;
+}
+
+footer{
+    background-color: var(--bg-color-foter);
+    color:var(--color-text);
+    text-align: center;
+    margin-top: auto;
+    padding: 5px;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 header h1{
@@ -23,15 +43,87 @@ nav ul{
     padding: 0;
 }
 
-nav ul li a{
+nav ul li{
     margin: 0 1rem;
-    color: var(--color-text);
-    text-decoration: none;
     border: 1px solid var(--color-text);
     padding: 5px;
     border-radius: 10px;
 }
 
+li a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+li img{
+    vertical-align: bottom;
+}
+
 a img {
     vertical-align: bottom;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.lenguage-list {
+    margin-top: 7px;
+    display: none;
+    background-color: var(--bg-color-encabezado);
+    padding: 5px;
+    flex-direction: column;
+    list-style: none;
+    margin-left: auto;
+    a{
+        margin: 5px;
+        background-color: var(--bg-component);
+        padding: 5px;
+        border-radius: 5px;
+    }
+    &:hover {
+        display: flex;
+    }
+}
+
+.lenguage-menu:hover{
+    cursor: pointer;
+
+    .lenguage-list {
+        position: absolute;
+        display: flex;
+    }
+}
+
+section{
+    text-align: center;
+    background-color: var(--bg-component);
+    color: var(--color-text);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+section img{
+    width: 70%;
+    border-radius: 10px;
+    &:hover{
+        transition: all 0.5s;
+        scale: 1.05;
+    }
+}
+
+section a{
+    color: var(--color-text);
+    text-decoration: none;
+
+    border: 1px solid var(--color-text);
+    border-radius: 10px;
+    padding: 5px;
+
+    &:hover{
+        background-color: var(--color-text);
+        color: var(--bg-component);
+    }
 }
