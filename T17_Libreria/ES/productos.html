@@ -4,8 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Productos </title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Lectores de Jesús</h1>
+        <nav>
+            <ul>
+                <li><a href="/ES/index.html">Inicio <img src="/assets/img/icons/home.svg"></a></li>
+                <li><a href="/ES/productos.html">Productos <img src="/assets/img/icons/productos.svg"></a></li>
+                <li class="lenguage-menu">
+                    Idioma <img src="/assets/img/icons/traduccion.svg">
+                    <div class="lenguage-list">
+                        <a href="/ES/index.html">🇪🇸 Español</a>
+                        <a href="/EN/index.html">🇬🇧 Inglés</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Productos</h1>
+        <section class="productos">
+            <!-- Libros -->
+            <div class="producto">
+                <img src="/assets/img/productos/Libro1.jpg" alt="Libro 1">
+                <h3>Matilda</h3>
+                <div class="descripcion">
+                    <p>Descripción del libro 1</p>
+                    <p>Precio: 10€</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="/assets/img/productos/Libro2.jpg" alt="Libro 1">
+                <h3>El Principito</h3>
+                <div class="descripcion">
+                    <p>Descripción del libro 2</p>
+                    <p>Precio: 10€</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="/assets/img/productos/Libro3.jpg" alt="Libro 1">
+                <h3>El Cuerpo Humano</h3>
+                <div class="descripcion">
+                    <p>Descripción del libro 3</p>
+                    <p>Precio: 10€</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <!-- Audiolibros -->
+            <div class="producto">
+                <audio controls>
+                    <source src="/assets/img/productos/Audiolibro1.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+                <h3>Erase una vez</h3>
+                <div class="descripcion">
+                    <p>Descripción del audiolibro 1</p>
+                    <p>Precio: 10€</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <audio controls>
+                    <source src="/assets/img/productos/Audiolibro2.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>                
+                <h3>Bob Esponja</h3>
+                <div class="descripcion">
+                    <p>Descripción del audiolibro 2</p>
+                    <p>Precio: 10€</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <audio controls>
+                    <source src="/assets/img/productos/Audiolibro3.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>                
+                <h3>El asombroso mundo de Gumbal</h3>
+                <div class="descripcion">
+                    <p>Descripción del audiolibro 3</p>
+                    <p>Precio: 10€</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <!-- Peliculas -->
+            <div class="producto">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/5Df5vHD3LvE?si=rW7U3EyHgu-AnPdp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3>Los Rabbits</h3>
+                <div class="descripcion">
+                    <p>Descripción del pelicula 1</p>
+                    <p>Precio: 10€</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/NoSmJspvq0U?si=9us-oe9CY80qgchp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                
+                <h3>Doraemon</h3>
+                <div class="descripcion">
+                    <p>Descripción del pelicula 2</p>
+                    <p>Precio: 10€</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="producto">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/_HmasaSBzYM?si=SftEpmw8eH4iE0tc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3>Hora de Aventuras</h3>
+                <div class="descripcion">
+                    <p>Descripción del pelicula 3</p>
+                    <p>Precio: 10€</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </section>
+        <!-- Menu Lateral -->
+        <aside>
+            <div>
+                <h2>Todos nuestros productos</h2>
+                <input type="text" id="mySearch" placeholder="Buscar...">
+                <button onclick="myFunction()">Buscar</button>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2025 Lectores de Jesús</p>
+    </footer>
+
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementsByClassName("productos")[0];
+            li = ul.getElementsByClassName("producto");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("h3")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
