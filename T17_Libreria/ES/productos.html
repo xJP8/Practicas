@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Lectores de Jesús</h1>
+        <img src="/assets/img/logo.png" alt="La Casa Del Libro" class="logo">
         <nav>
             <ul>
                 <li><a href="/ES/index.html">Inicio <img src="/assets/img/icons/home.svg"></a></li>
@@ -20,6 +20,7 @@
                         <a href="/EN/index.html">🇬🇧 Inglés</a>
                     </div>
                 </li>
+                <li onclick="mostrarCarro()">Cesta<img src="/assets/img/icons/shop.svg"></li>
             </ul>
         </nav>
     </header>
@@ -135,45 +136,7 @@
         </aside>
     </main>
     <footer>
-        <p>&copy; 2025 Lectores de Jesús</p>
+        <p>&copy; 2025 La Casa Del Libro</p>
     </footer>
-    <script>
-        function buscar() {
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById("mySearch");
-            filter = input.value.toUpperCase();
-            ul = document.getElementsByClassName("productos")[0];
-            li = ul.getElementsByClassName("producto");
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("h3")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-        
-        function filtrar() {
-            var select, filter, ul, li, i;
-            select = document.getElementById("filtro");
-            filter = select.value;
-            ul = document.getElementsByClassName("productos")[0];
-            li = ul.getElementsByClassName("producto");
-            for (i = 0; i < li.length; i++) {
-                if (filter === "none" || li[i].classList.contains(filter)) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-
-        function anadirCarrito() {
-            alert("Producto añadido al carrito");
-        }
-
-    </script>
 </body>
 </html>
