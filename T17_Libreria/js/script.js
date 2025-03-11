@@ -30,8 +30,9 @@ function filtrar() {
     }
 }
 
-function mostrarCarrito() {
-    alert("Carrito de la compra");
+function mostrarCarro() {
+    var dialog = document.getElementById("carrito");
+    dialog.showModal();
 }
 
 function anadirCarrito() {

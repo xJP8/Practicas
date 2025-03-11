@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Inicio </title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -42,6 +43,22 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.2436050420097!2d-3.7710434243129622!3d40.22588556723318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd41f5320b893765%3A0xfd153cb3a00bc9bc!2sIES%20Enrique%20Tierno%20Galv%C3%A1n!5e0!3m2!1ses!2ses!4v1741364795872!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
+    <dialog id="carrito" show="true">
+        <h1>Carrito de la compra</h1>
+        <ul id="carrito-lista">
+            <li id="carrito-producto">
+                <img src="" alt="" id="imagen">
+                <div>
+                    <h2 id="nombre"> </h2>
+                    <p id="precio"> </p>
+                    <p id="cantidad"> </p>
+                    <button><img src="/assets/img/icons/anadir.svg"></button>
+                    <button><img src="/assets/img/icons/quitar.svg"></button>
+                    <button><img src="/assets/img/icons/eliminar.svg"></button>
+                </div>
+            </li>
+        </ul>
+    </dialog>
     <footer>
         <p> &copy; 2025 La Casa Del Libro </p>
     </footer>
