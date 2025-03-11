@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Products </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="/assets/img/logo.png" alt="The House of Books" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/EN/index.html">Home <img src="/assets/img/icons/home.svg"></a></li>
+                <li><a href="/EN/productos.html">Products <img src="/assets/img/icons/productos.svg"></a></li>
+                <li class="lenguage-menu">
+                    Language <img src="/assets/img/icons/traduccion.svg">
+                    <div class="lenguage-list">
+                        <a href="/ES/productos.html">🇪🇸 Spanish</a>
+                        <a href="/EN/productos.html">🇬🇧 English</a>
+                    </div>
+                </li>
+                <li onclick="mostrarCarro()">Cart<img src="/assets/img/icons/shop.svg"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Products</h1>
+        <section class="productos">
+            <!-- Books -->
+            <div class="producto Libros">
+                <img src="/assets/img/productos/Libro1.jpg" alt="Book 1">
+                <h3>Matilda</h3>
+                <div class="descripcion">
+                    <p>A fascinating book about the story of a girl with extraordinary powers.</p>
+                    <p>Price: €4.99</p>
+                    <button onclick="anadirCarrito(this)">Buy</button>
+                </div>
+            </div>
+            <div class="producto Libros">
+                <img src="/assets/img/productos/Libro2.jpg" alt="Book 2">
+                <h3>The Little Prince</h3>
+                <div class="descripcion">
+                    <p>A classic of children's literature that tells the story of a little prince traveling through the universe.</p>
+                    <p>Price: €7.00</p>
+                    <button onclick="anadirCarrito(this)">Buy</button>
+                </div>
+            </div>
+            <div class="producto Libros">
+                <img src="/assets/img/productos/Libro3.jpg" alt="Book 3">
+                <h3>The Human Body</h3>
+                <div class="descripcion">
+                    <p>An educational book that explores the workings of the human body in a detailed and accessible way.</p>
+                    <p>Price: €1.99</p>
+                    <button onclick="anadirCarrito(this)">Buy</button>
+                </div>
+            </div>
+            <!-- Audiobooks -->
+            <div class="producto  Audiolibros">
+                <audio controls>
+                    <source src="/assets/img/productos/Audiolibro1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <h3>Once Upon a Time</h3>
+                <div class="descripcion">
+                    <p>An audiobook narrating classic children's tales.</p>
+                    <p>Price: €3.99</p>
+                    <button onclick="anadirCarrito(this)">Buy</button>
+                </div>
+            </div>
+            <div class="producto Audiolibros">
+                <audio controls>
+                    <source src="/assets/img/productos/Audiolibro2.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>                
+                <h3>SpongeBob</h3>
+                <div class="descripcion">
+                    <p>A fun audiobook with the adventures of SpongeBob and his friends.</p>
+                    <p>Price: €2.99</p>
+                    <button onclick="anadirCarrito(this)">Buy</button>
+                </div>
+            </div>
+            <div class="producto Audiolibros">
+                <audio controls>
+                    <source src="/assets/img/productos/Audiolibro3.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>                
+                <h3>The Amazing World of Gumball</h3>
+                <div class="descripcion">
+                    <p>An exciting audiobook with the adventures of Gumball and his friends.</p>
+                    <p>Price: €7.99</p>
+                    <button onclick="anadirCarrito(this)">Buy</button>
+                </div>
+            </div>
+            <!-- Movies -->
+            <div class="producto Peliculas">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/5Df5vHD3LvE?si=rW7U3EyHgu-AnPdp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3>The Rabbits</h3>
+                <div class="descripcion">
+                    <p>A fun movie about the adventures of the Rabbits.</p>
+                    <p>Price: €4.99</p>
+                    <button onclick="anadirCarrito(this)">Buy</button>
+                </div>
+            </div>
+            <div class="producto Peliculas">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/NoSmJspvq0U?si=9us-oe9CY80qgchp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                
+                <h3>Doraemon</h3>
+                <div class="descripcion">
+                    <p>An exciting movie about the adventures of Doraemon and his friends.</p>
+                    <p>Price: €19.99</p>
+                    <button onclick="anadirCarrito(this)">Buy</button>
+                </div>
+            </div>
+            <div class="producto Peliculas">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/_HmasaSBzYM?si=SftEpmw8eH4iE0tc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3>Adventure Time</h3>
+                <div class="descripcion">
+                    <p>A movie full of adventures and fun with Finn and Jake.</p>
+                    <p>Price: €7.99</p>
+                    <button onclick="anadirCarrito(this)">Buy</button>
+                </div>
+            </div>
+        </section>
+        <!-- Sidebar -->
+        <aside>
+            <div>
+                <h2>All our products</h2>
+                <input type="text" id="mySearch" placeholder="Search..." oninput="buscar()">
+                <select name="filtro" id="filtro" onchange="filtrar()">
+                    <option value="none">Filter...</option>
+                    <option value="Libros"> Books </option>
+                    <option value="Audiolibros"> Audiobooks </option>
+                    <option value="Peliculas"> Movies </option>
+                </select>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2025 The House of Books</p>
+    </footer>
+    <dialog id="carrito" show="true">
+        <h1>Shopping Cart</h1>
+        <ul id="carrito-lista">
+            <!-- Cart -->
+        </ul>
+        <button onclick="alert('Purchase completed')">Checkout</button>
+    </dialog>
+</body>
+</html>

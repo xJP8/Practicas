@@ -17,8 +17,8 @@
                 <li class="lenguage-menu">
                     Idioma <img src="/assets/img/icons/traduccion.svg">
                     <div class="lenguage-list">
-                        <a href="/ES/index.html">🇪🇸 Español</a>
-                        <a href="/EN/index.html">🇬🇧 Inglés</a>
+                        <a href="/ES/productos.html">🇪🇸 Español</a>
+                        <a href="/EN/productos.html">🇬🇧 Inglés</a>
                     </div>
                 </li>
                 <li onclick="mostrarCarro()">Cesta<img src="/assets/img/icons/shop.svg"></li>
@@ -35,7 +35,7 @@
                 <div class="descripcion">
                     <p>Un libro fascinante sobre la historia de una niña con poderes extraordinarios.</p>
                     <p>Precio: 4,99€</p>
-                    <button onclick="anadirCarrito()">Comprar</button>
+                    <button onclick="anadirCarrito(this)">Comprar</button>
                 </div>
             </div>
             <div class="producto Libros">
@@ -44,7 +44,7 @@
                 <div class="descripcion">
                     <p>Un clásico de la literatura infantil que narra la historia de un pequeño príncipe que viaja por el universo.</p>
                     <p>Precio: 7,00€</p>
-                    <button onclick="anadirCarrito()">Comprar</button>
+                    <button onclick="anadirCarrito(this)">Comprar</button>
                 </div>
             </div>
             <div class="producto Libros">
@@ -53,7 +53,7 @@
                 <div class="descripcion">
                     <p>Un libro educativo que explora el funcionamiento del cuerpo humano de manera detallada y accesible.</p>
                     <p>Precio: 1,99€</p>
-                    <button onclick="anadirCarrito()">Comprar</button>
+                    <button onclick="anadirCarrito(this)">Comprar</button>
                 </div>
             </div>
             <!-- Audiolibros -->
@@ -66,7 +66,7 @@
                 <div class="descripcion">
                     <p>Un audiolibro que narra cuentos clásicos para niños.</p>
                     <p>Precio: 3,99€</p>
-                    <button onclick="anadirCarrito()">Comprar</button>
+                    <button onclick="anadirCarrito(this)">Comprar</button>
                 </div>
             </div>
             <div class="producto Audiolibros">
@@ -78,7 +78,7 @@
                 <div class="descripcion">
                     <p>Un audiolibro divertido con las aventuras de Bob Esponja y sus amigos.</p>
                     <p>Precio: 2,99€</p>
-                    <button onclick="anadirCarrito()">Comprar</button>
+                    <button onclick="anadirCarrito(this)">Comprar</button>
                 </div>
             </div>
             <div class="producto Audiolibros">
@@ -90,7 +90,7 @@
                 <div class="descripcion">
                     <p>Un audiolibro emocionante con las aventuras de Gumball y sus amigos.</p>
                     <p>Precio: 7,99€</p>
-                    <button onclick="anadirCarrito()">Comprar</button>
+                    <button onclick="anadirCarrito(this)">Comprar</button>
                 </div>
             </div>
             <!-- Peliculas -->
@@ -100,7 +100,7 @@
                 <div class="descripcion">
                     <p>Una película divertida sobre las aventuras de los Rabbits.</p>
                     <p>Precio: 4,99€</p>
-                    <button onclick="anadirCarrito()">Comprar</button>
+                    <button onclick="anadirCarrito(this)">Comprar</button>
                 </div>
             </div>
             <div class="producto Peliculas">
@@ -109,7 +109,7 @@
                 <div class="descripcion">
                     <p>Una película emocionante sobre las aventuras de Doraemon y sus amigos.</p>
                     <p>Precio: 19,99€</p>
-                    <button onclick="anadirCarrito()">Comprar</button>
+                    <button onclick="anadirCarrito(this)">Comprar</button>
                 </div>
             </div>
             <div class="producto Peliculas">
@@ -118,7 +118,7 @@
                 <div class="descripcion">
                     <p>Una película llena de aventuras y diversión con Finn y Jake.</p>
                     <p>Precio: 7,99€</p>
-                    <button onclick="anadirCarrito()">Comprar</button>
+                    <button onclick="anadirCarrito(this)">Comprar</button>
                 </div>
             </div>
         </section>
@@ -139,5 +139,12 @@
     <footer>
         <p>&copy; 2025 La Casa Del Libro</p>
     </footer>
+    <dialog id="carrito" show="true">
+        <h1>Carrito de la compra</h1>
+        <ul id="carrito-lista">
+            <!-- Carrito -->
+        </ul>
+        <button onclick="alert('Compra realizada')">Realizar Compra</button>
+    </dialog>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <img src="/assets/img/logo.png" alt="The House of Books" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/EN/index.html">Home <img src="/assets/img/icons/home.svg"></a></li>
+                <li><a href="/EN/productos.html">Products <img src="/assets/img/icons/productos.svg"></a></li>
+                <li class="lenguage-menu">
+                    Language <img src="/assets/img/icons/traduccion.svg">
+                    <div class="lenguage-list">
+                        <a href="/ES/index.html">🇪🇸 Spanish</a>
+                        <a href="/EN/index.html">🇬🇧 English</a>
+                    </div>
+                </li>
+                <li onclick="mostrarCarro()">Cart<img src="/assets/img/icons/shop.svg"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Welcome to our bookstore!</h2>
+            <p>In our bookstore, you will find a wide variety of books from different genres and authors. Don't hesitate to visit us!</p>
+            <img src="/assets/img/libreria.jpeg" alt="Bookstore">
+        </section>
+        <section>
+            <h2>Our products!</h2>
+            <p>Discover our selection of best-selling books and the latest literary releases. Find your next favorite read!</p>
+            <img src="/assets/img/libro.jpg" alt="Books"><br><br>
+            <a href="/EN/productos.html">View products</a>
+        </section>
+        <section>
+            <h2>Where are we?</h2>
+            <p>We are located at 123 Fake Street, Springfield. Come visit us and discover everything we have to offer!</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.2436050420097!2d-3.7710434243129622!3d40.22588556723318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd41f5320b893765%3A0xfd153cb3a00bc9bc!2sIES%20Enrique%20Tierno%20Galv%C3%A1n!5e0!3m2!1ses!2ses!4v1741364795872!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </main>
+    <footer>
+        <p> &copy; 2025 The House of Books </p>
+    </footer>
+    <dialog id="carrito" show="true">
+        <h1>Shopping Cart</h1>
+        <ul id="carrito-lista">
+            <!-- Cart -->
+        </ul>
+        <button onclick="alert('Purchase completed')">Checkout</button>
+    </dialog>
+</body>
+</html>
