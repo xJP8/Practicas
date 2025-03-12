@@ -179,7 +179,9 @@ section{
                 border: transparent;
                 border-radius: 10px;
                 padding: 5px;
-
+                &:active{
+                    scale: 0.9;
+                }
             }
         }
     }

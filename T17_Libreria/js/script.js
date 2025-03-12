@@ -1,3 +1,6 @@
+
+
+// Funciones para el manejo de la barra de navegación
 function buscar() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("mySearch");
@@ -15,6 +18,8 @@ function buscar() {
     }
 }
 
+
+// Funciones para el manejo de los filtros
 function filtrar() {
     var select, filter, ul, li, i;
     select = document.getElementById("filtro");
@@ -30,6 +35,7 @@ function filtrar() {
     }
 }
 
+// Funciones para el manejo del carrito
 function mostrarCarro() {
     var dialog = document.getElementById("carrito");
     dialog.showModal();
